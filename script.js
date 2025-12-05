@@ -605,5 +605,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    console.log('Fresh Leaf website loaded successfully! 🌿');
+    console.log('Kasai Seeds website loaded successfully! 🌿');
 });
