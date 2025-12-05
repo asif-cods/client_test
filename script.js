@@ -198,85 +198,120 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==========================
     const products = [
         {
-            title: "Organic Vegetables",
+            title: "F-Jyoti Chilli",
             desc: `<strong>Product Highlights</strong><br>
                     <strong>Vigor & Yield:</strong> Resistant to virus diseases; offers frequent, high-volume blooming and fruiting.<br><br>
                     <strong>Harvest Timeline:</strong><br>
                     Green Stage: 60–65 days<br>
                     Red/Mature Stage: 100–105 days<br><br>
                     <strong>Commercial Appeal:</strong> Ideal for long-distance shipping and delivers high-quality fruit that earns a premium market price.`,
-            price: "$4.99",
-            unit: "/kg",
+            // price: "$4.99",
+            // unit: "/kg",
             badge: "Fresh",
             // img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&h=600&fit=crop" 
             img: "./images/prod-1.jpeg"
         },
         {
-            title: "Premium Grains",
-            desc: "High-quality wheat, rice, and millets grown using sustainable methods.",
-            price: "$3.49",
-            unit: "/kg",
+            title: "Okra Vimukta",
+            desc: `
+            <strong>Product Highlights</strong><br>
+            Okra seeds “Vimukta” from Sai Seeds bring prosperity and abundance.<br>
+	•	First harvesting starts between 45 to 50 days.<br>
+	•	Fruit color is dark green.<br>
+	•	Attractive, tender, and soft pods.<br>
+	•	Excellent fruit setting from bottom to top, with very little gap between nodes.<br>
+	•	A variety with plenty of fruit-bearing branches.<br>
+	•	Suitable for cultivation throughout the year.<br>
+	•	Export-quality variety.<br>
+	•	Highly tolerant to Yellow Vein Mosaic Virus and ELCV disease.<br>
+	•	Excellent quality and good market price.`,
+            // price: "$3.49",
+            // unit: "/kg",
             badge: "Organic",
             // img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&h=600&fit=crop" 
             img: "./images/prod-2.jpeg"
         },
         {
-            title: "Seasonal Fruits",
-            desc: "Hand-picked seasonal fruits at peak ripeness for maximum flavor.",
-            price: "$6.99",
-            unit: "/kg",
-            badge: "Premium",
+            title: "Lalaji",
+            desc: `<strong>Product Highlights</strong><br>
+                    <strong>Fruit:</strong> The onion is round in shape and bright red in color and delicious to eat.<br><br>
+                    <strong>Production capacity:</strong> 100 to 150 quintals per acre.<br><br>
+                    <strong>Seed rate:</strong> 3 kg per acre<br><br>
+                    <strong>Sowing:</strong> Kharif<br><br>
+                    <strong>Market price:</strong> High quality`,
+            // price: "$6.99",
+            // unit: "/kg",
+            badge: "Organic",
             // img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=800&h=600&fit=crop" 
             img: "./images/prod-3.jpeg"
         },
         {
-            title: "Fresh Herbs",
-            desc: "Aromatic herbs and leafy greens perfect for healthy cooking.",
-            price: "$2.99",
-            unit: "/bunch",
-            badge: "Aromatic",
-            img: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=800&h=600&fit=crop"
+            title: "Shankra Gulabi",
+            desc: `<strong>Product Highlights</strong><br>
+            Shankara Pink is a modified variety of Kasai Seeds.<br><br>
+            Attractive bright color and three-leafed onion<br><br>
+            The color of the onion is bright pink red.<br><br>
+            A variety that gives high yield in the Rabi season and has storage capacity for nine to ten months.<br><br>
+            Ready to harvest in 100 to 120 days.<br><br>
+            Average yield per acre is 20 to 22 tons if the weather is right and proper care is taken.<br><br>
+            High quality market price`,
+            // price: "$2.99",
+            // unit: "/bunch",
+            badge: "Organic",
+            img: "./images/prod-4.jpeg"
         },
         {
-            title: "Root Vegetables",
-            desc: "Fresh carrots, beets, and potatoes rich in nutrients and flavor.",
-            price: "$3.99",
-            unit: "/kg",
-            badge: "Natural",
-            img: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=800&h=600&fit=crop"
+            title: "Samarth Garva",
+            desc: `<strong>Product Highlights</strong><br>
+            <strong>Fruit:</strong> The onion is round in shape and is bright light red in color and delicious to eat.<br><br>
+
+            <strong>Production capacity:</strong> One hundred to one and a half hundred quintals per acre<br><br>
+
+            <strong>Seed rate:</strong> Three kg per acre<br><br>
+
+            <strong>Sowing:</strong> Kharif Late Kharif<br><br>
+
+            <strong>Market price:</strong> High quality`,
+            // price: "$3.99",
+            // unit: "/kg",
+            badge: "Organic",
+            img: "./images/prod-5.jpeg"
         },
         {
-            title: "Organic Pulses",
-            desc: "Premium lentils and beans, protein-rich and naturally grown.",
-            price: "$5.49",
-            unit: "/kg",
+            title: "Soyabeans MACS-1188",
+            desc: `<strong>Product Highlights</strong><br>
+            Pure organic Soyabeans, protein-rich and naturally grown.<br>`,
+            // price: "$5.49",
+            // unit: "/kg",
             badge: "Protein",
-            img: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800&h=600&fit=crop"
+            img: "./images/prod-6.jpeg"
         },
         {
-            title: "Fresh Dairy",
-            desc: "Farm-fresh milk and dairy products from grass-fed cattle.",
-            price: "$4.49",
-            unit: "/liter",
+            title: "Tur BDN-716",
+            desc: `<strong>Product Highlights</strong><br>
+            Premium, protein-rich and naturally grown.<br>`,
+            // price: "$4.49",
+            // unit: "/liter",
             badge: "Fresh",
-            img: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=800&h=600&fit=crop"
+            img: "./images/prod-7.jpeg"
         },
         {
-            title: "Honey & Preserves",
-            desc: "Pure organic honey and homemade preserves from our apiary.",
-            price: "$8.99",
-            unit: "/jar",
-            badge: "Pure",
-            img: "https://images.unsplash.com/photo-1587049352846-4a222e784366?w=800&h=600&fit=crop"
+            title: "Bollgard PKV-081 BT II",
+            desc: `<strong>Product Highlights</strong><br>
+            Premium, protein-rich and naturally grown.<br>`,
+            // price: "$8.99",
+            // unit: "/jar",
+            badge: "Organic",
+            img: "./images/prod-8.jpeg"
         },
-        {
-            title: "Organic Eggs",
-            desc: "Free-range organic eggs from happy, healthy hens.",
-            price: "$5.99",
-            unit: "/dozen",
-            badge: "Free-Range",
-            img: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=800&h=600&fit=crop"
-        }
+        // {
+        //     title: "Organic Eggs",
+        //     desc: "Free-range organic eggs from happy, healthy hens.",
+        //     price: "$5.99",
+        //     unit: "/dozen",
+        //     badge: "Free-Range",
+        //     img: "./images/prod-9.jpeg"
+        // }
     ];
 
     const productRow = document.getElementById('product-row');
@@ -297,10 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h3 class="card-title fs-4 fw-bold mb-3">${p.title}</h3>
                         <div class="card-text text-muted mb-4 flex-grow-1">${p.desc}</div>
                         <div class="d-flex justify-content-between align-items-center mt-auto">
-                            <div>
-                                <span class="product-price">${p.price}</span>
-                                <span class="product-price-unit">${p.unit}</span>
-                            </div>
+
                             <button onclick="redirectToWhatsApp('${p.title}')" class="btn btn-sm btn-success rounded-pill px-3">
                                 <i class="bi bi-cart-plus me-1"></i>Buy
                             </button>
@@ -310,6 +342,11 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `);
     });
+
+    // <div>
+    //     <span class="product-price">${p.price}</span>
+    //     <span class="product-price-unit">${p.unit}</span>
+    // </div>
 
     document.querySelectorAll('.fade-in-up').forEach(el => fadeObserver.observe(el));
 
