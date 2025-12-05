@@ -199,22 +199,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const products = [
         {
             title: "F-Jyoti Chilli",
-            desc: `<strong>Product Highlights</strong><br>
+            desc: {
+                en: `<strong>Product Highlights</strong><br>
                     <strong>Vigor & Yield:</strong> Resistant to virus diseases; offers frequent, high-volume blooming and fruiting.<br><br>
                     <strong>Harvest Timeline:</strong><br>
                     Green Stage: 60–65 days<br>
                     Red/Mature Stage: 100–105 days<br><br>
                     <strong>Commercial Appeal:</strong> Ideal for long-distance shipping and delivers high-quality fruit that earns a premium market price.`,
-            // price: "$4.99",
-            // unit: "/kg",
+                mr: `<strong>उत्पादन हायलाइट्स</strong><br>
+                    <strong>जोम आणि उत्पन्न:</strong> विषाणूजन्य रोगांना प्रतिकारक; वारंवार, जास्त प्रमाणात फुले आणि फळे येतात.<br><br>
+                    <strong>कापणीची वेळ:</strong><br>
+                    हिरव्या टप्प्यात: 60-65 दिवस<br>
+                    लाल/पक्व टप्प्यात: 100-105 दिवस<br><br>
+                    <strong>व्यावसायिक अपील:</strong> लांब अंतराच्या वाहतुकीसाठी आदर्श आणि उच्च-गुणवत्तेची फळे मिळवून देतात ज्याला बाजारात प्रीमियम किंमत मिळते.`
+            },
             badge: "Fresh",
-            // img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&h=600&fit=crop" 
             img: "./images/prod-1.jpeg"
         },
         {
             title: "Okra Vimukta",
-            desc: `
-            <strong>Product Highlights</strong><br>
+            desc: {
+                en: `<strong>Product Highlights</strong><br>
             Okra seeds “Vimukta” from Sai Seeds bring prosperity and abundance.<br>
 	•	First harvesting starts between 45 to 50 days.<br>
 	•	Fruit color is dark green.<br>
@@ -225,29 +230,44 @@ document.addEventListener('DOMContentLoaded', function () {
 	•	Export-quality variety.<br>
 	•	Highly tolerant to Yellow Vein Mosaic Virus and ELCV disease.<br>
 	•	Excellent quality and good market price.`,
-            // price: "$3.49",
-            // unit: "/kg",
+                mr: `<strong>उत्पादन हायलाइट्स</strong><br>
+            साई सीड्सचे 'विमुक्त' भेंडी बियाणे समृद्धी आणि भरभराट आणतात.<br>
+	•	पहिली कापणी 45 ते 50 दिवसात सुरू होते.<br>
+	•	फळांचा रंग गडद हिरवा असतो.<br>
+	•	आकर्षक, कोवळी आणि मऊ शेंगा.<br>
+	•	तळापासून वरपर्यंत उत्कृष्ट फळधारणा, नोड्समध्ये खूप कमी अंतर.<br>
+	•	भरपूर फळधारणा असलेल्या फांद्या असलेली जात.<br>
+	•	वर्षभर लागवडीसाठी योग्य.<br>
+	•	निर्यात-गुणवत्तेची जात.<br>
+	•	यलो व्हेन मोझॅक व्हायरस आणि ईएलसीव्ही रोगास अत्यंत सहनशील.<br>
+	•	उत्कृष्ट गुणवत्ता आणि चांगली बाजारभाव.`
+            },
             badge: "Organic",
-            // img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&h=600&fit=crop" 
             img: "./images/prod-2.jpeg"
         },
         {
             title: "Lalaji",
-            desc: `<strong>Product Highlights</strong><br>
+            desc: {
+                en: `<strong>Product Highlights</strong><br>
                     <strong>Fruit:</strong> The onion is round in shape and bright red in color and delicious to eat.<br><br>
                     <strong>Production capacity:</strong> 100 to 150 quintals per acre.<br><br>
                     <strong>Seed rate:</strong> 3 kg per acre<br><br>
                     <strong>Sowing:</strong> Kharif<br><br>
                     <strong>Market price:</strong> High quality`,
-            // price: "$6.99",
-            // unit: "/kg",
+                mr: `<strong>उत्पादन हायलाइट्स</strong><br>
+                    <strong>फळ:</strong> कांदा गोल आकाराचा असून दिसायला गडद लाल आणि खायला रुचकर लागतो.<br><br>
+                    <strong>उत्पादन क्षमता:</strong> एकरी 100 ते 150 क्विंटल.<br><br>
+                    <strong>बियांचे प्रमाण:</strong> एकरी 3 किलो<br><br>
+                    <strong>पेरणी:</strong> खरीप<br><br>
+                    <strong>बाजारभाव:</strong> उच्च दर्जाचा`
+            },
             badge: "Organic",
-            // img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=800&h=600&fit=crop" 
             img: "./images/prod-3.jpeg"
         },
         {
             title: "Shankra Gulabi",
-            desc: `<strong>Product Highlights</strong><br>
+            desc: {
+                en: `<strong>Product Highlights</strong><br>
             Shankara Pink is a modified variety of Kasai Seeds.<br><br>
             Attractive bright color and three-leafed onion<br><br>
             The color of the onion is bright pink red.<br><br>
@@ -255,14 +275,22 @@ document.addEventListener('DOMContentLoaded', function () {
             Ready to harvest in 100 to 120 days.<br><br>
             Average yield per acre is 20 to 22 tons if the weather is right and proper care is taken.<br><br>
             High quality market price`,
-            // price: "$2.99",
-            // unit: "/bunch",
+                mr: `<strong>उत्पादन हायलाइट्स</strong><br>
+            शंकरा गुलाबी ही कसाई सीड्सची सुधारित जात आहे.<br><br>
+            आकर्षक चमकदार रंग आणि तीन पापुद्रे असलेला कांदा<br><br>
+            कांद्याचा रंग चमकदार गुलाबी लाल असतो.<br><br>
+            रब्बी हंगामात भरघोस उत्पन्न देणारी आणि नऊ ते दहा महिने साठवण क्षमता असलेली जात.<br><br>
+            100 ते 120 दिवसात काढणीस तयार.<br><br>
+            हवामान योग्य असल्यास आणि योग्य काळजी घेतल्यास एकरी सरासरी उत्पादन 20 ते 22 टन मिळते.<br><br>
+            उच्च दर्जाचा बाजारभाव`
+            },
             badge: "Organic",
             img: "./images/prod-4.jpeg"
         },
         {
             title: "Samarth Garva",
-            desc: `<strong>Product Highlights</strong><br>
+            desc: {
+                en: `<strong>Product Highlights</strong><br>
             <strong>Fruit:</strong> The onion is round in shape and is bright light red in color and delicious to eat.<br><br>
 
             <strong>Production capacity:</strong> One hundred to one and a half hundred quintals per acre<br><br>
@@ -272,52 +300,58 @@ document.addEventListener('DOMContentLoaded', function () {
             <strong>Sowing:</strong> Kharif Late Kharif<br><br>
 
             <strong>Market price:</strong> High quality`,
-            // price: "$3.99",
-            // unit: "/kg",
+                mr: `<strong>उत्पादन हायलाइट्स</strong><br>
+            <strong>फळ:</strong> कांदा गोल आकाराचा असून दिसायला चमकदार हलका लाल आणि खायला रुचकर लागतो.<br><br>
+            <strong>उत्पादन क्षमता:</strong> एकरी 100 ते 150 क्विंटल<br><br>
+            <strong>बियांचे प्रमाण:</strong> एकरी 3 किलो<br><br>
+            <strong>पेरणी:</strong> खरीप, लेट खरीप<br><br>
+            <strong>बाजारभाव:</strong> उच्च दर्जाचा`
+            },
             badge: "Organic",
             img: "./images/prod-5.jpeg"
         },
         {
             title: "Soyabeans MACS-1188",
-            desc: `<strong>Product Highlights</strong><br>
+            desc: {
+                en: `<strong>Product Highlights</strong><br>
             Pure organic Soyabeans, protein-rich and naturally grown.<br>`,
-            // price: "$5.49",
-            // unit: "/kg",
+                mr: `<strong>उत्पादन हायलाइट्स</strong><br>
+            शुद्ध सेंद्रिय सोयाबीन, प्रथिनांनी समृद्ध आणि नैसर्गिकरित्या पिकवलेले.<br>`
+            },
             badge: "Protein",
             img: "./images/prod-6.jpeg"
         },
         {
             title: "Tur BDN-716",
-            desc: `<strong>Product Highlights</strong><br>
+            desc: {
+                en: `<strong>Product Highlights</strong><br>
             Premium, protein-rich and naturally grown.<br>`,
-            // price: "$4.49",
-            // unit: "/liter",
+                mr: `<strong>उत्पादन हायलाइट्स</strong><br>
+            प्रीमियम, प्रथिनांनी समृद्ध आणि नैसर्गिकरित्या पिकवलेले.<br>`
+            },
             badge: "Fresh",
             img: "./images/prod-7.jpeg"
         },
         {
             title: "Bollgard PKV-081 BT II",
-            desc: `<strong>Product Highlights</strong><br>
+            desc: {
+                en: `<strong>Product Highlights</strong><br>
             Premium, protein-rich and naturally grown.<br>`,
-            // price: "$8.99",
-            // unit: "/jar",
+                mr: `<strong>उत्पादन हायलाइट्स</strong><br>
+            प्रीमियम, प्रथिनांनी समृद्ध आणि नैसर्गिकरित्या पिकवलेले.<br>`
+            },
             badge: "Organic",
             img: "./images/prod-8.jpeg"
-        },
-        // {
-        //     title: "Organic Eggs",
-        //     desc: "Free-range organic eggs from happy, healthy hens.",
-        //     price: "$5.99",
-        //     unit: "/dozen",
-        //     badge: "Free-Range",
-        //     img: "./images/prod-9.jpeg"
-        // }
+        }
     ];
 
     const productRow = document.getElementById('product-row');
     const loadMoreBtn = document.getElementById('loadMore');
     const showLessBtn = document.getElementById('showLess');
     const initialCount = 3;
+
+    // Language State
+    let currentLang = 'en';
 
     products.forEach((p, i) => {
         const hiddenClass = i >= initialCount ? 'd-none' : '';
@@ -330,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     <div class="card-body p-4 d-flex flex-column">
                         <h3 class="card-title fs-4 fw-bold mb-3">${p.title}</h3>
-                        <div class="card-text text-muted mb-4 flex-grow-1">${p.desc}</div>
+                        <div class="card-text text-muted mb-4 flex-grow-1">${p.desc.en}</div>
                         <div class="d-flex justify-content-between align-items-center mt-auto">
 
                             <button onclick="redirectToWhatsApp('${p.title}')" class="btn btn-sm btn-success rounded-pill px-3">
@@ -342,6 +376,26 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `);
     });
+
+    // Handle Language Toggle
+    const langToggleBtn = document.getElementById('langToggle');
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'mr' : 'en';
+            langToggleBtn.textContent = currentLang === 'en' ? 'English' : 'मराठी';
+
+            // Update descriptions
+            const productCards = document.querySelectorAll('.product-item');
+            productCards.forEach((card, index) => {
+                if (products[index]) {
+                    const descContainer = card.querySelector('.card-text');
+                    if (descContainer) {
+                        descContainer.innerHTML = products[index].desc[currentLang];
+                    }
+                }
+            });
+        });
+    }
 
     // <div>
     //     <span class="product-price">${p.price}</span>
@@ -369,6 +423,31 @@ document.addEventListener('DOMContentLoaded', function () {
             behavior: 'smooth'
         });
     });
+
+    // ==========================
+    // FIELD VISIT DYNAMIC LOAD
+    // ==========================
+    const fieldImages = [
+        "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1595855793915-f933973c51f1?w=1200&h=600&fit=crop"
+    ];
+
+    const fieldVisitContainer = document.getElementById('field-visit-images');
+    if (fieldVisitContainer) {
+        fieldImages.forEach((imgSrc, index) => {
+            const activeClass = index === 0 ? 'active' : '';
+            fieldVisitContainer.insertAdjacentHTML('beforeend', `
+            <div class="carousel-item ${activeClass}">
+                <img src="${imgSrc}" class="d-block w-100" alt="Field Visit ${index + 1}" style="height: 500px; object-fit: cover;">
+                 <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Field View ${index + 1}</h5> -->
+                </div>
+            </div>
+        `);
+        });
+    }
 
     // ==========================
     // TESTIMONIALS
