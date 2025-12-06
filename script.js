@@ -428,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // FIELD VISIT DYNAMIC LOAD
     // ==========================
     const fieldImages = [
-        "/images/FieldVisits/fv-1.jpeg",
+        "images/FieldVisits/fv-1.jpeg",
         "images/FieldVisits/fv-2.png",
         "images/FieldVisits/fv-3.png",
         "images/FieldVisits/fv-4.jpeg",
