@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <strong>व्यावसायिक अपील:</strong> लांब अंतराच्या वाहतुकीसाठी आदर्श आणि उच्च-गुणवत्तेची फळे मिळवून देतात ज्याला बाजारात प्रीमियम किंमत मिळते.`
             },
             badge: "Fresh",
-            img: "./images/prod-1.jpeg"
+            img: "./images/products/prod-1.jpeg"
         },
         {
             title: "Okra Vimukta",
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	•	उत्कृष्ट गुणवत्ता आणि चांगली बाजारभाव.`
             },
             badge: "Organic",
-            img: "./images/prod-2.jpeg"
+            img: "./images/products/prod-2.jpeg"
         },
         {
             title: "Lalaji",
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <strong>बाजारभाव:</strong> उच्च दर्जाचा`
             },
             badge: "Organic",
-            img: "./images/prod-3.jpeg"
+            img: "./images/products/prod-3.jpeg"
         },
         {
             title: "Shankara Gulabi",
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
             उच्च दर्जाचा बाजारभाव`
             },
             badge: "Organic",
-            img: "./images/prod-4.jpeg"
+            img: "./images/products/prod-4.jpeg"
         },
         {
             title: "Samarth Garva",
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <strong>बाजारभाव:</strong> उच्च दर्जाचा`
             },
             badge: "Organic",
-            img: "./images/prod-5.jpeg"
+            img: "./images/products/prod-5.jpeg"
         },
         {
             title: "Soyabeans MACS-1188",
@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
             शुद्ध सेंद्रिय सोयाबीन, प्रथिनांनी समृद्ध आणि नैसर्गिकरित्या पिकवलेले.<br>`
             },
             badge: "Protein",
-            img: "./images/prod-6.jpeg"
+            img: "./images/products/prod-6.jpeg"
         },
         {
             title: "Tur BDN-716",
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
             प्रीमियम, प्रथिनांनी समृद्ध आणि नैसर्गिकरित्या पिकवलेले.<br>`
             },
             badge: "Fresh",
-            img: "./images/prod-7.jpeg"
+            img: "./images/products/prod-7.jpeg"
         },
         {
             title: "Bollgard PKV-081 BT II",
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
             प्रीमियम, प्रथिनांनी समृद्ध आणि नैसर्गिकरित्या पिकवलेले.<br>`
             },
             badge: "Organic",
-            img: "./images/prod-8.jpeg"
+            img: "./images/products/prod-8.jpeg"
         }
     ];
 
@@ -428,11 +428,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // FIELD VISIT DYNAMIC LOAD
     // ==========================
     const fieldImages = [
-        "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&h=600&fit=crop",
-        "https://images.unsplash.com/photo-1595855793915-f933973c51f1?w=1200&h=600&fit=crop"
+        "/images/FieldVisits/fv-1.jpeg",
+        "images/FieldVisits/fv-2.png",
+        "images/FieldVisits/fv-3.png",
+        "images/FieldVisits/fv-4.jpeg",
+        "images/FieldVisits/fv-5.jpeg",
+        "images/FieldVisits/fv-6.jpeg",
+        "images/FieldVisits/fv-7.jpeg",
+        "images/FieldVisits/fv-8.jpeg",
+        "images/FieldVisits/fv-9.jpeg",
+        "images/FieldVisits/fv-10.jpeg"
     ];
+    // const fieldImages = [
+    //     "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200&h=600&fit=crop",
+    //     "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=600&fit=crop",
+    //     "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&h=600&fit=crop",
+    //     "https://images.unsplash.com/photo-1595855793915-f933973c51f1?w=1200&h=600&fit=crop"
+    // ];
 
     const fieldVisitContainer = document.getElementById('field-visit-images');
     if (fieldVisitContainer) {
@@ -440,7 +452,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const activeClass = index === 0 ? 'active' : '';
             fieldVisitContainer.insertAdjacentHTML('beforeend', `
             <div class="carousel-item ${activeClass}">
-                <img src="${imgSrc}" class="d-block w-100" alt="Field Visit ${index + 1}" style="height: 500px; object-fit: cover;">
+                <img     object-fit: cover;
+    width: 100%;
+    height: 100veh;
+    // max-heigeeht: 400px;
+     src="${imgSrc}" class="d-block w-100 " alt="Field Visit ${index + 1}" style="height: 500px; object-fit: cover;">
                  <div class="carousel-caption d-none d-md-block">
                     <!-- <h5>Field View ${index + 1}</h5> -->
                 </div>
