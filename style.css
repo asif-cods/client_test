@@ -741,6 +741,13 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+      /* flex: 2;   */
+      display: flex;           /* makes content align inside */
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;            /* forces equal height */
+  text-align: center;
+
 }
 
 .contact-card:hover {

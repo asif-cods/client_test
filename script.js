@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Okra Vimukta",
             desc: {
                 en: `<strong>Product Highlights</strong><br>
-            Okra seeds “Vimukta” from Sai Seeds bring prosperity and abundance.<br>
+            Okra seeds “Vimukta” from Kasai Seeds bring prosperity and abundance.<br>
 	•	First harvesting starts between 45 to 50 days.<br>
 	•	Fruit color is dark green.<br>
 	•	Attractive, tender, and soft pods.<br>
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	•	Highly tolerant to Yellow Vein Mosaic Virus and ELCV disease.<br>
 	•	Excellent quality and good market price.`,
                 mr: `<strong>उत्पादन हायलाइट्स</strong><br>
-            साई सीड्सचे 'विमुक्त' भेंडी बियाणे समृद्धी आणि भरभराट आणतात.<br>
+            कासाई सीड्सचे 'विमुक्ता' भेंडी बियाणे समृद्धी आणि भरभराट आणतात.<br>
 	•	पहिली कापणी 45 ते 50 दिवसात सुरू होते.<br>
 	•	फळांचा रंग गडद हिरवा असतो.<br>
 	•	आकर्षक, कोवळी आणि मऊ शेंगा.<br>
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
             img: "./images/prod-3.jpeg"
         },
         {
-            title: "Shankra Gulabi",
+            title: "Shankara Gulabi",
             desc: {
                 en: `<strong>Product Highlights</strong><br>
             Shankara Pink is a modified variety of Kasai Seeds.<br><br>
