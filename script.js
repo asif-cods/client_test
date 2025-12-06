@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // IMAGE PRELOAD
     // ==========================
     const preloadImages = [
-        'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1920&h=1080&fit=crop',
+        'images/h-1.jpeg',
         'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1920&h=1080&fit=crop',
         'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&h=1080&fit=crop'
     ];
@@ -428,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // FIELD VISIT DYNAMIC LOAD
     // ==========================
     const fieldImages = [
-        "/images/FieldVisits/fv-1.jpeg",
+        "images/FieldVisits/fv-1.jpeg",
         "images/FieldVisits/fv-2.png",
         "images/FieldVisits/fv-3.png",
         "images/FieldVisits/fv-4.jpeg",
@@ -470,24 +470,24 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==========================
     const testimonials = [
         {
-            name: "Sarah Johnson",
-            role: "Home Chef",
-            img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
-            feedback: "The quality of vegetables from Fresh Leaf is outstanding! Everything is so fresh and flavorful. I've never tasted produce this good from any other source.",
+            name: "Mahesh waykar",
+            role: "karjat",
+            img: "images/cutomer-1.jpeg",
+            feedback: "I have been cultivating onion seeds from Kasai Seeds Company for many years. Their seeds are of excellent quality. Kasai Seeds Company delivers solid performance. I have experienced this myself — you should experience it too. Kasai Seeds is a symbol of trust.",
             stars: 5
         },
         {
-            name: "Michael Chen",
-            role: "Restaurant Owner",
-            img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop",
-            feedback: "Fast delivery and excellent service! The fresh fruits and grains are of top quality. My customers always compliment the freshness of our ingredients.",
+            name: "Arjun Laxman Chavan",
+            role: "Nashik",
+            img: "images/customer-2.jpeg",
+            feedback: "Kasai Seeds’ Vimukta okra variety is truly the best. I have cultivated it myself and experienced excellent results. You should also try cultivating it personally and see the quality for yourself.",
             stars: 5
         },
         {
             name: "Emily Rodriguez",
             role: "Nutritionist",
             img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
-            feedback: "Fresh Leaf's commitment to organic purity and freshness is unmatched. I recommend them to all my clients who want the best quality produce for their health.",
+            feedback: "Fast delivery and excellent service! The fresh fruits and grains are of top quality. My customers always compliment the freshness of our ingredients.",
             stars: 5
         }
     ];
