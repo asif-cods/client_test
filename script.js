@@ -439,12 +439,6 @@ document.addEventListener('DOMContentLoaded', function () {
         "images/FieldVisits/fv-9.jpeg",
         "images/FieldVisits/fv-10.jpeg"
     ];
-    // const fieldImages = [
-    //     "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200&h=600&fit=crop",
-    //     "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=600&fit=crop",
-    //     "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&h=600&fit=crop",
-    //     "https://images.unsplash.com/photo-1595855793915-f933973c51f1?w=1200&h=600&fit=crop"
-    // ];
 
     const fieldVisitContainer = document.getElementById('field-visit-images');
     if (fieldVisitContainer) {
@@ -484,10 +478,10 @@ document.addEventListener('DOMContentLoaded', function () {
             stars: 5
         },
         {
-            name: "Emily Rodriguez",
-            role: "Nutritionist",
-            img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
-            feedback: "Fast delivery and excellent service! The fresh fruits and grains are of top quality. My customers always compliment the freshness of our ingredients.",
+            name: "Pramod rajput",
+            role: "Vaijapur",
+            img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop",
+            feedback: "I’ve been using Kasai Seeds for my farm, and the results are always excellent. Great germination, strong plants, and very good yield. Truly reliable seeds — every farmer should try them",
             stars: 5
         }
     ];
@@ -582,24 +576,6 @@ document.addEventListener('DOMContentLoaded', function () {
             element.style.transform = `translateY(${scrolled * speed}px)`;
         });
     });
-
-    // ==========================
-    // ADD TO CART FUNCTIONALITY
-    // ==========================
-    // document.addEventListener('click', function(e) {
-    //     if (e.target.closest('.btn-success:has(.bi-cart-plus)')) {
-    //         const button = e.target.closest('.btn-success');
-    //         const originalText = button.innerHTML;
-
-    //         button.innerHTML = '<i class="bi bi-check2 me-1"></i>Added!';
-    //         button.classList.add('disabled');
-
-    //         setTimeout(() => {
-    //             button.innerHTML = originalText;
-    //             button.classList.remove('disabled');
-    //         }, 2000);
-    //     }
-    // });
 
     // ==========================
     // LAZY LOADING FOR IMAGES

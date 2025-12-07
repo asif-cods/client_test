@@ -87,7 +87,7 @@
     width: 100px;
     height: 125px;
     object-fit: contain;
-    /* animation: leafRotate 3s ease-in-out infinite; */
+
 }
 
 /* Alternative: Remove background circle for logo */
@@ -527,30 +527,6 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 20px;
 }
 
-/* Decorative Leaves */
-.decorative-leaf {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    opacity: 0.1;
-    pointer-events: none;
-}
-
-.left-leaf {
-    top: 10%;
-    left: -50px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 Q80 30 90 60 Q70 80 50 90 Q30 80 10 60 Q20 30 50 10 Z" fill="%2322c55e"/></svg>') no-repeat;
-    background-size: contain;
-    animation: float 6s ease-in-out infinite;
-}
-
-.right-leaf {
-    bottom: 10%;
-    right: -50px;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 Q80 30 90 60 Q70 80 50 90 Q30 80 10 60 Q20 30 50 10 Z" fill="%2322c55e"/></svg>') no-repeat;
-    background-size: contain;
-    animation: float 8s ease-in-out infinite reverse;
-}
 
 /* Why Choose Us Section */
 .why-choose-card {
@@ -951,11 +927,4 @@ section {
         font-size: 1.5rem;
     }
 
-    /* .navbar-nav {
-        text-align: center;
-    } */
 }
-
-/*@media (m-width: 576px) {
-.navbar-nav {}
-}  */
