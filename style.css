@@ -903,6 +903,10 @@ section {
     }
         .navbar-nav {
         text-align: center;
+        gap:5px;
+    }
+    #langToggle{
+            margin-left: 0px !important;
     }
 
     .nav-link.active::after {
@@ -925,6 +929,9 @@ section {
     
     .stats-section h3 {
         font-size: 1.5rem;
+    }
+    .lb{
+        display: inline-block;
     }
 
 }
