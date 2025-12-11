@@ -1,0 +1,795 @@
+:root {
+    --primary: #6C63FF;
+    --primary-dark: #524ae3;
+    --secondary: #03dac6;
+    --bg-dark: #121212;
+    --bg-card: #1E1E2E;
+    --text-main: #EAEAEA;
+    /* --text-muted: #A0A0A0; */
+    --gradient: linear-gradient(135deg, #6C63FF 0%, #03dac6 100%);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --font-heading: 'Outfit', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+/* Original Price (Slash) */
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* body {
+    font-family: var(--font-body) !important;
+    Bootstrap handles bg and color
+    overflow-x: hidden;
+} */
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4,
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+    font-family: var(--font-heading) !important;
+}
+
+.h5 {
+    color: white;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    /* font-family: 'Lora', serif; */
+    /* color: var(--text-dark); */
+    font-family: var(--font-body) !important;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+} */
+
+
+/* nav logo  */
+/* 1. Default/Mobile Logo Size (Small screens or when the navbar is collapsed) */
+/* The base HTML already uses 50px for width/height. We override it here */
+.navbar-brand img {
+    /* Logo size for small screens (e.g., mobile) */
+    width: 85px;
+    height: 55px;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Navbar Blur */
+.blur-nav {
+    background: rgba(255, 255, 255, 0.334) !important;
+    /* Transparent for blur */
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+.navbar-brand {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: var(--text-main);
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link.active {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: var(--gradient);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hero Animations */
+#hero {
+    padding-top: 100px;
+    /* Space for fixed navbar */
+}
+
+@media (max-width: 991px) {
+    .hero-visual {
+        margin-top: 3rem;
+        /* Space between buttons and card on mobile */
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text .d-flex {
+        justify-content: center;
+    }
+}
+
+.animate-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.animate-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 1. Define the Shake Animation */
+@keyframes shake-card {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(1deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* 2. Apply it to the card on hover */
+.hero-card:hover {
+    /* Run the animation 'shake-card' for 0.4 seconds */
+    animation: shake-card 0.4s ease-in-out infinite;
+
+    /* Optional: Add a slight shadow lift for better effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    /* Ensures it stays on top while shaking */
+}
+
+
+/* Course Animations */
+/* Base reveal class for scroll observer */
+.reveal {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific Course Card Animations triggered by class */
+.course-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Default state before animation */
+.course-card.animate-up {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.course-card.animate-down {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+/* Active state after animation */
+.course-card.active-up {
+    animation: slideUp 0.8s ease forwards;
+}
+
+.course-card.active-down {
+    animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.bg-card {
+    background: var(--bg-card);
+}
+
+/* Image Zoom */
+.badge-custom {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 10;
+    text-transform: uppercase;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInBadge 0.5s ease-out forwards;
+}
+
+@keyframes fadeInBadge {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.badge-bestseller {
+    background: linear-gradient(135deg, #FF6B6B 0%, #EE5253 100%);
+}
+
+.badge-new {
+    background: linear-gradient(135deg, #1DD1A1 0%, #10AC84 100%);
+}
+
+.badge-free {
+    background: linear-gradient(135deg, #48dbfb 0%, #2980b9 100%);
+}
+
+.badge-beginner {
+    background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%);
+    color: #333;
+    /* Darker text for better contrast on yellow/orange */
+}
+
+
+.course-img-wrapper {
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.course-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary);
+}
+
+.course-card:hover .course-img {
+    transform: scale(1.1);
+}
+
+/* Blob Animation */
+.blob {
+    width: 400px;
+    height: 400px;
+    background: var(--gradient);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, -20px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Custom Overrides for Bootstrap Components */
+.btn-primary {
+    background: var(--gradient) !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+}
+
+.btn-outline-primary {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Form Styles */
+
+/* Consultant Box Styles */
+/* Hidden by default */
+.consultant-box {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+/* When visible */
+.consultant-box.showC {
+    max-height: 500px;
+    /* transition: max-height 0.4s ease, opacity 0.4s ease; */
+    /* must be larger than actual content */
+    opacity: 1;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--bg-card) !important;
+    border: 1px solid #333;
+    color: #fff !important;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(108, 99, 255, 0.25) !important;
+}
+
+
+/* Placeholder Color Styles */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    /* Set your desired color here. */
+    /* Example: Using a muted version of your --text-main variable */
+    color: #6c63ff !important;
+
+    /* Optional: Some browsers (like Firefox) use a default opacity. 
+       Set to 1 to ensure full color consistency. */
+    opacity: 1 !important;
+}
+
+/* Carousel Overrides */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--primary);
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.review-card {
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: 1rem;
+    margin: 1rem 3rem;
+    /* Space for arrows */
+}
+
+
+/* About us */
+.img-wrapper {
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    border-radius: 12px;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.1);
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* about us */
+.about-image-box {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+
+/* Footer Socials */
+.socials {
+    transition: transform ease all 0.1 s;
+}
+
+.socials a:hover {
+    color: var(--primary) !important;
+    transform: translateY(-3px);
+    display: inline-block;
+    transform: scale(1.2);
+    /* transition: transform ease all 5s; */
+}
+
+/* Continuous Horizontal Float */
+.float-horizontal {
+    animation: floatHorizontal 6s ease-in-out infinite;
+}
+
+@keyframes floatHorizontal {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-20px);
+    }
+}
+
+/* whatsapp and scroll top button  */
+/* whatsapp and scroll top button  */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient);
+    color: #FFF;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(108, 99, 255, 0.5);
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* common animation right and left  */
+/* default hidden state */
+.scroll-animate {
+    opacity: 0;
+    transition: 0.8s ease-out;
+}
+
+/* left side */
+.from-left {
+    transform: translateX(-100px);
+}
+
+/* right side */
+.from-right {
+    transform: translateX(100px);
+}
+
+/* bottom side */
+.from-bottom {
+    transform: translateY(100px);
+}
+
+/* show animation */
+.scroll-animate.show {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* 2. Desktop/Normal Screen Size (When the navbar is NOT wrapped as a menu) */
+/* Apply this size when the screen width is large enough (e.g., 992px and above for Bootstrap's 'lg' breakpoint) */
+@media (min-width: 992px) {
+    .navbar-brand img {
+        /* Logo size for normal/desktop screen */
+        width: 98px;
+        height: 63px;
+    }
+}
+
+/* Why Choose Us & Utilities */
+.bg-card-dark {
+    background-color: #1a1a2e;
+    /* Slightly different dark */
+}
+
+.hover-up {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hover-up:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.transition-all {
+    transition: all 0.3s ease !important;
+}
+
+/* Why Choose Us Custom Styles */
+#why-choose-us .card {
+    border: 1px solid transparent !important;
+    /* Override border-0 if present, or just set base */
+}
+
+#why-choose-us .card:hover {
+    border-color: var(--primary) !important;
+}
+
+/* Custom Blue Button */
+.btn-blue {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+.btn-blue:hover {
+    background-color: #0b5ed7 !important;
+    border-color: #0a58ca !important;
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.5);
+}
+
+/* Styles applied to screens 575.98px and smaller (Mobile-first styles) */
+@media screen and (max-width: 576px) {
+
+    /* 1. Target the Element
+    .element-to-change {
+        2. Add your specific property changes here
+        font-size: 14px;
+        text-align: center;
+    } */
+
+    /* Example from your previous questions: Centering the Image */
+    .Conslt-img {
+        /* Override desktop centering if needed, or refine padding */
+        /* padding-top: 40px; */
+        max-width: 100%;
+        /* Use less space for a smaller navbar height */
+    }
+
+    /* Example: Make the Consultant Card stack vertically */
+    .consultant-card {
+        display: flex;
+        justify-content: center;
+        /* Center items horizontally when stacked */
+    }
+}
+
+/* Course Detail Image Fix */
+.course-detail-wrapper {
+    height: 400px;
+    /* Fixed height for consistency on desktop */
+}
+
+@media (max-width: 991px) {
+    .course-detail-wrapper {
+        height: 300px;
+        /* Smaller height for tablets/mobile */
+    }
+}

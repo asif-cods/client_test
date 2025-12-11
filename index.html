@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow School - Master Your Future</title>
+    <meta name="description" content="Premium online learning platform for modern students.">
+    <!-- Google Fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-light">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top blur-nav">
+        <div class="container">
+            <!-- <a class="navbar-brand fw-bold text-primary fs-3" href="#"> -->
+            <a class="navbar-brand d-flex align-items-center" href="#hero">
+                <!-- Shadow School. -->
+                <img src="./image/logo.png" alt="Shadow School" width="50px" height="50px">
+            </a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <!-- <span class="fas fa-bars text-white"></span> -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3 align-items-center">
+                    <!-- <li class="nav-item"><a class="nav-link text-white" href="#hero">Home</a></li> -->
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--  text-muted  for disappear the text -->
+    <!-- Hero Section -->
+    <header id="hero" class="d-flex align-items-center min-vh-100 position-relative overflow-hidden">
+        <div class="container position-relative z-2">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-text animate-left">
+                    <h1 class="display-3 fw-bold mb-3">Unlock Your Potential with <span class="gradient-text">Shadow
+                            School</span></h1>
+                    <p class="lead mb-4">Master new skills, advance your career, and explore your passions
+                        with our premium courses taught by industry experts.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#courses" class="btn btn-primary px-4 py-3 rounded-pill">Explore Courses</a>
+                        <a href="#contact" class="btn btn-outline-primary px-4 py-3 rounded-pill">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-visual position-relative animate-right">
+                    <div class="blob position-absolute top-50 start-50 translate-middle"></div>
+                    <div class="glass-card hero-card p-4 text-center mx-auto"
+                        style="max-width: 400px; transform: rotate(-3deg);">
+                        <h3 class="h4 mb-2">Verified Excellence</h3>
+                        <p class="mb-1">⭐ 4.9/5 Average Rating</p>
+                        <p class="mb-0">🎓 10k+ Students</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5 display-5">Featured Courses</h2>
+
+            <!-- Course Grid (Row) handled by JS -->
+            <div id="course-grid" class="row g-4 justify-content-center">
+                <!-- Dynamic Content Loading... -->
+            </div>
+
+            <div id="courses-btn-container" class="text-center mt-5">
+                <button id="toggle-courses-btn" class="btn btn-primary px-5 py-2 rounded-pill">View All Courses</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section (Bootstrap Carousel) -->
+    <section id="reviews" class="section py-5 bg-card-dark  scroll-animate from-right">
+        <div class="container">
+            <h2 class="section-title text-center mb-5 display-5">Student Stories</h2>
+
+            <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id="slider-container">
+                    <!-- Dynamic Reviews Loading here -->
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section py-5 scroll-animate from-left">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-1">
+                    <div class="about-image-box p-1 overflow-hidden border border-primary rounded-4">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhaW5pbmd8ZW58MHx8MHx8fDA%3D"
+                                alt="Shadow School">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2">
+                    <h2 class="section-title mb-4">About Us</h2>
+                    <p class="lead mb-4">Shadow School is dedicated to bridging the gap between traditional
+                        education and industry demands. We focus on practical, hands-on learning that prepares you for
+                        the real world.</p>
+                    <p class="mb-4 text-light opacity-75">
+                        Our curriculum is meticulously designed by industry veterans to ensure you learn the most
+                        relevant and up-to-date skills.
+                        We believe in a community-driven approach where students not only learn from instructors but
+                        also from peers.
+                        Whether you are starting from scratch or looking to upskill, we provide the resources and
+                        mentorship you need to succeed.
+                    </p>
+                    <p class="fw-bold text-primary">Founded by experts, driven by passion.</p>
+                    <div class="d-flex gap-4 mt-4">
+                        <div class="text-center">
+                            <h4 class="fw-bold mb-0">50+</h4>
+                            <small class="text-light opacity-75">Courses</small>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="fw-bold mb-0">10k+</h4>
+                            <small class="text-light opacity-75">Students</small>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="fw-bold mb-0">4.9</h4>
+                            <small class="text-light opacity-75">Rating</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="section py-5 bg-card-dark scroll-animate from-bottom">
+        <div class="container">
+            <h2 class="section-title text-center mb-5 display-5">Why Choose Us</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-card h-100 p-4 text-center hover-up transition-all">
+                        <div class="icon-box mb-3 mx-auto text-primary">
+                            <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Expert Instructors</h4>
+                        <p class="small text-light opacity-75">Learn from industry leaders with real-world experience
+                            and proven track records.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-card h-100 p-4 text-center hover-up transition-all">
+                        <div class="icon-box mb-3 mx-auto text-secondary">
+                            <i class="fas fa-laptop-code fa-3x"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Hands-on Projects</h4>
+                        <p class="small text-light opacity-75">Build a portfolio of real projects that demonstrate your
+                            skills to employers.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-card h-100 p-4 text-center hover-up transition-all">
+                        <div class="icon-box mb-3 mx-auto text-primary">
+                            <i class="fas fa-clock fa-3x"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Flexible Learning</h4>
+                        <p class="small text-light opacity-75">Study at your own pace with lifetime access to course
+                            materials and updates.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-card h-100 p-4 text-center hover-up transition-all">
+                        <div class="icon-box mb-3 mx-auto text-secondary">
+                            <i class="fas fa-users fa-3x"></i>
+                        </div>
+                        <h4 class="h5 mb-3">Supportive Community</h4>
+                        <p class="small text-light opacity-75">Join a global network of learners and get 24/7 support
+                            for your questions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5 display-5">Contact Us</h2>
+            <div class="row g-5">
+                <div class="col-lg-6 ">
+                    <div class="contact-info bg-card p-5 rounded-4 h-100 scroll-animate from-left">
+                        <h3 class="mb-4">Get in Touch</h3>
+                        <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> email: hello@shadowschool.com
+                        </p>
+                        <p class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> Phone: +1 (555) 123-4567</p>
+                        <p class="mb-4"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Address: 123 Innovation
+                            Dr, Tech City</p>
+
+                        <!-- One-on-One Section Button -->
+                        <button id="consultant-btn" class="btn btn-outline-primary w-100 mt-3">Book 1-on-1
+                            Consultation</button>
+
+                        <!-- Hidden Consultant Details   -->
+                        <div id="consultant-details"
+                            class="consultant-card Conslt-cont  consultant-box  flex-column flex-sm-row gap-3 mt-4 p-3 border border-info rounded bg-opacity-10 bg-info align-items-center">
+                            <img src="https://plus.unsplash.com/premium_photo-1682089804117-cea5d901647f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Consultant" class="rounded-circle Conslt-img" width="80" height="80"
+                                style="object-fit: cover;">
+                            <div class="consultant-info text-center text-sm-start">
+                                <h4 class="h6 text-info fw-bold">Dr. Alex Shadow</h4>
+                                <p class="mb-1 small">Fee: $100/hr</p>
+                                <p class="mb-2 small ">Expert career guidance and technical mentorship. 15+
+                                    years of experience.</p>
+                                <a href="https://wa.me/9150582673?text=Hi I'm interested in your 1-on-1 consultation. Please guide me."
+                                    target="_blank" class="btn btn-success btn-sm"><i class="fab fa-whatsapp"></i> Chat
+                                    on WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ">
+                    <div class="contact-form-wrapper bg-card p-5 rounded-4 h-100 scroll-animate from-right">
+                        <form class="contact-form d-grid gap-3">
+                            <div>
+                                <input type="text" class="form-control  border-secondary text-light p-3"
+                                    placeholder="Your Name" required>
+                            </div>
+                            <div>
+                                <input type="email" class="form-control  border-secondary text-light p-3"
+                                    placeholder="Your Email" required>
+                            </div>
+                            <div>
+                                <textarea class="form-control bg-white border-secondary text-light p-3"
+                                    placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary p-3">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-5 mt-auto">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="mb-3 mb-md-0">&copy; 2024 Shadow School. All rights reserved.</p>
+                <div class="socials d-flex gap-4">
+                    <a href="#" class="fs-4"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="fs-4"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="fs-4"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="fs-4"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/9150582673" target="_blank" class="whatsapp-float animate-float"
+        aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" class="scroll-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <!-- Fixed WhatsApp Button
+    <a href="https://wa.me/1234567890" class="position-fixed bottom-0 end-0 m-4 text-success display-4" target="_blank"
+        aria-label="Chat on WhatsApp" style="z-index: 1000; transition: transform 0.3s;">
+        <i class="fab fa-whatsapp-square bg-white rounded-2 shadow"></i>
+    </a> -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

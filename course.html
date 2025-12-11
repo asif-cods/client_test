@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - Shadow School</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-light">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top blur-nav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="./image/logo.png" alt="Shadow School" width="50px" height="50px">
+            </a>
+            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Details Content -->
+    <section class="section py-5 min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="mb-4" style="margin-top: 47px;">
+                <a href="index.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left me-2"></i>Back to
+                    Home</a>
+            </div>
+            <div id="course-details-container">
+                <!-- Dynamic Content -->
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-5 mt-auto">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="mb-3 mb-md-0">&copy; 2024 Shadow School. All rights reserved.</p>
+                <div class="socials d-flex gap-4">
+                    <a href="#" class="fs-4"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="fs-4"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="fs-4"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="fs-4"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/8263999300" target="_blank" class="whatsapp-float animate-float"
+        aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
