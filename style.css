@@ -1,10 +1,13 @@
 :root {
-    --primary: #6C63FF;
+    /* --primary: #6C63FF; */
+    --primary: #009dff;
     --primary-dark: #524ae3;
     --secondary: #03dac6;
     --bg-dark: #121212;
     --bg-card: #1E1E2E;
     --text-main: #EAEAEA;
+    /* #3B23A5   #482DB1 #8A61F5  #361E9F */
+    /* #00F7F7 */
     /* --text-muted: #A0A0A0; */
     --gradient: linear-gradient(135deg, #6C63FF 0%, #03dac6 100%);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -94,20 +97,61 @@ html {
 }
 
 body {
-    /* font-family: 'Lora', serif; */
-    /* color: var(--text-dark); */
+    background-color: var(--bg-dark) !important;
+    color: var(--text-main) !important;
     font-family: var(--font-body) !important;
     line-height: 1.7;
     overflow-x: hidden;
 }
 
-/* h1,
+/* Enforce Theme on Bootstrap Utility Classes */
+.bg-dark {
+    background-color: var(--bg-dark) !important;
+}
+
+.text-light {
+    color: var(--text-main) !important;
+}
+
+.bg-card {
+    background-color: var(--bg-card) !important;
+}
+
+/* Ensure headings use the correct font and color */
+h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-    font-family: 'Montserrat', sans-serif;
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+    font-family: var(--font-heading) !important;
+    color: #fff;
+    /* or var(--text-main) if preferred, but headings usually pop with white */
+}
+
+.text-primary {
+    --bs-text-opacity: 1;
+    color: #78afff !important;
+}
+
+a {
+    color: #78afff;
+}
+
+/* input::placeholder {
+    color: #fbff00 !important;
+    font-weight: 500;
+    letter-spacing: .5px;
 } */
 
 
@@ -116,7 +160,7 @@ h6 {
 /* The base HTML already uses 50px for width/height. We override it here */
 .navbar-brand img {
     /* Logo size for small screens (e.g., mobile) */
-    width: 85px;
+    width: 100%;
     height: 55px;
     transition: width 0.3s ease, height 0.3s ease;
 }
@@ -240,6 +284,39 @@ h6 {
     }
 }
 
+/* Hero Image Custom Styles */
+.hero-img {
+    max-height: 450px;
+    width: auto;
+    object-fit: contain;
+    /* Soft shadow to lift it off the background */
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+    border-radius: 24px;
+    /* transition: transform 0.3s ease; */
+}
+
+/* Mobile responsive adjustments for Hero Image and Card */
+@media (max-width: 991px) {
+    .hero-img {
+        max-height: 350px;
+        margin-bottom: 2rem;
+    }
+
+    .hero-card {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        margin-top: -60px !important;
+        /* Overlap slightly */
+        margin-bottom: 20px !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        transform: rotate(0deg) !important;
+        width: 100%;
+        max-width: 300px !important;
+    }
+}
+
 /* 1. Define the Shake Animation */
 @keyframes shake-card {
     0% {
@@ -349,6 +426,8 @@ h6 {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     box-shadow: var(--shadow);
+    top: 2px;
+    height: 136px;
 }
 
 .bg-card {
@@ -470,8 +549,15 @@ h6 {
 }
 
 .btn-outline-primary:hover {
-    background: var(--primary) !important;
+    background: var(--gradient) !important;
+    border-color: transparent !important;
     color: #fff !important;
+}
+
+/* Exception for Hero Section 'Get In Touch' button */
+#hero .btn-outline-primary:hover {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
 }
 
 .section-title {
@@ -523,13 +609,12 @@ h6 {
 }
 
 
-/* Placeholder Color Styles */
+/* FormPlaceholder Color Styles */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     /* Set your desired color here. */
     /* Example: Using a muted version of your --text-main variable */
-    color: #6c63ff !important;
-
+    color: var(--primary) !important;
     /* Optional: Some browsers (like Firefox) use a default opacity. 
        Set to 1 to ensure full color consistency. */
     opacity: 1 !important;
@@ -587,11 +672,12 @@ h6 {
 }
 
 .socials a:hover {
-    color: var(--primary) !important;
-    transform: translateY(-3px);
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-3px) scale(1.2);
     display: inline-block;
-    transform: scale(1.2);
-    /* transition: transform ease all 5s; */
 }
 
 /* Continuous Horizontal Float */
@@ -708,15 +794,18 @@ h6 {
 @media (min-width: 992px) {
     .navbar-brand img {
         /* Logo size for normal/desktop screen */
-        width: 98px;
+        width: 100%;
         height: 63px;
     }
 }
 
 /* Why Choose Us & Utilities */
 .bg-card-dark {
-    background-color: #1a1a2e;
-    /* Slightly different dark */
+    /* Using a slightly lighter/different dark from the palette or simply the card color */
+    /* Since user wants strict theme, let's use the card background */
+    background-color: var(--bg-card) !important;
+    /* Or if it needs contrast, we can use a slightly manipulated version, 
+       but for strict adherence, --bg-card is safer. */
 }
 
 .hover-up {
@@ -744,15 +833,16 @@ h6 {
 
 /* Custom Blue Button */
 .btn-blue {
-    background-color: #0d6efd !important;
-    border-color: #0d6efd !important;
+    background: var(--gradient) !important;
+    border: none !important;
     color: #fff !important;
 }
 
 .btn-blue:hover {
-    background-color: #0b5ed7 !important;
-    border-color: #0a58ca !important;
-    box-shadow: 0 0 15px rgba(13, 110, 253, 0.5);
+    background: linear-gradient(135deg, #5a52d5 0%, #02b3a3 100%) !important;
+    /* Slightly darker gradient or same */
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 /* Styles applied to screens 575.98px and smaller (Mobile-first styles) */
@@ -789,7 +879,16 @@ h6 {
 
 @media (max-width: 991px) {
     .course-detail-wrapper {
-        height: 300px;
-        /* Smaller height for tablets/mobile */
+        min-height: 250px;
+        height: auto;
     }
+}
+
+/* Hover Scale Utility */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
 }
