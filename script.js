@@ -70,14 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const courses = [
         {
             id: 1,
+            category: "Blue Team",
             title: "DFIR Course",
-            tag: "75 hours: Master digital forensics and incident response to protect, investigate, and remediate cyber threats effectively.",
+            tag: "Master digital forensics and incident response to protect, investigate, and remediate cyber threats effectively.",
+            duration: "75 hours",
+            offer: "50% off",
             description: "Advance your cybersecurity career with our DFIR course. Acquire hands-on skills in digital forensics, memory and mobile device analysis, malware investigation, and incident response to protect critical data.",
             price: 599,
             originalPrice: 1200,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
             formLink: "https://forms.google.com/example-dfir",
-            badge: "",
+            badge: "Bestseller",
             syllabus: [
                 { week: "Week 1", topic: "Storage & File Systems", content: "Storage & File systems fundamentals and more." },
                 { week: "Week 2", topic: "Windows Acquisition", content: "Windows Data Acquisition and more." },
@@ -93,8 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 2,
+            category: "Red Team",
             title: "Information Security (Beginner)",
-            tag: "30 hours: Build a strong foundation in information security and core cyber defense concepts.",
+            tag: "Build a strong foundation in information security and core cyber defense concepts.",
+            duration: "30 hours",
+            offer: "",
             description: "Start your cybersecurity journey by learning essential information security concepts, policies, human security, secure development basics, and data protection fundamentals",
             price: 299,
             originalPrice: 600,
@@ -110,8 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 3,
+            category: "Red Team",
             title: "Information Security (Advanced)",
-            tag: "45 hours: Move to the next level with advanced security technologies and risk management.",
+            tag: "Move to the next level with advanced security technologies and risk management.",
+            duration: "45 hours",
+            offer: "",
             description: "Advance your cybersecurity career by mastering cryptography, risk management, system and cloud security, audits, IAM, compliance, and real-world security practices.",
             price: 449,
             originalPrice: 900,
@@ -129,8 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 4,
+            category: "Blue Team",
             title: "SIEM Engineer (Beginner)",
-            tag: "30 hours: Build your foundation in SIEM and SOC monitoring.",
+            tag: "Build your foundation in SIEM and SOC monitoring.",
+            duration: "30 hours",
+            offer: "",
             description: "This course covers SIEM fundamentals, network security, log collection, parsing, and alert generation.",
             price: 299,
             originalPrice: 600,
@@ -146,8 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 5,
+            category: "Blue Team",
             title: "SIEM Engineer (Advanced)",
-            tag: "45 hours: Master enterprise SIEM tools and advanced threat detection.",
+            tag: "Master enterprise SIEM tools and advanced threat detection.",
+            duration: "45 hours",
+            offer: "",
             description: "This course cover Splunk, wazuh, alert tuning, SOAR tools and advanced analysis",
             price: 449,
             originalPrice: 900,
@@ -164,8 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 6,
+            category: "Blue Team",
             title: "Incident Response (Beginner)",
-            tag: "30 hours: Learn how to detect, respond, and contain security incidents.",
+            tag: "Learn how to detect, respond, and contain security incidents.",
+            duration: "30 hours",
+            offer: "",
             description: "This course cover foundational IR skills, OS-specific incident response , basic log and malware analysis.",
             price: 299,
             originalPrice: 600,
@@ -181,8 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 7,
+            category: "Blue Team",
             title: "Incident Response (Advanced)",
-            tag: "45 hours: Handle complex attacks with advanced forensics and response skills.",
+            tag: "Handle complex attacks with advanced forensics and response skills.",
+            duration: "45 hours",
+            offer: "",
             description: "This course cover deeper forensics, memory/registry analysis, AD attacks, reporting and crisis management.",
             price: 449,
             originalPrice: 900,
@@ -200,8 +221,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 8,
+            category: "Blue Team",
             title: "SOC Analyst (Beginner)",
-            tag: "30 hours: Start your SOC career with essential monitoring and analysis skills.",
+            tag: "Start your SOC career with essential monitoring and analysis skills.",
+            duration: "30 hours",
+            offer: "",
             description: "This course cover foundational knowledge, core SOC operations, and basic analysis skills. Suitable for beginners with little to no prior experience in SOC.",
             price: 299,
             originalPrice: 600,
@@ -217,8 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 9,
+            category: "Blue Team",
             title: "SOC Analyst (Advanced)",
-            tag: "45 hours: Operate like a real SOC analyst with hands-on incident response.",
+            tag: "Operate like a real SOC analyst with hands-on incident response.",
+            duration: "45 hours",
+            offer: "",
             description: "These are more technical, specialized, and hands-on. Suitable for learners who already have the basics and want to handle real SOC incidents, malware analysis, and lab simulations.",
             price: 449,
             originalPrice: 900,
@@ -236,14 +263,17 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 10,
+            category: "Programming",
             title: "C, C++",
-            tag: "60 hours: Master fundamental and advanced C/C++ programming for efficient, structured code.",
+            tag: "Master fundamental and advanced C/C++ programming for efficient, structured code.",
+            duration: "60 hours",
+            offer: "",
             description: "Learn the fundamental and advanced concepts of both C and C++ programming. Build a strong understanding of syntax, data structures, memory handling, and object-oriented concepts essential for efficient and structured programming.",
             price: 499,
             originalPrice: 1000,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
             formLink: "https://forms.google.com/example-c-cpp",
-            badge: "",
+            badge: "Bestseller",
             syllabus: [
                 { week: "Week 1", topic: "C Programming", content: "C Programming Concepts and more." },
                 { week: "Week 2", topic: "C Intermediate", content: "C intermediate and more." },
@@ -253,14 +283,17 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 11,
+            category: "Programming",
             title: "Bash",
-            tag: "30 - 45 hours: Automate and streamline system tasks using powerful Bash scripting skills.",
+            tag: "Automate and streamline system tasks using powerful Bash scripting skills.",
+            duration: "30 - 40 hours",
+            offer: "Bestseller",
             description: "Learn how to automate tasks and manage system operations efficiently using BASH scripting. Understand the essentials of scripting in Unix/Linux environments to streamline processes and work with system commands.",
             price: 349,
             originalPrice: 700,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
             formLink: "https://forms.google.com/example-bash",
-            badge: "",
+            badge: "Bestseller",
             syllabus: [
                 { week: "Week 1", topic: "Foundations", content: "Foundations and more." },
                 { week: "Week 2", topic: "Scripting Basics", content: "Scripting Basics and more." },
@@ -270,14 +303,17 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 12,
+            category: "Programming",
             title: "Rust",
-            tag: "30 - 45 hours: Master Rust programming to build blazing-fast, memory-safe, and future-ready applications.",
+            tag: "Master Rust programming to build blazing-fast, memory-safe, and future-ready applications.",
+            duration: "35 - 40 hours",
+            offer: "",
             description: "Learn the core concepts of the Rust programming language, including memory management, ownership, and concurrency. This course builds a strong foundation for writing safe and high-performance code.",
             price: 399,
             originalPrice: 800,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
             formLink: "https://forms.google.com/example-rust",
-            badge: "",
+            badge: "Bestseller",
             syllabus: [
                 { week: "Week 1", topic: "Rust Basics", content: "Rust Basics and more." },
                 { week: "Week 2", topic: "Working with Data", content: "Working with Data and more." },
@@ -371,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (courseGrid) {
         let isExpanded = false;
         const initialCount = 3;
+        const filterSelect = document.getElementById('course-filter');
 
         function createCourseCard(course, index) {
             const col = document.createElement('div');
@@ -387,12 +424,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${course.image}" alt="${course.title}" class="course-img">
                     </div>
                     <div class="course-content p-4 d-flex flex-column flex-grow-1">
+                        <div class="mb-2">
+                             <span class="badge bg-secondary text-white rounded-pill mb-2 small">${course.category || 'Course'}</span>
+                        </div>
                         <h3 class="h5 fw-bold mb-2">${course.title}</h3>
-                        <p class="small mb-3 flex-grow-1" style="color: #b0b0b0;">${course.tag.substring(0, 100)}...</p>
-                        <div class=" justify-content-between text-center align-items-center mt-auto">
-
-
-
+                        <p class="small mb-3 flex-grow-1" style="color: #b0b0b0;">${course.tag.substring(0, 800)}</p>
+                        <div class=" justify-content-between d-flex text-center align-items-center mt-auto">
+                        <div>
+                           ${course.offer ? `<span  class="text-info fw-bold" >${course.offer}</span>` : ''} 
+                        </div>
                             <a href="course.html?id=${course.id}" class="btn btn-blue btn-sm rounded-pill px-3">Enquiry</a>
                         </div>
                     </div>
@@ -400,59 +440,66 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             return col;
         }
-        // d-flex
-        // <div>
-        //     ${course.originalPrice ? `<span class="original-price">${formatPrice(course.originalPrice)}</span>` : ''}
-        //     <span class="text-info fw-bold">${formatPrice(course.price)}</span>
-        // </div>
 
+        function renderCourses(courseData, limit = null) {
+            courseGrid.innerHTML = '';
+            const dataToRender = limit ? courseData.slice(0, limit) : courseData;
 
-        // Initial Render
-        courses.slice(0, initialCount).forEach((course, index) => {
-            const card = createCourseCard(course, index);
-            courseGrid.innerHTML = ''; // Ensure clean slate initially (though appendChild usually fine if empty)
-            courseGrid.appendChild(card); // Wait, clearing inside loop? NO.
-            // Fixed loop below
-        });
+            if (dataToRender.length === 0) {
+                courseGrid.innerHTML = '<div class="col-12 text-center"><p class="text-muted">No courses found for this category.</p></div>';
+            }
 
-        // Correcting the initial render loop logic to not clear every time
-        courseGrid.innerHTML = '';
-        courses.slice(0, initialCount).forEach((course, index) => {
-            const card = createCourseCard(course, index);
-            courseGrid.appendChild(card);
-            observer.observe(card.querySelector('.course-card'));
-        });
+            dataToRender.forEach((course, index) => {
+                const card = createCourseCard(course, index);
+                courseGrid.appendChild(card);
+                observer.observe(card.querySelector('.course-card'));
+            });
+        }
 
+        // Initial Render with Default "All" Behavior
+        renderCourses(courses, initialCount);
 
+        // Filter Event Listener
+        if (filterSelect) {
+            filterSelect.addEventListener('change', (e) => {
+                const category = e.target.value;
+                isExpanded = false; // Reset expansion state
+
+                if (category === 'all') {
+                    renderCourses(courses, initialCount);
+                    if (toggleCoursesBtn) {
+                        toggleCoursesBtn.style.display = 'inline-block';
+                        toggleCoursesBtn.innerText = 'View All Courses';
+                    }
+                } else {
+                    const filtered = courses.filter(c => c.category === category);
+                    renderCourses(filtered); // Show all filtered
+                    if (toggleCoursesBtn) {
+                        toggleCoursesBtn.style.display = 'none'; // Hide button when filtering
+                    }
+                }
+            });
+        }
+
+        // View All / Show Less Toggle Logic
         if (toggleCoursesBtn) {
             toggleCoursesBtn.addEventListener('click', () => {
                 isExpanded = !isExpanded;
+                const category = filterSelect ? filterSelect.value : 'all';
 
-                if (isExpanded) {
-                    // Show More: Append remaning
-                    courses.slice(initialCount).forEach((course, index) => {
-                        const card = createCourseCard(course, index + initialCount);
-                        courseGrid.appendChild(card);
-                        observer.observe(card.querySelector('.course-card'));
-                    });
-                    toggleCoursesBtn.innerText = 'Show Less';
-                } else {
-                    // Show Less: Remove extra
-                    const allItems = courseGrid.querySelectorAll('.course-item');
-                    allItems.forEach((item, i) => {
-                        if (i >= initialCount) {
-                            const cardEffect = item.querySelector('.course-card');
-                            if (cardEffect) observer.unobserve(cardEffect);
-                            item.remove();
+                // Should only be clickable if category is 'all' (due to logic above), but good to check
+                if (category === 'all') {
+                    if (isExpanded) {
+                        renderCourses(courses); // Show all
+                        toggleCoursesBtn.innerText = 'Show Less';
+                    } else {
+                        renderCourses(courses, initialCount); // Show limited
+                        toggleCoursesBtn.innerText = 'View All Courses';
+                        // Scroll back to courses
+                        const coursesSection = document.getElementById('courses');
+                        if (coursesSection) {
+                            coursesSection.scrollIntoView({ behavior: 'smooth' });
                         }
-                    });
-
-                    toggleCoursesBtn.innerText = 'View All Courses';
-
-                    // Scroll back
-                    const coursesSection = document.getElementById('courses');
-                    if (coursesSection) {
-                        coursesSection.scrollIntoView({ behavior: 'smooth' });
                     }
                 }
             });
@@ -515,9 +562,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Generate Syllabus Table HTML if syllabus exists
             let syllabusHtml = '';
             if (course.syllabus && course.syllabus.length > 0) {
+                // Extract Duration from tag (e.g. "75 hours: ...")
+                // const duration = course.tag ? course.tag.split(':')[0] : ''; ---------------------------------------------
+                const durations = course.duration;
+
                 syllabusHtml = `
                     <div class="mt-5">
                          <h2 class="section-title text-center mb-5 display-5">Course Syllabus</h2>
+                         ${durations ? `<h4 class="text-center text-primary mb-4"><i class="fas fa-clock me-2"></i>Duration: ${durations}</h4>` : ''}
                         <div class="table-responsive rounded-4 shadow-lg overflow-hidden">
                             <table class="table table-dark table-striped table-hover mb-0 align-middle">
                                 <thead>

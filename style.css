@@ -364,6 +364,11 @@ a {
     transform: translateY(0);
 }
 
+/* filter  */
+.form-select {
+    --bs-form-select-bg-img: url(https://img.icons8.com/?size=96&id=pfuW6dHMyTUI&format=png) !important;
+}
+
 /* Specific Course Card Animations triggered by class */
 .course-card {
     transition: transform 0.3s, box-shadow 0.3s;
@@ -466,11 +471,11 @@ a {
 }
 
 .badge-bestseller {
-    background: linear-gradient(135deg, #FF6B6B 0%, #EE5253 100%);
+    background: linear-gradient(135deg, #1DD1A1 0%, #10AC84 100%);
 }
 
 .badge-new {
-    background: linear-gradient(135deg, #1DD1A1 0%, #10AC84 100%);
+    background: linear-gradient(135deg, #FF6B6B 0%, #EE5253 100%);
 }
 
 .badge-free {
@@ -480,6 +485,12 @@ a {
 .badge-beginner {
     background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%);
     color: #333;
+    /* Darker text for better contrast on yellow/orange */
+}
+
+.badge-advanced {
+    background: linear-gradient(135deg, #cc3df4 0%, #9412b8 100%);
+    /* color: #333; */
     /* Darker text for better contrast on yellow/orange */
 }
 
@@ -595,7 +606,7 @@ a {
 }
 
 
-.contact-form input,
+/* .contact-form input,
 .contact-form textarea {
     background-color: var(--bg-card) !important;
     border: 1px solid #333;
@@ -606,7 +617,7 @@ a {
 .contact-form textarea:focus {
     border-color: var(--primary) !important;
     box-shadow: 0 0 0 0.25rem rgba(108, 99, 255, 0.25) !important;
-}
+} */
 
 
 /* FormPlaceholder Color Styles */
