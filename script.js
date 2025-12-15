@@ -20,6 +20,98 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
+    // 1. Get references to the main modal and the close button
+    const offerModal = document.getElementById('offerModal');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    // --- Configuration ---
+    const displayDelay = 3000; // Time in milliseconds (e.g., 3000ms = 3 seconds)
+    const cookieName = 'offerPopUpSeen';
+    const cookieExpiryDays = 1; // Show it again after 1 day
+
+    // Helper functions for cookies (to prevent showing the popup on every single page load)
+
+    // Function to set a cookie
+    function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // Function to check if a cookie exists
+    function getCookie(name) {
+        const cname = name + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(cname) === 0) {
+                return c.substring(cname.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    // 2. Logic to Show the Pop-up
+    function showPopUp() {
+        if (!offerModal) return; // Exit if the modal element isn't found
+
+        // Check if the user has seen the pop-up recently (based on cookie)
+        if (getCookie(cookieName) === 'true') {
+            return; // Pop-up has been seen recently, so don't show it
+        }
+
+        // Show the modal after the defined delay
+        setTimeout(() => {
+            offerModal.style.display = 'block';
+
+            // Set the cookie so it doesn't show up again immediately
+            setCookie(cookieName, 'true', cookieExpiryDays);
+        }, displayDelay);
+    }
+
+    // 3. Logic to Hide/Close the Pop-up
+    function hidePopUp() {
+        if (offerModal) {
+            offerModal.style.display = 'none';
+        }
+    }
+
+    // 4. Attach Event Listeners
+
+    // Close when the dedicated close button is clicked
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', hidePopUp);
+    }
+
+    // Close when the user clicks anywhere on the dark backdrop
+    if (offerModal) {
+        offerModal.addEventListener('click', (event) => {
+            // Check if the click occurred exactly on the overlay (not on the content box inside it)
+            if (event.target === offerModal) {
+                hidePopUp();
+            }
+        });
+    }
+
+    // Close when the ESC key is pressed
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' || event.key === 'Esc') {
+            hidePopUp();
+        }
+    });
+
+    // 5. Run the main function
+    showPopUp();
+
+
+
+
+
     // ==========================
     // ACTIVE NAV ON SCROLL
     // ==========================
@@ -70,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const courses = [
         {
             id: 1,
-            category: "Blue Team",
+            category: "Professional",
             title: "DFIR Course",
             tag: "Master digital forensics and incident response to protect, investigate, and remediate cyber threats effectively.",
             duration: "75 hours",
@@ -79,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 599,
             originalPrice: 1200,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-dfir",
+            // formLink: "https://forms.google.com/example-dfir",
             badge: "Bestseller",
             syllabus: [
                 { week: "Week 1", topic: "Storage & File Systems", content: "Storage & File systems fundamentals and more." },
@@ -105,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 299,
             originalPrice: 600,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-infosec-beginner",
+            // formLink: "https://forms.google.com/example-infosec-beginner",
             badge: "Beginner",
             syllabus: [
                 { week: "Week 1", topic: "InfoSec Foundations", content: "Information Security Foundations and more." },
@@ -125,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 449,
             originalPrice: 900,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-infosec-advanced",
+            // formLink: "https://forms.google.com/example-infosec-advanced",
             badge: "Advanced",
             syllabus: [
                 { week: "Week 1", topic: "Cryptography", content: "Cryptography fundamentals and more." },
@@ -147,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 299,
             originalPrice: 600,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-siem-beginner",
+            // formLink: "https://forms.google.com/example-siem-beginner",
             badge: "Beginner",
             syllabus: [
                 { week: "Week 1", topic: "SIEM Fundamentals", content: "SIEM fundamentals and more." },
@@ -167,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 449,
             originalPrice: 900,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-siem-advanced",
+            // formLink: "https://forms.google.com/example-siem-advanced",
             badge: "Advanced",
             syllabus: [
                 { week: "Week 1", topic: "Splunk", content: "Splunk fundamentals and more." },
@@ -188,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 299,
             originalPrice: 600,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-ir-beginner",
+            // formLink: "https://forms.google.com/example-ir-beginner",
             badge: "Beginner",
             syllabus: [
                 { week: "Week 1", topic: "Incident Handling", content: "Incident Handling Basics and more." },
@@ -208,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 449,
             originalPrice: 900,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-ir-advanced",
+            // formLink: "https://forms.google.com/example-ir-advanced",
             badge: "Advanced",
             syllabus: [
                 { week: "Week 1", topic: "Memory & Registry", content: "Memory & Registry Forensics and more." },
@@ -230,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 299,
             originalPrice: 600,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-soc-beginner",
+            // formLink: "https://forms.google.com/example-soc-beginner",
             badge: "Beginner",
             syllabus: [
                 { week: "Week 1", topic: "SOC Fundamentals", content: "SOC fundamentals & Security frameworks and more." },
@@ -250,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 449,
             originalPrice: 900,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-soc-advanced",
+            // formLink: "https://forms.google.com/example-soc-advanced",
             badge: "Advanced",
             syllabus: [
                 { week: "Week 1", topic: "Malware Analysis", content: "Malware Analysis Fundamentals and more." },
@@ -272,7 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 499,
             originalPrice: 1000,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-c-cpp",
+            // formLink: "https://forms.google.com/example-c-cpp",
             badge: "Bestseller",
             syllabus: [
                 { week: "Week 1", topic: "C Programming", content: "C Programming Concepts and more." },
@@ -287,12 +379,12 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Bash",
             tag: "Automate and streamline system tasks using powerful Bash scripting skills.",
             duration: "30 - 40 hours",
-            offer: "Bestseller",
+            offer: "",
             description: "Learn how to automate tasks and manage system operations efficiently using BASH scripting. Understand the essentials of scripting in Unix/Linux environments to streamline processes and work with system commands.",
             price: 349,
             originalPrice: 700,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-bash",
+            // formLink: "https://forms.google.com/example-bash",
             badge: "Bestseller",
             syllabus: [
                 { week: "Week 1", topic: "Foundations", content: "Foundations and more." },
@@ -312,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 399,
             originalPrice: 800,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-            formLink: "https://forms.google.com/example-rust",
+            // formLink: "https://forms.google.com/example-rust",
             badge: "Bestseller",
             syllabus: [
                 { week: "Week 1", topic: "Rust Basics", content: "Rust Basics and more." },
@@ -321,7 +413,79 @@ document.addEventListener('DOMContentLoaded', () => {
                 { week: "Week 4", topic: "Advanced Concepts", content: "Advanced Concepts and more." },
                 { week: "Week 5", topic: "Projects", content: "Projects and more." }
             ]
-        }
+        },
+        {
+            id: 13,
+            category: "Blue Team",
+            title: "Cyber Security for Students",
+            tag: "Master your advanced fundamentals in Blue team",
+            duration: "30 hours",
+            offer: "",
+            description: "This course equips stuents with essential cybersecurity knowledge and helps beuild their careers in Blue Team",
+            price: 399,
+            originalPrice: 800,
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            // formLink: "https://forms.google.com/example-rust",
+            badge: "Comming Soon",
+            syllabus: [
+                { week: "Week 1", topic: "Comming Soon", content: "Syllabus will be updated soon" },
+
+            ]
+        },
+        {
+            id: 14,
+            category: "Red Team",
+            title: "Cyber Security for Students",
+            tag: "Master your advanced fundamentals in Red team",
+            duration: "30 hours",
+            offer: "",
+            description: "This course equips stuents with essential cybersecurity knowledge and helps beuild their careers in Red Team",
+            price: 399,
+            originalPrice: 800,
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            // formLink: "https://forms.google.com/example-rust",
+            badge: "Comming Soon",
+            syllabus: [
+                { week: "Week 1", topic: "Comming Soon", content: "Syllabus will be updated soon" },
+
+            ]
+        },
+        {
+            id: 15,
+            category: "Purple Team",
+            title: "Cyber Security for Students",
+            tag: "Master your advanced fundamentals in Purple team",
+            duration: "60 hours",
+            offer: "",
+            description: "This course equips stuents with essential cybersecurity knowledge and helps beuild their careers in Purple Team",
+            price: 399,
+            originalPrice: 800,
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            // formLink: "https://forms.google.com/example-rust",
+            badge: "Comming Soon",
+            syllabus: [
+                { week: "Week 1", topic: "Comming Soon", content: "Syllabus will be updated soon" },
+
+            ]
+        },
+        {
+            id: 16,
+            category: "Professional",
+            title: "Cyber Security for Students",
+            tag: "Get entry level job through your skills",
+            duration: "30 hours",
+            offer: "",
+            description: "This gain essential skills for a smooth transition into the cybersecurity industry",
+            price: 399,
+            originalPrice: 800,
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            // formLink: "https://forms.google.com/example-rust",
+            badge: "Comming Soon",
+            syllabus: [
+                { week: "Week 1", topic: "Comming Soon", content: "Syllabus will be updated soon" },
+
+            ]
+        },
 
     ];
 
@@ -459,25 +623,77 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initial Render with Default "All" Behavior
         renderCourses(courses, initialCount);
 
-        // Filter Event Listener
-        if (filterSelect) {
-            filterSelect.addEventListener('change', (e) => {
-                const category = e.target.value;
-                isExpanded = false; // Reset expansion state
+        const badgeFilterSelect = document.getElementById('badge-filter');
 
-                if (category === 'all') {
+        // Combined Filter Function
+        function applyFilters() {
+            const category = filterSelect ? filterSelect.value : 'all';
+            const badge = badgeFilterSelect ? badgeFilterSelect.value : 'all';
+
+            // Filter logic
+            let filtered = courses;
+
+            if (category !== 'all') {
+                filtered = filtered.filter(c => c.category === category);
+            }
+
+            if (badge !== 'all') {
+                filtered = filtered.filter(c => c.badge === badge);
+            }
+
+            // Determine if we are keeping the "View More" functionality active
+            // We only keep standard pagination if NO filters are active
+            const isFiltering = category !== 'all' || badge !== 'all';
+
+            if (isFiltering) {
+                renderCourses(filtered); // Show all results for the filter combination
+                if (toggleCoursesBtn) toggleCoursesBtn.style.display = 'none';
+                isExpanded = false; // Reset expansion logic implicitly
+            } else {
+                // No filters active: show initial count or all based on isExpanded
+                if (isExpanded) {
+                    renderCourses(courses);
+                    if (toggleCoursesBtn) {
+                        toggleCoursesBtn.style.display = 'inline-block';
+                        toggleCoursesBtn.innerText = 'Show Less';
+                    }
+                } else {
                     renderCourses(courses, initialCount);
                     if (toggleCoursesBtn) {
                         toggleCoursesBtn.style.display = 'inline-block';
                         toggleCoursesBtn.innerText = 'View All Courses';
                     }
-                } else {
-                    const filtered = courses.filter(c => c.category === category);
-                    renderCourses(filtered); // Show all filtered
-                    if (toggleCoursesBtn) {
-                        toggleCoursesBtn.style.display = 'none'; // Hide button when filtering
-                    }
                 }
+            }
+        }
+
+        // Attach listeners
+        if (filterSelect) {
+            filterSelect.addEventListener('change', () => {
+                isExpanded = false; // Reset pagination when filter changes
+                applyFilters();
+            });
+        }
+        if (badgeFilterSelect) {
+            badgeFilterSelect.addEventListener('change', () => {
+                isExpanded = false; // Reset pagination when filter changes
+                applyFilters();
+            });
+        }
+
+        // Clear Filters Button Logic
+        const clearFiltersBtn = document.getElementById('clear-filters');
+        if (clearFiltersBtn) {
+            clearFiltersBtn.addEventListener('click', () => {
+                // Reset select values
+                if (filterSelect) filterSelect.value = 'all';
+                if (badgeFilterSelect) badgeFilterSelect.value = 'all';
+
+                // Reset state
+                isExpanded = false;
+
+                // Re-apply (will trigger default 'all' view)
+                applyFilters();
             });
         }
 
@@ -485,21 +701,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleCoursesBtn) {
             toggleCoursesBtn.addEventListener('click', () => {
                 isExpanded = !isExpanded;
-                const category = filterSelect ? filterSelect.value : 'all';
+                applyFilters(); // Re-run render with new isExpanded state (only matters if no filters)
 
-                // Should only be clickable if category is 'all' (due to logic above), but good to check
-                if (category === 'all') {
-                    if (isExpanded) {
-                        renderCourses(courses); // Show all
-                        toggleCoursesBtn.innerText = 'Show Less';
-                    } else {
-                        renderCourses(courses, initialCount); // Show limited
-                        toggleCoursesBtn.innerText = 'View All Courses';
-                        // Scroll back to courses
-                        const coursesSection = document.getElementById('courses');
-                        if (coursesSection) {
-                            coursesSection.scrollIntoView({ behavior: 'smooth' });
-                        }
+                // Scroll back logic
+                if (!isExpanded) {
+                    const coursesSection = document.getElementById('courses');
+                    if (coursesSection) {
+                        coursesSection.scrollIntoView({ behavior: 'smooth' });
                     }
                 }
             });
@@ -550,7 +758,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //     });
     // }
 
-    // --- Course Details Rendering (Course Page) ---
+
+    // ==========================
+    // Course Details Rendering (Course Page)
+    // ==========================
     const detailsContainer = document.getElementById('course-details-container');
 
     if (detailsContainer) {
@@ -613,7 +824,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="lead mb-4">${course.description}</p>
                         
                         <div class="d-grid gap-3 col-lg-8">
-                            <a href="https://tinyurl.com/shadow-school" target="_blank" class="btn btn-primary d-block">Fill Admission Form</a>
+                            <a href="https://forms.gle/wE1T8SWjzhLvM1H66" target="_blank" class="btn btn-primary d-block">Fill Admission Form</a>
                             <a href="https://wa.me/9150582673?text=I'm interested in ${encodeURIComponent(course.title)} Course. Please guide me." target="_blank" class="btn btn-outline-success d-block">
                                 <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                             </a>

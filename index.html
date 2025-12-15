@@ -20,9 +20,24 @@
 
 <body class="bg-dark text-light">
 
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader"></div>
+    </div>
+
+    <!-- Popup alert  -->
+    <div id="offerModal" class="modal-overlay">
+        <div class="modal-content">
+
+            <img src="./image/alert.png" alt="Limited-time course offer poster" class="offer-poster-img">
+            <!-- <h3>🎁 Limited Time Offer!</h3> -->
+            <!-- <p>Enroll today and get 20% off with code **COURSE20**.</p> -->
+
+            <a href="/course.html?id=2" class="enroll-btn">Enroll Now</a>
+
+            <button id="closeModal">No, I Join Later</button>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -99,15 +114,32 @@
         <div class="container">
             <h2 class="section-title text-center mb-5 display-5">Featured Courses</h2>
             <!-- Filter Dropdown -->
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-4">
+            <div class="row justify-content-center mb-5 g-3">
+                <div class="col-md-3">
                     <select id="course-filter" class="form-select bg-dark text-light border-secondary shadow-sm"
                         style="cursor: pointer;">
                         <option value="all" selected>All Categories</option>
                         <option value="Red Team">Red Team</option>
                         <option value="Blue Team">Blue Team</option>
                         <option value="Programming">Programming</option>
+                        <option value="Professional">Professional</option>
                     </select>
+                </div>
+                <div class="col-md-3">
+                    <select id="badge-filter" class="form-select bg-dark text-light border-secondary shadow-sm"
+                        style="cursor: pointer;">
+                        <option value="all" selected>All Levels</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Bestseller">Bestseller</option>
+                        <!-- Handling the typo in data "Comming Soon" by value, but showing correct spelling in text -->
+                        <option value="Comming Soon">Coming Soon</option>
+                    </select>
+                </div>
+                <div class="col-md-1 d-flex align-items-center justify-content-center">
+                    <button id="clear-filters" class="btn btn-outline-secondary btn-sm" title="Clear Filters">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
             </div>
 
@@ -241,6 +273,90 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5 display-5">FAQS</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item bg-transparent border-0 mb-3">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button
+                                    class="accordion-button bg-card-dark text-light collapsed rounded-3 shadow-none fw-bold"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                                    Why should I choose Shadow School?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-light opacity-75">
+                                    We offer a unique 1-on-1 mentorship program where you will be guided by an expert
+                                    mentor throughout your course. We provide a 100% practical-based approach, ensuring
+                                    you gain hands-on experience, not just theoretical knowledge.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent border-0 mb-3">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button
+                                    class="accordion-button bg-card-dark text-light collapsed rounded-3 shadow-none fw-bold"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    How is the curriculum structured?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-light opacity-75">
+                                    Our curriculum is fully customized to align with industry requirements and your
+                                    specific career goals. We focus on in-depth concepts, ensuring you master the tools
+                                    and techniques used by professionals in the field.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent border-0 mb-3">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button
+                                    class="accordion-button bg-card-dark text-light collapsed rounded-3 shadow-none fw-bold"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    What kind of career support do you offer?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-light opacity-75">
+                                    We provide comprehensive career guidance, including resume building, interview
+                                    preparation, and job placement assistance. Our mentor support ensures you are
+                                    job-ready by the time you complete the course.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent border-0 mb-3">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button
+                                    class="accordion-button bg-card-dark text-light collapsed rounded-3 shadow-none fw-bold"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                    aria-expanded="false" aria-controls="collapseFour">
+                                    Is there any prerequisite knowledge required?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-light opacity-75">
+                                    No prior experience is necessary for our beginner courses. We start from the
+                                    fundamentals and gradually move to advanced topics.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Us Section -->
     <section id="contact" class="section py-5">
         <div class="container">
@@ -289,8 +405,8 @@
                             Whether you are an institution, a corporate entity, or an instructor, let's build the future
                             together.
                         </p>
-                        <a href="https://forms.google.com/example-partner-registration" target="_blank"
-                            class="btn btn-primary px-5 py-3 rounded-pill fw-bold">
+                        <a href="https://forms.gle/Y3BsZJcvDCoSXj1r5" target="_blank"
+                            class="btn btn-primary px-5 py-3 partner-btn rounded-pill fw-bold">
                             Partner Registration Form
                         </a>
                     </div>
@@ -305,10 +421,12 @@
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
                 <p class="mb-3 mb-md-0">&copy; 2024 Shadow School. All rights reserved.</p>
                 <div class="socials d-flex gap-4">
-                    <a href="#" class="fs-4"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="fs-4"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="fs-4"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="fs-4"><i class="fab fa-github"></i></a>
+                    <!-- <a href="#" class="fs-4"><i class="fab fa-instagram"></i></a> -->
+                    <!-- <a href="#" class="fs-4"><i class="fab fa-twitter"></i></a> -->
+                    <a href="https://www.linkedin.com/company/shadow-school/" class="fs-4"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="#" class="fs-4"><i class="fab fa-discord"></i></a>
+                    <!-- <a href="#" class="fs-4"><i class="fab fa-github"></i></a> -->
                 </div>
             </div>
         </div>
