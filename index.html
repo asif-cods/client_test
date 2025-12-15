@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadow School - Master Your Future</title>
+    <title>Shadow School - Master Your Future with Shadow School</title>
     <meta name="description" content="Premium online learning platform for modern students.">
+
     <!-- Google Fonts -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./image/icon.png">
 </head>
 
 <body class="bg-dark text-light">
@@ -30,13 +32,20 @@
     <div id="offerModal" class="modal-overlay">
         <div class="modal-content">
 
-            <img src="./image/alert.png" alt="Limited-time course offer poster" class="offer-poster-img">
+            <img src="./image/alert-AD.png" alt="Limited-time course offer poster" class="offer-poster-img">
             <!-- <h3>🎁 Limited Time Offer!</h3> -->
             <!-- <p>Enroll today and get 20% off with code **COURSE20**.</p> -->
 
             <a href="/course.html?id=2" class="enroll-btn">Enroll Now</a>
 
-            <button id="closeModal">No, I Join Later</button>
+            <!-- <button id="closeModal">No, I Join Later</button> -->
+            <!-- <i id="closeModal" class="fa-solid fa-xmark"></i> -->
+            <i class="fa-solid fa-xmark fa-lg" id="closeModal" style="color: red;
+    position: absolute;
+    width: 28px;
+    top: 11px;
+    right: 1px;"></i>
+
         </div>
     </div>
 
@@ -46,7 +55,7 @@
             <!-- <a class="navbar-brand fw-bold text-primary fs-3" href="#"> -->
             <a class="navbar-brand d-flex align-items-center" href="#hero">
                 <!-- Shadow School. -->
-                <img src="./image/sdsds.png" alt="Shadow School" width="50px" height="50px">
+                <img src="./image/logo.png" alt="Shadow School" width="50px" height="50px">
             </a>
             <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav">
@@ -428,7 +437,7 @@
                     <!-- <a href="#" class="fs-4"><i class="fab fa-twitter"></i></a> -->
                     <a href="https://www.linkedin.com/company/shadow-school/" class="fs-4"><i
                             class="fab fa-linkedin"></i></a>
-                    <a href="#" class="fs-4"><i class="fab fa-discord"></i></a>
+                    <a href="https://discord.gg/aSWEgyhS" class="fs-4"><i class="fab fa-discord"></i></a>
                     <!-- <a href="#" class="fs-4"><i class="fab fa-github"></i></a> -->
                 </div>
             </div>
