@@ -492,20 +492,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviews = [
         {
             type: 'screenshot',
-            image: './image/review1.png', // The uploaded WhatsApp screenshot
+            image: './image/reviews/review1.png', // The uploaded WhatsApp screenshot
             name: "Student Feedback"
         },
         {
             type: 'screenshot',
             // text: "Shadow School completely changed my career path. The mentors are top-notch and the curriculum is up-to-date.",
             name: "Sarah Jenkins",
-            image: './image/review1.png',
+            image: './image/reviews/review1.png',
         },
         {
             type: 'screenshot',
             // text: "I loved the flexible schedule and the hands-on projects. I built a portfolio that got me hired in 3 months!",
             name: "Michael Chen",
-            image: './image/review1.png',
+            image: './image/reviews/review1.png',
         },
         {
             type: 'text',
