@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+
     // ==========================
     // PRELOADER
     // ==========================
@@ -20,96 +21,104 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // 1. Get references to the main modal and the close button
-    const offerModal = document.getElementById('offerModal');
-    const closeModalBtn = document.getElementById('closeModal');
 
-    // --- Configuration ---
-    const displayDelay = 3000; // Time in milliseconds (e.g., 3000ms = 3 seconds)
-    const cookieName = 'offerPopUpSeen';
-    const cookieExpiryDays = 1; // Show it again after 1 day
+    // Alert AD
+    const POPUP_INTERVAL_MIN = 5;      // popup every 5 minutes
+    const OFFER_DURATION_MIN = 30;     // offer resets every 30 minutes
 
-    // Helper functions for cookies (to prevent showing the popup on every single page load)
+    const POPUP_COOKIE = 'popupLastShown';
+    const OFFER_COOKIE = 'offerActive';
+    const OFFER_START_KEY = 'offerStartTime';
 
-    // Function to set a cookie
-    function setCookie(name, value, days) {
+    const popup = document.getElementById('popupAd');
+    const countdownEl = document.getElementById('popupCountdown');
+
+    let countdownTimer = null; // prevents multiple timers
+
+    // COOKIE HELPERS
+    function setCookieMinutes(name, value, minutes) {
         const d = new Date();
-        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + d.toUTCString();
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        d.setTime(d.getTime() + minutes * 60 * 1000);
+        document.cookie =
+            `${name}=${value};expires=${d.toUTCString()};path=/;SameSite=Lax`;
     }
 
-    // Function to check if a cookie exists
     function getCookie(name) {
-        const cname = name + "=";
-        const decodedCookie = decodeURIComponent(document.cookie);
-        const ca = decodedCookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(cname) === 0) {
-                return c.substring(cname.length, c.length);
-            }
-        }
-        return "";
+        return document.cookie
+            .split('; ')
+            .find(row => row.startsWith(name + '='))
+            ?.split('=')[1];
     }
 
-    // 2. Logic to Show the Pop-up
-    function showPopUp() {
-        if (!offerModal) return; // Exit if the modal element isn't found
+    // OFFER TIMER (30 MIN RESET)
+    function initOfferTimer() {
+        let startTime = localStorage.getItem(OFFER_START_KEY);
 
-        // Check if the user has seen the pop-up recently (based on cookie)
-        if (getCookie(cookieName) === 'true') {
-            return; // Pop-up has been seen recently, so don't show it
+        if (getCookie(OFFER_COOKIE) !== 'true' || !startTime) {
+            startTime = Date.now();
+            localStorage.setItem(OFFER_START_KEY, startTime);
+            setCookieMinutes(OFFER_COOKIE, 'true', OFFER_DURATION_MIN);
         }
 
-        // Show the modal after the defined delay
-        setTimeout(() => {
-            offerModal.style.display = 'block';
-
-            // Set the cookie so it doesn't show up again immediately
-            setCookie(cookieName, 'true', cookieExpiryDays);
-        }, displayDelay);
+        startCountdown(startTime);
     }
 
-    // 3. Logic to Hide/Close the Pop-up
-    function hidePopUp() {
-        if (offerModal) {
-            offerModal.style.display = 'none';
-        }
+    // POPUP EVERY 5 MIN (ON RELOAD)
+    function showPopupEvery5Min() {
+        if (!popup) return; // Guard clause if popup doesn't exist
+        if (getCookie(POPUP_COOKIE) === 'true') return;
+
+        popup.style.display = 'flex';
+        setCookieMinutes(POPUP_COOKIE, 'true', POPUP_INTERVAL_MIN);
+
+        initOfferTimer();
     }
 
-    // 4. Attach Event Listeners
+    // COUNTDOWN (SAFE SINGLE TIMER)
+    function startCountdown(startTime) {
+        if (countdownTimer) return; //  prevent duplicates
 
-    // Close when the dedicated close button is clicked
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', hidePopUp);
-    }
+        const totalSeconds = OFFER_DURATION_MIN * 60;
 
-    // Close when the user clicks anywhere on the dark backdrop
-    if (offerModal) {
-        offerModal.addEventListener('click', (event) => {
-            // Check if the click occurred exactly on the overlay (not on the content box inside it)
-            if (event.target === offerModal) {
-                hidePopUp();
+        countdownTimer = setInterval(() => {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const remaining = totalSeconds - elapsed;
+
+            if (remaining <= 0) {
+                clearInterval(countdownTimer);
+                countdownTimer = null;
+
+                countdownEl.textContent = "Offer expired";
+                localStorage.removeItem(OFFER_START_KEY);
+                return;
             }
+
+            const minutes = Math.floor(remaining / 60);
+            const seconds = remaining % 60;
+
+            countdownEl.textContent =
+                `Offer ends in: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+    }
+
+    // CLOSE POPUP
+    const closePopupBtn = document.getElementById('closePopupBtn');
+    if (closePopupBtn && popup) {
+        closePopupBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
         });
+
+        // Also close when clicking the poster image itself
+        const popupLink = popup.querySelector('a');
+        if (popupLink) {
+            popupLink.addEventListener('click', () => {
+                popup.style.display = 'none';
+            });
+        }
     }
 
-    // Close when the ESC key is pressed
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' || event.key === 'Esc') {
-            hidePopUp();
-        }
-    });
-
-    // 5. Run the main function
-    showPopUp();
-
-
-
+    // START SYSTEM (LAST LINE)
+    showPopupEvery5Min();
 
 
     // ==========================
@@ -170,7 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Advance your cybersecurity career with our DFIR course. Acquire hands-on skills in digital forensics, memory and mobile device analysis, malware investigation, and incident response to protect critical data.",
             price: 599,
             originalPrice: 1200,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            // image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/dfir.png",
             // formLink: "https://forms.google.com/example-dfir",
             badge: "Bestseller",
             syllabus: [
@@ -196,7 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Start your cybersecurity journey by learning essential information security concepts, policies, human security, secure development basics, and data protection fundamentals",
             price: 299,
             originalPrice: 600,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            // image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/infosec_beginner.png",
             // formLink: "https://forms.google.com/example-infosec-beginner",
             badge: "Beginner",
             syllabus: [
@@ -216,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Advance your cybersecurity career by mastering cryptography, risk management, system and cloud security, audits, IAM, compliance, and real-world security practices.",
             price: 449,
             originalPrice: 900,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/infosec_advanced.png",
             // formLink: "https://forms.google.com/example-infosec-advanced",
             badge: "Advanced",
             syllabus: [
@@ -238,7 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "This course covers SIEM fundamentals, network security, log collection, parsing, and alert generation.",
             price: 299,
             originalPrice: 600,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            // image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/siem_beginner.png",
             // formLink: "https://forms.google.com/example-siem-beginner",
             badge: "Beginner",
             syllabus: [
@@ -258,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "This course cover Splunk, wazuh, alert tuning, SOAR tools and advanced analysis",
             price: 449,
             originalPrice: 900,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/siem_advanced.png",
             // formLink: "https://forms.google.com/example-siem-advanced",
             badge: "Advanced",
             syllabus: [
@@ -279,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "This course cover foundational IR skills, OS-specific incident response , basic log and malware analysis.",
             price: 299,
             originalPrice: 600,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/ir_beginner.png",
             // formLink: "https://forms.google.com/example-ir-beginner",
             badge: "Beginner",
             syllabus: [
@@ -299,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "This course cover deeper forensics, memory/registry analysis, AD attacks, reporting and crisis management.",
             price: 449,
             originalPrice: 900,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/ir_advanced.png",
             // formLink: "https://forms.google.com/example-ir-advanced",
             badge: "Advanced",
             syllabus: [
@@ -321,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "This course cover foundational knowledge, core SOC operations, and basic analysis skills. Suitable for beginners with little to no prior experience in SOC.",
             price: 299,
             originalPrice: 600,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/soc_beginner.png",
             // formLink: "https://forms.google.com/example-soc-beginner",
             badge: "Beginner",
             syllabus: [
@@ -341,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "These are more technical, specialized, and hands-on. Suitable for learners who already have the basics and want to handle real SOC incidents, malware analysis, and lab simulations.",
             price: 449,
             originalPrice: 900,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/soc_advanced.png",
             // formLink: "https://forms.google.com/example-soc-advanced",
             badge: "Advanced",
             syllabus: [
@@ -363,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Learn the fundamental and advanced concepts of both C and C++ programming. Build a strong understanding of syntax, data structures, memory handling, and object-oriented concepts essential for efficient and structured programming.",
             price: 499,
             originalPrice: 1000,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/C-C++.png",
             // formLink: "https://forms.google.com/example-c-cpp",
             badge: "Bestseller",
             syllabus: [
@@ -383,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Learn how to automate tasks and manage system operations efficiently using BASH scripting. Understand the essentials of scripting in Unix/Linux environments to streamline processes and work with system commands.",
             price: 349,
             originalPrice: 700,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/bash.png",
             // formLink: "https://forms.google.com/example-bash",
             badge: "Bestseller",
             syllabus: [
@@ -403,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Learn the core concepts of the Rust programming language, including memory management, ownership, and concurrency. This course builds a strong foundation for writing safe and high-performance code.",
             price: 399,
             originalPrice: 800,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/rust.png",
             // formLink: "https://forms.google.com/example-rust",
             badge: "Bestseller",
             syllabus: [
@@ -424,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "This course equips stuents with essential cybersecurity knowledge and helps beuild their careers in Blue Team",
             price: 399,
             originalPrice: 800,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/cfs-blue-team.png",
             // formLink: "https://forms.google.com/example-rust",
             badge: "Comming Soon",
             syllabus: [
@@ -442,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "This course equips stuents with essential cybersecurity knowledge and helps beuild their careers in Red Team",
             price: 399,
             originalPrice: 800,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/cfs-red-team.png",
             // formLink: "https://forms.google.com/example-rust",
             badge: "Comming Soon",
             syllabus: [
@@ -460,7 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "This course equips stuents with essential cybersecurity knowledge and helps beuild their careers in Purple Team",
             price: 399,
             originalPrice: 800,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/cfs-purple-team.jpeg",
             // formLink: "https://forms.google.com/example-rust",
             badge: "Comming Soon",
             syllabus: [
@@ -478,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "This gain essential skills for a smooth transition into the cybersecurity industry",
             price: 399,
             originalPrice: 800,
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "images/courses/csep.jpeg",
             // formLink: "https://forms.google.com/example-rust",
             badge: "Comming Soon",
             syllabus: [
@@ -492,27 +504,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviews = [
         {
             type: 'screenshot',
-            image: './image/reviews/review1.png', // The uploaded WhatsApp screenshot
-            name: "Student Feedback"
+            image: 'images/reviews/review1.png', // The uploaded WhatsApp screenshot
+            name: "Enamul Hussain "
         },
         {
-            type: 'screenshot',
-            // text: "Shadow School completely changed my career path. The mentors are top-notch and the curriculum is up-to-date.",
-            name: "Sarah Jenkins",
-            image: './image/reviews/review1.png',
+            type: 'text',
+            text: "Courses are very well structured and Syllabus , You are teaching in Native Language ,So i can understand Well. Thank you, Sir.",
+            name: "Shankar, Chennai",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/960px-Unknown_person.jpg"
         },
         {
             type: 'screenshot',
             // text: "I loved the flexible schedule and the hands-on projects. I built a portfolio that got me hired in 3 months!",
-            name: "Michael Chen",
-            image: './image/reviews/review1.png',
+            name: "Ajith Logeshwaran",
+            image: 'images/reviews/review3.jpeg',
         },
         {
             type: 'text',
-            text: "The best investment I've made in myself. The community is supportive and the content is gold.",
-            name: "Priya Patel",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
-        }
+            text: "The best investment I've made in myself. You cleared my doubts Every time I ask without hesitation and content is very Advanced.",
+            name: "Priya Patel, Delhi",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/960px-Unknown_person.jpg"
+        },
+        {
+            type: 'screenshot',
+            // text: "I loved the flexible schedule and the hands-on projects. I built a portfolio that got me hired in 3 months!",
+            name: "Sai saketh",
+            image: 'images/reviews/review5.jpeg',
+        },
+        {
+            type: 'text',
+            text: "Thanks for the great course sir, I thought in English and it was so easy to understand.",
+            name: "Mohan Prakash, UP",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/960px-Unknown_person.jpg"
+        },
     ];
 
     // // --- Currency Logic ---
@@ -728,6 +752,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 content = `
                     <div class="review-card mx-auto text-center p-0 overflow-hidden border-0" style="max-width: 500px; background: transparent; box-shadow: none;">
                         <img src="${review.image}" alt="${review.name}" class="img-fluid rounded-4 shadow-lg hover-scale">
+                        <p class="student-name text-primary fw-bold mb-0">- ${review.name}</p>
                     </div>
                 `;
             } else {
@@ -825,7 +850,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         <div class="d-grid gap-3 col-lg-8">
                             <a href="https://forms.gle/wE1T8SWjzhLvM1H66" target="_blank" class="btn btn-primary d-block">Fill Admission Form</a>
-                            <a href="https://wa.me/9150582673?text=I'm interested in ${encodeURIComponent(course.title)} Course. Please guide me." target="_blank" class="btn btn-outline-success d-block">
+                            <a href="https://wa.me/9384316300?text=I'm interested in ${encodeURIComponent(course.title)} Course. Please guide me." target="_blank" class="btn btn-outline-success d-block">
                                 <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                             </a>
                         </div>
@@ -864,10 +889,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const consultantBtn = document.getElementById('consultant-btn');
     const consultantDetails = document.getElementById('consultant-details');
 
-    consultantBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        consultantDetails.classList.toggle('showC');
-    });
+    if (consultantBtn && consultantDetails) {
+        consultantBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            consultantDetails.classList.toggle('showC');
+        });
+    }
 
 
     // ==========================
@@ -875,20 +902,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================
     const scrollTopBtn = document.getElementById('scrollTop');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            scrollTopBtn.classList.add('show');
-        } else {
-            scrollTopBtn.classList.remove('show');
-        }
-    });
-
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
         });
-    });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // ==========================
     // WHATSAPP BUTTON ANIMATION

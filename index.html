@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="./image/icon.png">
+    <link rel="icon" type="image/png" href="./images/icon.png">
 </head>
 
 <body class="bg-dark text-light">
@@ -29,26 +29,17 @@
     </div>
 
     <!-- Popup alert  -->
-    <div id="offerModal" class="modal-overlay">
-        <div class="modal-content">
-
-            <img src="./image/alert-AD.png" alt="Limited-time course offer poster" class="offer-poster-img">
-            <!-- <h3>🎁 Limited Time Offer!</h3> -->
-            <!-- <p>Enroll today and get 20% off with code **COURSE20**.</p> -->
-
-            <a href="/client_test/course.html?id=2" class="enroll-btn">Enroll Now</a>
-
-            <!-- <button id="closeModal">No, I Join Later</button> -->
-            <!-- <i id="closeModal" class="fa-solid fa-xmark"></i> -->
-            <i class="fa-solid fa-xmark fa-lg" id="closeModal" style="color: rgb(255, 255, 255);
-    position: absolute;
-    cursor: pointer;
-    width: 28px;
-    top: 11px;
-    right: 1px;"></i>
-
+    <section id="popupAd">
+        <div class="popup-content">
+            <button class="close-btn" id="closePopupBtn">×</button>
+            <a href="#courses">
+                <img src="./images/alert-popup.png" alt="Ethical hacking and cybersecurity">
+            </a>
+            <div class="countdown" id="popupCountdown">Offer ends in: 42:29</div>
         </div>
-    </div>
+    </section>
+
+
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top blur-nav">
@@ -56,7 +47,7 @@
             <!-- <a class="navbar-brand fw-bold text-primary fs-3" href="#"> -->
             <a class="navbar-brand d-flex align-items-center" href="#hero">
                 <!-- Shadow School. -->
-                <img src="./image/logo.png" alt="Shadow School" width="50px" height="50px">
+                <img src="./images/logo.png" alt="Shadow School" width="50px" height="50px">
             </a>
             <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav">
@@ -90,7 +81,7 @@
     <!-- Hero Section -->
     <header id="hero" class="d-flex align-items-center min-vh-100 position-relative overflow-hidden">
         <div class="container position-relative z-2">
-            <div class="row align-items-center">
+            <div class="row  hero-mobile align-items-center">
                 <div class="col-lg-6 hero-text animate-left">
                     <!-- <h1 class="display-3 fw-bold mb-3">Unlock Your Potential with <span class="gradient-text">Shadow
                             School</span></h1> -->
@@ -111,7 +102,7 @@
                     <div class="blob position-absolute top-50 start-50 translate-middle"></div>
                     <!-- Hero Image -->
                     <div class="text-center position-relative z-1 icon-box">
-                        <img src="./image/hero-boy.png" alt="Future Student" class="img-fluid hero-img animate-float">
+                        <img src="./images/hero-boy.png" alt="Future Student" class="img-fluid hero-img animate-float">
                     </div>
                     <!-- Floating Badge -->
                     <!-- <div class="glass-card hero-card p-4 text-center position-absolute bottom-0 end-0 mb-5 me-md-5"
@@ -392,7 +383,7 @@
                         <!-- Hidden Consultant Details   -->
                         <div id="consultant-details"
                             class="consultant-card Conslt-cont  consultant-box  flex-column flex-sm-row gap-3 mt-4 p-3 border border-info rounded bg-opacity-10 bg-info align-items-center">
-                            <img src="./image/consulatant/razudeen.jpg" alt="Raizudeen-Consultant-Shadow-School"
+                            <img src="./images/consulatant/razudeen.jpg" alt="Raizudeen-Consultant-Shadow-School"
                                 class="rounded-circle Conslt-img" width="120" height="120" style="object-fit: cover;">
                             <div class="consultant-info text-center text-sm-start">
                                 <h4 class="h6 text-info fw-bold">Mohamad Raizudeen</h4>
@@ -437,9 +428,10 @@
                 <div class="socials d-flex gap-4">
                     <!-- <a href="#" class="fs-4"><i class="fab fa-instagram"></i></a> -->
                     <!-- <a href="#" class="fs-4"><i class="fab fa-twitter"></i></a> -->
-                    <a href="https://www.linkedin.com/company/shadow-school/" class="fs-4"><i
+                    <a href="https://www.linkedin.com/company/shadow-school/" target="_blank" class="fs-4"><i
                             class="fab fa-linkedin"></i></a>
-                    <a href="https://discord.gg/aSWEgyhS" class="fs-4"><i class="fab fa-discord"></i></a>
+                    <a href="https://discord.gg/aSWEgyhS" target="_blank" class="fs-4"><i
+                            class="fab fa-discord"></i></a>
                     <!-- <a href="#" class="fs-4"><i class="fab fa-github"></i></a> -->
                 </div>
             </div>
@@ -447,8 +439,8 @@
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/9150582673" target="_blank" class="whatsapp-float animate-float"
-        aria-label="Contact us on WhatsApp">
+    <a href="https://wa.me/9384316300?text=I'm interested in Shadow School Courses. Kindly guide me." target="_blank"
+        class="whatsapp-float animate-float" aria-label="Contact us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
