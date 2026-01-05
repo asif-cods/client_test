@@ -4,180 +4,495 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadow School - Master Your Future with Shadow School</title>
-    <meta name="description" content="Premium online learning platform for modern students.">
+    <title>CyberRakshak | Master Cyber Security</title>
+    <meta name="description"
+        content="Master Cyber Security and defend the digital world. Enroll now in our top-rated ethical hacking and SOC courses.">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome & Lucide Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Google Fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="./images/icon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-dark text-light">
+<body class="cyber-theme">
 
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader"></div>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-container">
+        <div class="cyber-loader">
+            <div class="glitch" data-text="LOADING...">LOADING...</div>
+        </div>
     </div>
 
-    <!-- Popup alert  -->
-    <section id="popupAd">
-        <div class="popup-content">
-            <button class="close-btn" id="closePopupBtn">×</button>
-            <a href="#courses">
-                <img src="./images/alert-popup.png" alt="Ethical hacking and cybersecurity">
-            </a>
-            <div class="countdown" id="popupCountdown">Offer ends in: 42:29</div>
-        </div>
-    </section>
-
-
-
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top blur-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
         <div class="container">
-            <!-- <a class="navbar-brand fw-bold text-primary fs-3" href="#"> -->
-            <a class="navbar-brand d-flex align-items-center" href="#hero">
-                <!-- Shadow School. -->
-                <img src="./images/logo.png" alt="Shadow School" width="50px" height="50px">
+            <a class="navbar-brand logo-text" href="#">
+                <i class="fas fa-shield-halved neon-text"></i> CYBER<span class="text-primary">RAKSHAK</span>
             </a>
-            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
-                <!-- <span class="fas fa-bars text-white"></span> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav gap-3 align-items-center">
-                    <!-- <li class="nav-item"><a class="nav-link text-white" href="#hero">Home</a></li> -->
-                    <li class="nav-item">
-                        <a class="nav-link fw-medium" href="#hero">Home</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <!-- <li class="nav-item">
-                        <select id="currencySelect" class="form-select border-primary text-primary"
-                            style="width: auto; cursor: pointer; font-weight: 500;">
-                            <option value="USD" selected>$ USD</option>
-                            <option value="INR">₹ INR</option>
-                            <option value="EUR">€ EUR</option>
-                        </select>
-                    </li> -->
+                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#threat-map">Live Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-cyber ms-3" href="#contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!--  text-muted  for disappear the text -->
-    <!-- Hero Section -->
-    <header id="hero" class="d-flex align-items-center min-vh-100 position-relative overflow-hidden">
-        <div class="container position-relative z-2">
-            <div class="row  hero-mobile align-items-center">
-                <div class="col-lg-6 hero-text animate-left">
-                    <!-- <h1 class="display-3 fw-bold mb-3">Unlock Your Potential with <span class="gradient-text">Shadow
-                            School</span></h1> -->
-                    <h1 class="display-3 fw-bold mb-3">Transform Your Skillset for Success with <span
-                            class="gradient-text">Shadow School</span>
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero-section position-relative overflow-hidden">
+        <div id="canvas-container" class="position-absolute top-0 start-0 w-100 h-100"></div>
+        <div class="container position-relative z-2 h-100 d-flex align-items-center">
+            <div class="row w-100 align-items-center">
+                <div class="col-lg-7 hero-content" data-tilt>
+                    <h1 class="display-1 fw-bold text-white glitch-text" data-text="Master Cyber Security">
+                        Master Cyber Security.<br>
+                        <span class="neon-text-blue">Defend the Digital World.</span>
                     </h1>
-                    <!-- <p class="lead mb-4">Master new skills, advance your career, and explore your passions
-                        with our premium courses taught by industry experts.</p> -->
-                    <p class="lead mb-4">Shadow School delivers industry-relevant courses created by
-                        experienced professionals to help you build practical skills, gain confidence, and stay
-                        competitive in today’s job market.</p>
+                    <p class="lead text-light mt-4 mb-5" style="max-width: 600px;">
+                        Join the elite force of ethical hackers and security experts.
+                        Interactive learning. Real-world simulations. Certified expertise.
+                    </p>
                     <div class="d-flex gap-3">
-                        <a href="#courses" class="btn btn-primary px-4 py-3 rounded-pill">Explore Courses</a>
-                        <a href="#contact" class="btn btn-outline-primary px-4 py-3 rounded-pill">Get in Touch</a>
+                        <a href="#courses" class="btn btn-cyber-primary btn-lg">
+                            <span>Enroll Now</span>
+                            <div class="btn-glitch"></div>
+                        </a>
+                        <a href="#roadmap" class="btn btn-cyber-outline btn-lg">
+                            View Curriculum
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6 hero-visual position-relative animate-right">
-                    <div class="blob position-absolute top-50 start-50 translate-middle"></div>
-                    <!-- Hero Image -->
-                    <div class="text-center position-relative z-1 icon-box">
-                        <img src="./images/hero-boy.png" alt="Future Student" class="img-fluid hero-img animate-float">
+
+                <!-- Right Side Hacker Animation -->
+                <div class="col-lg-5 position-relative d-none d-lg-block">
+                    <div class="hacker-slider">
+                        <img src="assets/images/h1.png" alt="Cyber Expert" class="img-fluid hacker-img active">
+                        <img src="assets/images/h2.png" alt="Digital Defender" class="img-fluid hacker-img">
+                        <img src="assets/images/h3.png" alt="Ethical Hacker" class="img-fluid hacker-img">
                     </div>
-                    <!-- Floating Badge -->
-                    <!-- <div class="glass-card hero-card p-4 text-center position-absolute bottom-0 end-0 mb-5 me-md-5"
-                        style="max-width: 300px; transform: rotate(-3deg); z-index: 2;">
-                        <h3 class="h5 mb-2">Verified Excellence</h3>
-                        <p class="mb-1">⭐ 4.9/5 Average Rating</p>
-                        <p class="mb-0">🎓 10k+ Students</p>
-                    </div> -->
                 </div>
             </div>
         </div>
-    </header>
-
-    <!-- Courses Section -->
-    <section id="courses" class="section py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5 display-5">Featured Courses</h2>
-            <!-- Filter Dropdown -->
-            <div class="row justify-content-center mb-5 g-3">
-                <div class="col-md-3">
-                    <select id="course-filter" class="form-select bg-dark text-light border-secondary shadow-sm"
-                        style="cursor: pointer;">
-                        <option value="all" selected>All Categories</option>
-                        <option value="Red Team">Red Team</option>
-                        <option value="Blue Team">Blue Team</option>
-                        <option value="Programming">Programming</option>
-                        <option value="Professional">Professional</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <select id="badge-filter" class="form-select bg-dark text-light border-secondary shadow-sm"
-                        style="cursor: pointer;">
-                        <option value="all" selected>All Levels</option>
-                        <option value="Beginner">Beginner</option>
-                        <option value="Advanced">Advanced</option>
-                        <option value="Bestseller">Bestseller</option>
-                        <!-- Handling the typo in data "Comming Soon" by value, but showing correct spelling in text -->
-                        <option value="Comming Soon">Coming Soon</option>
-                    </select>
-                </div>
-                <div class="col-md-1 d-flex align-items-center justify-content-center">
-                    <button id="clear-filters" class="btn btn-outline-secondary btn-sm" title="Clear Filters">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
-
-
-            <!-- Course Grid (Row) handled by JS -->
-            <div id="course-grid" class="row g-4 justify-content-center">
-                <!-- Dynamic Content Loading... -->
-            </div>
-
-            <div id="courses-btn-container" class="text-center mt-5">
-                <button id="toggle-courses-btn" class="btn btn-primary px-5 py-2 rounded-pill">View All Courses</button>
+            <div class="arrows">
+                <span class="arrow-down"></span>
+                <span class="arrow-down"></span>
+                <span class="arrow-down"></span>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section (Bootstrap Carousel) -->
-    <section id="reviews" class="section py-5 bg-card-dark  scroll-animate from-right">
+    <!-- 2. About Section -->
+    <section id="about" class="section-padding bg-darker">
         <div class="container">
-            <h2 class="section-title text-center mb-5 display-5">Student Stories</h2>
+            <!-- About Content with Image & Text -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="about-image-wrapper position-relative">
+                        <div class="pulse-ring"></div>
+                        <img src="assets/images/aboout.jpg" alt="Cyber Security" class="img-fluid cyber-hero-img">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-content">
+                        <h2 class="display-5 fw-bold mb-4">
+                            <span class="neon-text-blue">Defend</span> The Digital Frontier
+                        </h2>
+                        <p class="lead mb-4">
+                            Join the elite league of cyber defenders protecting organizations from evolving threats.
+                        </p>
+                        <p class="mb-4" style="color: #aaa; line-height: 1.8;">
+                            At CyberRakshak, we transform aspiring security professionals into industry-ready experts
+                            through hands-on training,
+                            real-world simulations, and cutting-edge methodologies. Our comprehensive curriculum covers
+                            offensive and defensive
+                            security, cloud infrastructure protection, and advanced threat intelligence.
+                        </p>
+                        <div class="about-stats d-flex gap-4 flex-wrap">
+                            <div class="stat-badge">
+                                <div class="stat-number neon-text-green">10K+</div>
+                                <div class="stat-label">Students Trained</div>
+                            </div>
+                            <div class="stat-badge">
+                                <div class="stat-number neon-text-blue">95%</div>
+                                <div class="stat-label">Placement Rate</div>
+                            </div>
+                            <div class="stat-badge">
+                                <div class="stat-number neon-text-purple">50+</div>
+                                <div class="stat-label">Countries</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner" id="slider-container">
-                    <!-- Dynamic Reviews Loading here -->
+            <!-- What We Teach - Animated Cards -->
+            <div class="what-we-teach-section mt-5 pt-5">
+                <h2 class="text-center mb-5" data-aos="fade-up">
+                    WHAT WE <span class="neon-text-green">TEACH</span>
+                </h2>
+                <div class="row g-4">
+                    <!-- Ethical Hacking Card -->
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="teach-card">
+                            <div class="card-icon-wrapper">
+                                <i class="fas fa-user-secret"></i>
+                            </div>
+                            <h4>ETHICAL<br>HACKING</h4>
+                            <div class="card-glow"></div>
+                        </div>
+                    </div>
+
+                    <!-- Blue Teaming Card -->
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="teach-card">
+                            <div class="card-icon-wrapper">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>CYBER<br>FORENSICS</h4>
+                            <div class="card-glow"></div>
+                        </div>
+                    </div>
+
+                    <!-- Red Teaming Card -->
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="teach-card">
+                            <div class="card-icon-wrapper">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h4>BUG<br>HUNTING</h4>
+                            <div class="card-glow"></div>
+                        </div>
+                    </div>
+
+                    <!-- Cloud Security Card -->
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="teach-card">
+                            <div class="card-icon-wrapper">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h4>CLOUD<br>SECURITY</h4>
+                            <div class="card-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Elite Security Experts Section -->
+        <section id="experts-section" class="position-relative mt-5">
+            <div class="text-center mb-5">
+                <div class="terminal-badge d-inline-block mb-3">
+                    <span class="text-success">root@cyberrakshak:~$</span> <span class="text-white typing-effect">ls
+                        /team/elite-members</span>
+                </div>
+                <h2 class="display-4 fw-bold text-white mb-3">ELITE <span class="neon-text-blue">SECURITY
+                        EXPERTS</span></h2>
+                <p class=" text-uppercase letter-spacing-2">Neural Network of Global Cyber rakshakers</p>
+            </div>
+
+            <div id="expert-canvas-container" class="position-relative w-100" style="height: 80vh; overflow: hidden;">
+                <canvas id="expert-canvas" class="webgl-canvas"></canvas>
+                <div id="expert-overlays">
+                    <!-- Speaker nodes will be injected here via JS -->
+                </div>
+            </div>
+        </section>
+        </div>
+    </section>
+
+    <!-- 3. Courses Section -->
+    <section id="courses" class="section-padding bg-darker">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Elite <span class="neon-text-purple">Programs</span></h2>
+
+            <!-- Filter Buttons -->
+            <div class="course-filters text-center mb-5" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> All Courses
+                </button>
+                <button class="filter-btn" data-filter="ethical-hacking">
+                    <i class="fas fa-user-secret"></i> Ethical Hacking
+                </button>
+                <button class="filter-btn" data-filter="cyber-crime">
+                    <i class="fas fa-shield-virus"></i> Cyber Crime
+                </button>
+                <button class="filter-btn" data-filter="digital-marketing">
+                    <i class="fas fa-bullhorn"></i> Digital Marketing
+                </button>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="row g-4" id="coursesGrid">
+                <!-- Courses will be dynamically loaded here -->
+            </div>
+
+            <!-- Show More/Less Button -->
+            <div class="text-center mt-5" id="showMoreContainer">
+                <button class="btn btn-cyber-outline px-5 py-3" id="showMoreBtn">
+                    <i class="fas fa-chevron-down"></i> Show More Courses
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Cyber Threat Map Section -->
+    <section id="threat-map" class="position-relative">
+        <div id="map-container" class="w-100" style="height: 600px;"></div>
+        <div
+            class="map-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center pointer-events-none">
+            <div class="text-center glass-panel p-4">
+                <h2 class="text-white neon-text-red">GLOBAL THREAT INTEL</h2>
+                <p class="text-light">Live attacks monitored in real-time</p>
+                <div id="threat-stats" class="text-start mt-3 font-monospace">
+                    <!-- JS will populate this -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Choose Us -->
+    <section id="why-us" class="section-padding ">
+        <div class="container">
+            <div class="row  justify-content-center align-items-center">
+                <div class="col-lg-6">
+                    <div class="content-box glass-card p-5" data-aos="fade-left">
+                        <h2 class="section-title mb-4">Why <span class="neon-text-blue">Join Us?</span></h2>
+                        <ul class="list-unstyled cyber-list">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Industry-Standard Labs</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> 24/7 Mentor Support</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Real-world Capstone Projects</li>
+                        </ul>
+
+                        <div class="stats-counter d-flex justify-content-between mt-5">
+                            <div class="stat-item text-center">
+                                <h3 class="counter text-white fw-bold" data-target="10000">0</h3>
+                                <p class="small  ">Students</p>
+                            </div>
+                            <div class="stat-item text-center">
+                                <h3 class="counter text-white fw-bold" data-target="50">0</h3>
+                                <p class="small  ">Countries</p>
+                            </div>
+                            <div class="stat-item text-center">
+                                <h3 class="counter text-white fw-bold" data-target="95">0</h3>
+                                <p class="small  ">% Hired</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Learning Scroll - Timeline -->
+    <section id="roadmap" class="section-padding bg-darker">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Your <span class="neon-text-green">Path</span></h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <!-- Step 1 -->
+                <div class="timeline-item left">
+                    <div class="content glass-card p-4">
+                        <h4 class="text-white">Beginner</h4>
+                        <p class=" ">Linux, Networking, Python basics.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="timeline-item right">
+                    <div class="content glass-card p-4">
+                        <h4 class="text-white">Intermediate</h4>
+                        <p class=" ">Web App Security, Network Scanning.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="timeline-item left">
+                    <div class="content glass-card p-4">
+                        <h4 class="text-white">Advanced</h4>
+                        <p class=" ">Exploit Development, Active Directory.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="timeline-item right">
+                    <div class="content glass-card p-4">
+                        <h4 class="text-white">Expert</h4>
+                        <p class=" ">Red Teaming, Advanced SOC Ops.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Testimonials -->
+    <section id="testimonials" class="section-padding bg-darker">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Success <span
+                    class="neon-text-purple">Stories</span></h2>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
                 </div>
 
-                <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel"
+                <div class="carousel-inner">
+                    <!-- Testimonial 1 -->
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center" data-aos="zoom-in">
+                            <div class="testimonial-card glass-card p-5 text-center position-relative">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-avatar">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
+                                        alt="Rahul Sharma" class="rounded-circle">
+                                    <div class="avatar-glow"></div>
+                                </div>
+                                <div class="stars mb-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <p class="testimonial-text fst-italic">
+                                    "CyberRakshak transformed my career completely! From zero knowledge to landing a SOC
+                                    Analyst position at a Fortune 500 company in just 6 months. The hands-on labs and
+                                    real-world scenarios are unmatched."
+                                </p>
+                                <h5 class="text-white mt-4 mb-1">Rahul Sharma</h5>
+                                <span class="neon-text-blue small">SOC Analyst @ TCS</span>
+                                <p class="   small mt-2">Batch 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center" data-aos="zoom-in">
+                            <div class="testimonial-card glass-card p-5 text-center position-relative">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-avatar">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
+                                        alt="Priya Patel" class="rounded-circle">
+                                    <div class="avatar-glow"></div>
+                                </div>
+                                <div class="stars mb-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <p class="testimonial-text fst-italic">
+                                    "The mentors here are phenomenal! They're always available to help and guide you
+                                    through complex topics. I cleared my CEH and OSCP certifications on my first attempt
+                                    thanks to their training."
+                                </p>
+                                <h5 class="text-white mt-4 mb-1">Priya Patel</h5>
+                                <span class="neon-text-purple small">Penetration Tester @ Infosys</span>
+                                <p class="   small mt-2">Batch 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center" data-aos="zoom-in">
+                            <div class="testimonial-card glass-card p-5 text-center position-relative">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-avatar">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop"
+                                        alt="Arjun Kumar" class="rounded-circle">
+                                    <div class="avatar-glow"></div>
+                                </div>
+                                <div class="stars mb-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <p class="testimonial-text fst-italic">
+                                    "Best decision of my life! The course structure is perfect for beginners. Started
+                                    with no coding knowledge, now I'm successfully hunting bugs and earning through Bug
+                                    Bounty programs."
+                                </p>
+                                <h5 class="text-white mt-4 mb-1">Arjun Kumar</h5>
+                                <span class="neon-text-green small">Bug Bounty Hunter</span>
+                                <p class="   small mt-2">Batch 2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center" data-aos="zoom-in">
+                            <div class="testimonial-card glass-card p-5 text-center position-relative">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <div class="testimonial-avatar">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop"
+                                        alt="Sneha Reddy" class="rounded-circle">
+                                    <div class="avatar-glow"></div>
+                                </div>
+                                <div class="stars mb-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <p class="testimonial-text fst-italic">
+                                    "The industry connections and placement support are incredible. Got interviewed by 5
+                                    top companies and received 3 offers. Currently working as a Security Analyst and
+                                    loving every moment!"
+                                </p>
+                                <h5 class="text-white mt-4 mb-1">Sneha Reddy</h5>
+                                <span class="neon-text-blue small">Security Analyst @ Wipro</span>
+                                <p class="   small mt-2">Batch 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel"
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
@@ -186,277 +501,140 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="section py-5 scroll-animate from-left">
+    <!-- 8. Pricing -->
+    <!-- <section id="pricing" class="section-padding bg-darker">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 order-lg-1">
-                    <div class="about-image-box p-1 overflow-hidden border border-primary rounded-4">
-                        <div class="img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhaW5pbmd8ZW58MHx8MHx8fDA%3D"
-                                alt="Shadow School">
+            <h2 class="section-title text-center mb-5">Secure Your <span class="neon-text-blue">Future</span></h2>
+            <div class="row g-4 justify-content-center"> -->
+    <!-- Standard -->
+    <!-- <div class="col-lg-4">
+                    <div class="pricing-card glass-card p-4 text-center">
+                        <h4 class="  mb-3">Standard</h4>
+                        <div class="price-tag mb-4">
+                            <span class="h1 fw-bold text-white">$499</span>
                         </div>
+                        <ul class="list-unstyled text-start mb-4">
+                            <li><i class="fas fa-check text-success me-2"></i> All Video Content</li>
+                            <li><i class="fas fa-check text-success me-2"></i> 10 Lab Hours</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Community Access</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-light w-100">Get Started</a>
                     </div>
-                </div>
-                <div class="col-lg-6 order-lg-2">
-                    <h2 class="section-title mb-4">About Us</h2>
-                    <p class="lead mb-4">Shadow School bridges the gap between traditional education and real-world
-                        industry demands through practical, hands-on learning. Our programs, led by experienced industry
-                        professionals, equip learners with job-ready skills in cybersecurity and programming using
-                        real-world scenarios, labs and mentorship.</p>
-                    <p class="mb-4 text-light opacity-75">
-                        We foster a community-driven environment where collaboration and expert guidance help students
-                        build confidence and practical expertise. Whether starting a career or upskilling, Shadow School
-                        empowers learners to succeed in today’s technology-driven world.
-                    </p>
-                    <p class="fw-bold text-primary">Founded by experts, Driven by passion.</p>
-                    <div class="d-flex gap-4 mt-4">
-                        <div class="text-center">
-                            <h4 class="fw-bold mb-0">15+</h4>
-                            <small class="text-light opacity-75">Courses</small>
+                </div> -->
+    <!-- Pro -->
+    <!-- <div class="col-lg-4">
+                    <div class="pricing-card glass-card p-4 text-center border-neon-purple position-relative">
+                        <div class="badge bg-primary position-absolute top-0 start-50 translate-middle">MOST POPULAR
                         </div>
-                        <div class="text-center">
-                            <h4 class="fw-bold mb-0">100+</h4>
-                            <small class="text-light opacity-75">Students</small>
+                        <h4 class="text-white mb-3">Professional</h4>
+                        <div class="price-tag mb-4">
+                            <span class="h1 fw-bold text-white">$999</span>
                         </div>
-                        <div class="text-center">
-                            <h4 class="fw-bold mb-0">4.9</h4>
-                            <small class="text-light opacity-75">Rating</small>
-                        </div>
+                        <ul class="list-unstyled text-start mb-4">
+                            <li><i class="fas fa-check text-success me-2"></i> Everything in Standard</li>
+                            <li><i class="fas fa-check text-success me-2"></i> 100 Lab Hours</li>
+                            <li><i class="fas fa-check text-success me-2"></i> 1-on-1 Mentorship</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Placement Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-cyber-primary w-100">Enroll Now</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="section py-5 bg-card-dark scroll-animate from-bottom">
+    <!-- 9. Contact -->
+    <section id="contact" class="section-padding">
         <div class="container">
-            <h2 class="section-title text-center mb-5 display-5">Why Choose Us</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card bg-card h-100 p-4 text-center hover-up transition-all">
-                        <div class="icon-box mb-3 mx-auto text-primary">
-                            <i class="fas fa-chalkboard-teacher fa-3x"></i>
-                        </div>
-                        <h4 class="h5 mb-3">Expert Instructors</h4>
-                        <p class="small text-light opacity-75">Learn from industry leaders with real-world experience
-                            and proven track records.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card bg-card h-100 p-4 text-center hover-up transition-all">
-                        <div class="icon-box mb-3 mx-auto text-secondary">
-                            <i class="fas fa-laptop-code fa-3x"></i>
-                        </div>
-                        <h4 class="h5 mb-3">Hands-on Projects</h4>
-                        <p class="small text-light opacity-75">Build a portfolio of real projects that demonstrate your
-                            skills to employers.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card bg-card h-100 p-4 text-center hover-up transition-all">
-                        <div class="icon-box mb-3 mx-auto text-primary">
-                            <i class="fas fa-clock fa-3x"></i>
-                        </div>
-                        <h4 class="h5 mb-3">Flexible Learning</h4>
-                        <p class="small text-light opacity-75">Study at your own pace with lifetime access to course
-                            materials and updates.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="card bg-card h-100 p-4 text-center hover-up transition-all">
-                        <div class="icon-box mb-3 mx-auto text-secondary">
-                            <i class="fas fa-users fa-3x"></i>
-                        </div>
-                        <h4 class="h5 mb-3">Supportive Community</h4>
-                        <p class="small text-light opacity-75">Join a global network of learners and get 24/7 support
-                            for your questions.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="section py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5 display-5">FAQS</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item bg-transparent border-0 mb-3">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button
-                                    class="accordion-button bg-card-dark text-light collapsed rounded-3 shadow-none fw-bold"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                    aria-expanded="false" aria-controls="collapseOne">
-                                    Why should I choose Shadow School?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-light opacity-75">
-                                    We offer a unique 1-on-1 mentorship program where you will be guided by an expert
-                                    mentor throughout your course. We provide a 100% practical-based approach, ensuring
-                                    you gain hands-on experience, not just theoretical knowledge.
-                                </div>
+                    <div class="glass-card p-5">
+                        <h2 class="text-center mb-4 text-white">Initialize <span class="neon-text-red">Connection</span>
+                        </h2>
+                        <form id="contactForm">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control bg-transparent text-white" id="name"
+                                    placeholder="Name" required>
+                                <label for="name">Codenames</label>
                             </div>
-                        </div>
-                        <div class="accordion-item bg-transparent border-0 mb-3">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button
-                                    class="accordion-button bg-card-dark text-light collapsed rounded-3 shadow-none fw-bold"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                    aria-expanded="false" aria-controls="collapseTwo">
-                                    How is the curriculum structured?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-light opacity-75">
-                                    Our curriculum is fully customized to align with industry requirements and your
-                                    specific career goals. We focus on in-depth concepts, ensuring you master the tools
-                                    and techniques used by professionals in the field.
-                                </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control bg-transparent text-white" id="email"
+                                    placeholder="name@example.com" required>
+                                <label for="email">Secure Comms (Email)</label>
                             </div>
-                        </div>
-                        <div class="accordion-item bg-transparent border-0 mb-3">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button
-                                    class="accordion-button bg-card-dark text-light collapsed rounded-3 shadow-none fw-bold"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                    aria-expanded="false" aria-controls="collapseThree">
-                                    What kind of career support do you offer?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-light opacity-75">
-                                    We provide comprehensive career guidance, including resume building, interview
-                                    preparation, and job placement assistance. Our mentor support ensures you are
-                                    job-ready by the time you complete the course.
-                                </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-select bg-transparent text-white" id="courseSelect">
+                                    <option value="" class="text-dark">Select Mission (Course)</option>
+                                    <option value="hacking" class="text-dark">Ethical Hacking</option>
+                                    <option value="soc" class="text-dark">SOC Analyst</option>
+                                    <option value="pentest" class="text-dark">Penetration Testing</option>
+                                </select>
+                                <label for="courseSelect">Mission Objective</label>
                             </div>
-                        </div>
-                        <div class="accordion-item bg-transparent border-0 mb-3">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button
-                                    class="accordion-button bg-card-dark text-light collapsed rounded-3 shadow-none fw-bold"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                    aria-expanded="false" aria-controls="collapseFour">
-                                    Is there any prerequisite knowledge required?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-light opacity-75">
-                                    No prior experience is necessary for our beginner courses. We start from the
-                                    fundamentals and gradually move to advanced topics.
-                                </div>
-                            </div>
-                        </div>
+                            <button type="submit" class="btn btn-cyber w-100 py-3">SEND TRANSMISSION</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Us Section -->
-    <section id="contact" class="section py-5">
+    <!-- 10. Footer -->
+    <footer class="footer-section py-5 bg-black border-top border-dark">
         <div class="container">
-            <h2 class="section-title text-center mb-5 display-5">Contact Us</h2>
-            <div class="row g-5">
-                <div class="col-lg-6 ">
-                    <div class="contact-info bg-card p-5 rounded-4 h-100 scroll-animate from-left">
-                        <h3 class="mb-4">Get in Touch</h3>
-                        <p class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> email:
-                            shadowschoolins@gmail.com
-                        </p>
-                        <p class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> Phone: +91 93843 16300</p>
-                        <p class="mb-4"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Address: Remote</p>
-
-                        <!-- One-on-One Section Button -->
-                        <button id="consultant-btn" class="btn btn-outline-primary w-100 mt-3">Book 1-on-1
-                            Consultation</button>
-
-                        <!-- Hidden Consultant Details   -->
-                        <div id="consultant-details"
-                            class="consultant-card Conslt-cont  consultant-box  flex-column flex-sm-row gap-3 mt-4 p-3 border border-info rounded bg-opacity-10 bg-info align-items-center">
-                            <img src="./images/consulatant/razudeen.jpg" alt="Raizudeen-Consultant-Shadow-School"
-                                class="rounded-circle Conslt-img" width="120" height="120" style="object-fit: cover;">
-                            <div class="consultant-info text-center text-sm-start">
-                                <h4 class="h6 text-info fw-bold">Mohamad Raizudeen</h4>
-                                <p class="mb-1 small">Free for 30 minutes</p>
-                                <p class="mb-2 small ">I’m a cybersecurity and programming trainer with 5+ years of
-                                    experience, including creating CTF challenges and course content. I give guidance on
-                                    careers, certifications, and practical skills. Book a call to get advice and
-                                    mentorship tailored for you.</p>
-                                <a href="https://zcal.co/i/NeuWBsgu" target="_blank" class="btn btn-primary btn-sm">Book
-                                    a Call</a>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="text-white mb-3">CYBER<span class="text-primary">RAKSHAK</span></h4>
+                    <p class=" ">Empowering the next generation of cyber defenders.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-6 ">
-                    <div
-                        class="contact-form-wrapper bg-card p-5 rounded-4 h-100 scroll-animate from-right d-flex flex-column justify-content-center text-center">
-                        <div class="icon-box mb-4 text-primary">
-                            <i class="fas fa-handshake fa-4x"></i>
-                        </div>
-                        <h3 class="mb-3">Partner with Us</h3>
-                        <p class="mb-4 text-light opacity-75">
-                            Collaborate with Shadow School to empower the next generation of cybersecurity experts.
-                            Whether you are an institution, a corporate entity, or an instructor, let's build the future
-                            together.
-                        </p>
-                        <a href="https://forms.gle/Y3BsZJcvDCoSXj1r5" target="_blank"
-                            class="btn btn-primary px-5 py-3 partner-btn rounded-pill fw-bold">
-                            Partner Registration Form
-                        </a>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#courses" class="  text-decoration-none">Courses</a></li>
+                        <li><a href="#about" class="  text-decoration-none">About Us</a></li>
+                        <li><a href="#pricing" class="  text-decoration-none">Pricing</a></li>
+                        <li><a href="#contact" class="  text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-white mb-3">Newsletter</h5>
+                    <div class="input-group">
+                        <input type="email" class="form-control bg-transparent text-white border-secondary"
+                            placeholder="Your Email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black py-5 mt-auto">
-        <div class="container">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <p class="mb-3 mb-md-0">&copy; 2025 Shadow School. All rights reserved.</p>
-                <div class="socials d-flex gap-4">
-                    <!-- <a href="#" class="fs-4"><i class="fab fa-instagram"></i></a> -->
-                    <!-- <a href="#" class="fs-4"><i class="fab fa-twitter"></i></a> -->
-                    <a href="https://www.linkedin.com/company/shadow-school/" target="_blank" class="fs-4"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="https://discord.gg/aSWEgyhS" target="_blank" class="fs-4"><i
-                            class="fab fa-discord"></i></a>
-                    <!-- <a href="#" class="fs-4"><i class="fab fa-github"></i></a> -->
-                </div>
+            <div class="text-center mt-4">
+                <p class="  small">&copy; 2024 CyberRakshak. All Rights Reserved. BY ASIF.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/9384316300?text=I'm interested in Shadow School Courses. Kindly guide me." target="_blank"
-        class="whatsapp-float animate-float" aria-label="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollTop" class="scroll-top-btn" aria-label="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    <!-- Fixed WhatsApp Button
-    <a href="https://wa.me/1234567890" class="position-fixed bottom-0 end-0 m-4 text-success display-4" target="_blank"
-        aria-label="Chat on WhatsApp" style="z-index: 1000; transition: transform 0.3s;">
-        <i class="fab fa-whatsapp-square bg-white rounded-2 shadow"></i>
-    </a> -->
-
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+
+    <!-- Custom Scripts -->
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
