@@ -205,8 +205,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 5000); // 5 seconds
     }
 
-    // Initialize slider
+    // About Section Image Slider
+    function initAboutSlider() {
+        const images = document.querySelectorAll('.cyber-hero-img');
+        if (images.length === 0) return;
+
+        let currentIndex = 0;
+
+        setInterval(() => {
+            // Remove active class from current
+            images[currentIndex].classList.remove('active');
+
+            // Calculate next index
+            currentIndex = (currentIndex + 1) % images.length;
+
+            // Add active class to next
+            images[currentIndex].classList.add('active');
+        }, 4000); // 4 seconds
+    }
+
+    // Initialize sliders
     initHackerSlider();
+    initAboutSlider();
 
     // Navbar Scroll Effect
     window.addEventListener('scroll', () => {

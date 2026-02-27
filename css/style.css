@@ -30,6 +30,10 @@ h6 {
     letter-spacing: 1px;
 }
 
+h2 {
+    font-size: 3.5rem !important;
+}
+
 .text-primary {
     color: var(--cyber-blue) !important;
 }
@@ -376,14 +380,29 @@ h6 {
 .about-image-wrapper {
     position: relative;
     z-index: 1;
+    /* overflow: hidden; */
+    border-radius: 20px;
 }
 
 .cyber-hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     border-radius: 20px;
     filter: drop-shadow(0 0 40px rgba(0, 243, 255, 0.3));
     animation: floatImage 6s ease-in-out infinite;
-    position: relative;
     z-index: 2;
+}
+
+.cyber-hero-img:first-of-type {
+    position: relative;
+}
+
+.cyber-hero-img.active {
+    opacity: 1;
 }
 
 @keyframes floatImage {
@@ -473,7 +492,7 @@ h6 {
 .what-we-teach-section h2 {
     font-family: var(--font-tech);
     letter-spacing: 3px;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 .teach-card {
@@ -625,6 +644,55 @@ h6 {
     color: var(--cyber-green);
 }
 
+/* Feature Cards (Why Choose Us) */
+.feature-card {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cyber-blue);
+    box-shadow: 0 10px 40px rgba(0, 243, 255, 0.2);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+    background: rgba(0, 243, 255, 0.1);
+}
+
+.feature-glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--cyber-blue), transparent);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover .feature-glow {
+    opacity: 1;
+    animation: glowMove 2s ease-in-out infinite;
+}
+
 .cyber-grid-box {
     position: relative;
     padding: 2rem;
@@ -707,12 +775,59 @@ h6 {
     color: var(--cyber-black);
 }
 
+/* Level Filter Buttons */
+.level-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.level-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ccc;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-family: var(--font-tech);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.level-btn:hover {
+    border-color: var(--cyber-blue);
+    color: var(--cyber-blue);
+    transform: translateY(-2px);
+}
+
+.level-btn.active {
+    background: rgba(0, 243, 255, 0.1);
+    border-color: var(--cyber-blue);
+    color: var(--cyber-blue);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
 /* Course Cards */
-.course-card {
+.course-card.glass-card {
     height: 100%;
     display: flex;
     flex-direction: column;
     min-height: 450px;
+    border-radius: 20px;
+    /* Smooth corners */
+    overflow: hidden;
+    /* Fix image spilling out of corners */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.course-card.glass-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    /* Pop up and scale */
+    box-shadow: 0 20px 40px rgba(0, 243, 255, 0.2);
+    border-color: var(--cyber-blue);
 }
 
 .course-card .card-img-top {
@@ -729,7 +844,7 @@ h6 {
     transition: transform 0.5s ease;
 }
 
-.course-card:hover .card-img-top img {
+.course-card.glass-card:hover .card-img-top img {
     transform: scale(1.1);
 }
 
@@ -767,21 +882,46 @@ h6 {
 #threat-map {
     background: #000;
     overflow: hidden;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+#attack-counter {
+    text-shadow: 0 0 15px rgba(255, 0, 60, 0.6);
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 2px;
 }
 
 .glass-panel {
-    background: rgba(0, 0, 0, 0.85);
-    /* Darker background */
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--cyber-red);
-    box-shadow: 0 0 20px rgba(255, 0, 60, 0.4);
-    /* Stronger red glow */
-    min-width: 300px;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 0, 60, 0.3);
+    box-shadow: 0 0 30px rgba(255, 0, 60, 0.15);
+    min-width: 350px;
+    border-radius: 4px;
 }
 
-.glass-panel h2 {
-    font-size: 1.8rem;
-    letter-spacing: 2px;
+#threat-stats div {
+    border-left: 2px solid var(--cyber-red);
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    background: rgba(255, 0, 60, 0.05);
+    font-size: 0.75rem;
+    animation: alertSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes alertSlideIn {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+        background: rgba(255, 0, 60, 0.3);
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        background: rgba(255, 0, 60, 0.05);
+    }
 }
 
 /* Timeline */

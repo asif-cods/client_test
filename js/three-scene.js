@@ -120,106 +120,10 @@ function initHeroScene() {
 }
 
 // -----------------------------------------------------------------------------
-// Scene 2: Live Threat Map
+// Scene 2: Live Threat Map (Embedded Kaspersky)
 // -----------------------------------------------------------------------------
-function initThreatMap() {
-    const container = document.getElementById('map-container');
-    if (!container) return;
+// Threat map is now handled via iframe embed in index.html
 
-    const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x000000, 0.03);
-
-    const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 1, 1000);
-    camera.position.set(0, 15, 50); // Lower camera for horizon view
-    camera.lookAt(0, 0, 0);
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
-
-    // Grid (World Plane)
-    const gridHelper = new THREE.GridHelper(200, 50, 0x333333, 0x111111);
-    scene.add(gridHelper);
-
-    // Attacks (Arcs)
-    // We visually simulate standard attack arcs
-    const group = new THREE.Group();
-    scene.add(group);
-
-    function createAttack() {
-        // Random start and end points on the grid
-        const startX = (Math.random() - 0.5) * 80;
-        const startZ = (Math.random() - 0.5) * 80;
-        const endX = (Math.random() - 0.5) * 80;
-        const endZ = (Math.random() - 0.5) * 80;
-
-        const height = Math.random() * 15 + 5;
-
-        // Quadratic Bezier Curve
-        const curve = new THREE.QuadraticBezierCurve3(
-            new THREE.Vector3(startX, 0, startZ),
-            new THREE.Vector3((startX + endX) / 2, height, (startZ + endZ) / 2),
-            new THREE.Vector3(endX, 0, endZ)
-        );
-
-        const points = curve.getPoints(20);
-        const geometry = new THREE.BufferGeometry().setFromPoints(points);
-        // Mostly red attacks to match reference image
-        const material = new THREE.LineBasicMaterial({
-            color: Math.random() > 0.3 ? 0xff003c : 0x00ff41,
-            transparent: true,
-            opacity: 0.8
-        });
-
-        const curveObject = new THREE.Line(geometry, material);
-        group.add(curveObject);
-
-        // Remove after animation
-        setTimeout(() => {
-            group.remove(curveObject);
-            geometry.dispose();
-            material.dispose();
-        }, 1000 + Math.random() * 1000);
-    }
-
-    // Add attacks periodically
-    setInterval(createAttack, 200);
-
-    // Animation Loop
-    const animate = () => {
-        requestAnimationFrame(animate);
-
-        // Slowly rotate camera or group
-        group.rotation.y += 0.002;
-
-        renderer.render(scene, camera);
-    };
-
-    animate();
-
-    // Resize
-    window.addEventListener('resize', () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-    });
-
-    // Update Stats
-    const statsDiv = document.getElementById('threat-stats');
-    if (statsDiv) {
-        setInterval(() => {
-            const types = ['DDOS', 'SQL Injection', 'Malware', 'Phishing', 'Brute Force'];
-            const type = types[Math.floor(Math.random() * types.length)];
-            const ips = Math.floor(Math.random() * 255) + '.' + Math.floor(Math.random() * 255);
-            statsDiv.innerHTML = `
-                <div class="small text-danger">> ALERT: ${type} DETECTED</div>
-                <div class="small text-success">> SRC: 192.168.${ips}</div>
-                <div class="small text-info">> TARGET: REGION-${Math.floor(Math.random() * 10)}</div>
-            `;
-        }, 800);
-    }
-}
 
 // -----------------------------------------------------------------------------
 // Scene 3: Elite Security Experts (Neural Network)
@@ -259,14 +163,13 @@ function initExpertsScene() {
 
     // Speakers Data
     const speakers = [
-        { name: "Dr. Rakshit Tandon", role: "Cyber Security Evangelist", img: "assets/images/founder.png" },
-        { name: "Sarah Net", role: "Chief Technology Officer", img: "assets/images/cofounder.png" },
-        { name: "Alex Cyber", role: "Red Team Lead", img: "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8fHww" },
-        { name: "Priya Singh", role: "Cloud Security Architect", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdvbWFufGVufDB8fDB8fHww" },
-        { name: "David Chen", role: "Malware Analyst", img: "https://images.unsplash.com/photo-1615109398623-88346a601842?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFufGVufDB8fDB8fHww" },
-        { name: "Emily White", role: "SOC Manager", img: "https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tYW58ZW58MHx8MHx8fDA%3D" },
-        { name: "Michael Ro", role: "Ethical Hacker", img: "https://plus.unsplash.com/premium_photo-1672239496290-5061cfee7ebb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-        { name: "Lisa Wong", role: "Forensics Expert", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvbWFufGVufDB8fDB8fHww" }
+        { name: "Chaudhary Pawan Sohlot", role: "CEO & Founder, Cyber Crime Investigator, Crime Branch Law Enforcement Agency", img: "assets/images/team-img/Chaudhary Pawan Sohlot.png" },
+        { name: "Sunil Chaudhary", role: "Cyber Advocate Advisor", img: "assets/images/team-img/Sunil Chaudhary.png" },
+        { name: "DCP Yogesh Kumar", role: "Jaipur LEA Capacity Building Head", img: "assets/images/team-img/DCP Yogesh Kumar.png" },
+        { name: "Shri Shailendra Singh", role: "OSD Govt of India", img: "assets/images/team-img/Shri Shailendra Singh.png" },
+        { name: "ACP RAJ KHATIB", role: "Mumbai Police", img: "assets/images/team-img/ACP RAJ KHATIB.jpg" },
+        { name: "Dinesh Chaudhary", role: "Finance Management Head", img: "assets/images/team-img/Dinesh Chaudhary.jpg" },
+        { name: "Babita Chaudhary", role: "Director (Women Empowerment)", img: "assets/images/team-img/Babita Chaudhary.jpg" }
     ];
 
     const nodes = [];
@@ -496,11 +399,13 @@ function initExpertsScene() {
 
     // Zoom (Wheel)
     container.addEventListener('wheel', (e) => {
-        e.preventDefault();
         const zoomSpeed = 0.05;
         // Clamp Zoom
         const newZ = camera.position.z + e.deltaY * zoomSpeed * 0.1;
-        if (newZ > 10 && newZ < 40) {
+
+        // Tighter limits for easier scrolling (min: 14, max: 22. Initial is 18)
+        if (newZ >= 14 && newZ <= 22) {
+            e.preventDefault(); // Prevent page scrolling ONLY when zooming within bounds
             camera.position.z = newZ;
         }
     }, { passive: false });
@@ -510,7 +415,6 @@ function initExpertsScene() {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     initHeroScene();
-    initThreatMap();
     initExpertsScene();
 });
 

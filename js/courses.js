@@ -5,156 +5,118 @@ const coursesData = [
     // Ethical Hacking Courses
     {
         id: 1,
-        title: "Ethical Hacking Fundamentals",
+        title: "Foundational Bug Hunting course",
         category: "ethical-hacking",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
-        duration: "12 Weeks",
+        image: "assets/images/courses/c1.jpeg",
+        duration: "3 Months",
         level: "Beginner",
         link: "https://superprofile.bio/course/b033dc99-b91b-43b1-b143-ee30713a22bb",
-        price: "$499",
+        price: "₹8,000",
+        oldPrice: "₹10,000",
         badge: "POPULAR",
-        description: "Master the art of ethical hacking from scratch"
+        description: "Master the art of Bug Hunting from scratch"
     },
     {
         id: 2,
-        title: "Bug Bounty Hunting",
+        title: "Advance Bug Hunting course",
         category: "ethical-hacking",
         image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
-        duration: "14 Weeks",
-        level: "Advanced",
+        duration: "6 Months",
+        level: "Expert",
         link: "https://superprofile.bio/vp/681e0015d28af900137d24ef",
-        price: "$799",
-        badge: "",
-        description: "Deep dive into advanced pentesting techniques"
+        price: "₹15,000",
+        oldPrice: "₹20,000",
+        badge: "Trending",
+        description: "Deep dive into advanced Bug Hunting techniques"
     },
     {
         id: 3,
-        title: "Web Application Security",
-        category: "ethical-hacking",
+        title: "Digital Forensics",
+        category: "cyber-crime",
         image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
-        duration: "10 Weeks",
+        duration: "",
         level: "Intermediate",
         link: "https://superprofile.bio/vp/6734af001e544600136eed86",
-        price: "$599",
-        badge: "",
+        price: "₹22,000",
+        oldPrice: "₹25,000",
+        badge: "Popular",
         description: "Secure web applications against attacks"
     },
     {
         id: 4,
-        title: "Cyber Security Professional",
-        category: "ethical-hacking",
+        title: "Cyber Crime Investigation",
+        category: "cyber-crime",
         image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
-        duration: "12 Weeks",
-        level: "Intermediate",
+        duration: "",
+        level: "Advanced",
         link: "https://superprofile.bio/vp/684d357205d9340013cc0d4a",
-        price: "$649",
-        badge: "",
-        description: "Master network penetration testing"
+        price: "₹35,000",
+        oldPrice: "₹40,000",
+        badge: "Popular",
+        description: ""
     },
 
     // Cyber Crime Courses
     {
         id: 5,
-        title: "Cyber Shakti Program",
-        category: "cyber-crime",
+        title: "Ethical Hacking Penetration Testing",
+        category: "ethical-hacking",
         image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=250&fit=crop",
-        duration: "10 Weeks",
-        level: "Intermediate",
+        duration: "6 Months",
+        level: "",
         link: "https://www.thecyberrakshak.com/courses/758019",
-        price: "$699",
-        badge: "",
-        description: "Learn to investigate digital crimes"
+        price: "₹38,000",
+        oldPrice: "₹40,000",
+        badge: "Popular",
+        description: ""
     },
     {
         id: 6,
-        title: "Digital Forensics Expert",
+        title: "Foundation SOC",
         category: "cyber-crime",
         image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&h=250&fit=crop",
-        duration: "16 Weeks",
+        duration: "",
         level: "Expert",
         link: "",
-        price: "$899",
-        badge: "NEW",
-        description: "Advanced digital forensics techniques"
+        price: "₹8,000",
+        oldPrice: "₹15,000",
+        badge: "Popular",
+        description: ""
     },
     {
         id: 7,
-        title: "Incident Response & Recovery",
-        category: "cyber-crime",
+        title: "Advance SIEM COURSE",
+        category: "ethical-hacking",
         image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=250&fit=crop",
-        duration: "8 Weeks",
+        duration: "",
         level: "Advanced",
         link: "",
-        price: "$749",
-        badge: "",
+        price: "₹25,000",
+        oldPrice: "₹30,000",
+        badge: "Popular",
         description: "Handle security incidents effectively"
-    },
-    {
-        id: 8,
-        title: "Malware Analysis",
-        category: "cyber-crime",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
-        duration: "12 Weeks",
-        level: "Advanced",
-        link: "",
-        price: "$799",
-        badge: "",
-        description: "Analyze and reverse engineer malware"
     },
 
     // Digital Marketing Courses
     {
-        id: 9,
-        title: "Digital Marketing Mastery",
+        id: 8,
+        title: "AI Powered Digital Marketing",
         category: "digital-marketing",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-        duration: "10 Weeks",
+        duration: "",
         level: "Beginner",
         link: "https://www.thecyberrakshak.com/courses/762667?mainCategory=144",
-        price: "$399",
-        badge: "TRENDING",
-        description: "Complete digital marketing bootcamp"
-    },
-    {
-        id: 10,
-        title: "Social Media Marketing",
-        category: "digital-marketing",
-        image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop",
-        duration: "8 Weeks",
-        level: "Beginner",
-        link: "",
-        price: "$349",
-        badge: "",
-        description: "Master social media platforms"
-    },
-    {
-        id: 11,
-        title: "SEO & Content Strategy",
-        category: "digital-marketing",
-        image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&h=250&fit=crop",
-        duration: "6 Weeks",
-        level: "Intermediate",
-        link: "",
-        price: "$449",
-        badge: "",
-        description: "Optimize content for search engines"
-    },
-    {
-        id: 12,
-        title: "Email Marketing Automation",
-        category: "digital-marketing",
-        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop",
-        duration: "4 Weeks",
-        level: "Intermediate",
-        link: "",
-        price: "$299",
-        badge: "",
-        description: "Automate email campaigns effectively"
+        price: "₹3,000",
+        oldPrice: "₹5,000",
+        badge: "Popular",
+        description: "Complete AI Powered Digital Marketing bootcamp"
     }
+
 ];
 
 // State Management
 let currentFilter = 'all';
+let currentLevelFilter = 'all';
 let displayedCourses = 4; // Initially show 4 courses
 const coursesPerPage = 4;
 
@@ -162,12 +124,19 @@ const coursesPerPage = 4;
 const coursesGrid = document.getElementById('coursesGrid');
 const showMoreBtn = document.getElementById('showMoreBtn');
 const filterButtons = document.querySelectorAll('.filter-btn');
+const levelFilterButtons = document.querySelectorAll('.level-btn');
 
 // Render Courses
-function renderCourses(filter = 'all', limit = displayedCourses) {
-    const filteredCourses = filter === 'all'
-        ? coursesData
-        : coursesData.filter(course => course.category === filter);
+function renderCourses(categoryFilter = currentFilter, levelFilter = currentLevelFilter, limit = displayedCourses) {
+    let filteredCourses = coursesData;
+
+    if (categoryFilter !== 'all') {
+        filteredCourses = filteredCourses.filter(course => course.category === categoryFilter);
+    }
+
+    if (levelFilter !== 'all') {
+        filteredCourses = filteredCourses.filter(course => course.level.toLowerCase() === levelFilter.toLowerCase());
+    }
 
     const coursesToShow = filteredCourses.slice(0, limit);
 
@@ -214,7 +183,10 @@ function createCourseCard(course, index) {
                         <span><i class="far fa-clock"></i> ${course.duration}</span>
                         <span><i class="fas fa-signal"></i> ${course.level}</span>
                     </div>
-                    <div class="price mb-3 text-white fw-bold">${course.price}</div>
+                    <div class="price mb-3 text-white fw-bold">
+                        <span class="fs-5">${course.price}</span>
+                        ${course.oldPrice ? `<small class=" text-decoration-line-through ms-2">${course.oldPrice}</small>` : ''}
+                    </div>
                     <a href="${enrollLink}"${linkTarget} class="btn btn-sm btn-cyber w-100">Enroll Now</a>
                 </div>
             </div>
@@ -259,28 +231,43 @@ filterButtons.forEach(btn => {
         displayedCourses = coursesPerPage; // Reset to initial count
 
         // Render filtered courses
-        renderCourses(currentFilter, displayedCourses);
+        renderCourses(currentFilter, currentLevelFilter, displayedCourses);
+    });
+});
+
+// Level Filter Functionality
+levelFilterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        levelFilterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        currentLevelFilter = btn.dataset.level;
+        displayedCourses = coursesPerPage;
+
+        renderCourses(currentFilter, currentLevelFilter, displayedCourses);
     });
 });
 
 // Show More/Less Functionality
 showMoreBtn.addEventListener('click', () => {
-    const filteredCourses = currentFilter === 'all'
-        ? coursesData
-        : coursesData.filter(course => course.category === currentFilter);
+    let filteredCourses = coursesData;
+    if (currentFilter !== 'all') {
+        filteredCourses = filteredCourses.filter(course => course.category === currentFilter);
+    }
+    if (currentLevelFilter !== 'all') {
+        filteredCourses = filteredCourses.filter(course => course.level.toLowerCase() === currentLevelFilter.toLowerCase());
+    }
 
     if (showMoreBtn.classList.contains('show-less')) {
         // Show less
         displayedCourses = coursesPerPage;
+        document.getElementById('courses').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-        // Show more
-        displayedCourses += coursesPerPage;
+        // Show ALL remaining courses
+        displayedCourses = filteredCourses.length;
     }
 
-    renderCourses(currentFilter, displayedCourses);
-
-    // Scroll to courses section
-    document.getElementById('courses').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    renderCourses(currentFilter, currentLevelFilter, displayedCourses);
 });
 
 // Initialize on page load
