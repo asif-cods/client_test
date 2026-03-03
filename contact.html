@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CyberRakshak</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-page-section {
+            padding-top: 150px;
+            padding-bottom: 100px;
+        }
+
+        .contact-info-card {
+            background: rgba(15, 15, 25, 0.8);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
+        }
+
+        .contact-icon-box {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid var(--cyber-blue);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--cyber-blue);
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px var(--cyber-blue);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            margin-top: 50px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            filter: grayscale(1) invert(0.9) contrast(1.2);
+        }
+
+        .contact-form-card {
+            background: rgba(10, 10, 15, 0.9);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-control-cyber {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: #fff !important;
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control-cyber:focus {
+            background: rgba(0, 243, 255, 0.05);
+            border-color: var(--cyber-blue);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body class="cyber-theme">
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-container">
+        <div class="cyber-loader">
+            <div class="glitch" data-text="LOADING...">LOADING...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="index.html">
+                <!-- <i class="fas fa-shield-halved neon-text"></i> CYBER<span class="text-primary">RAKSHAK</span> -->
+                <img src="assets/images/logo.png" alt="CYBERRAKSHAK" width="70px" height="65px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Success Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="https://play.google.com/store/apps/details?id=co.diaz.bawkn&hl=en_IN" target="_blank"
+                            class="play-store-link">
+                            <img src="assets/images/google_play_badge.png" alt="Get it on Google Play" height="40px"
+                                class="play-store-badge">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-page-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-3 fw-bold text-white mb-3" data-aos="fade-up">ESTABLISH <span
+                        class="neon-text-blue">CONTACT</span></h1>
+                <p class="text-secondary letter-spacing-2 text-uppercase" data-aos="fade-up" data-aos-delay="100">Send
+                    us a secure transmission or visit our headquarters</p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <!-- Address -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info-card">
+                        <div class="contact-icon-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4 class="text-white mb-3">Headquarters</h4>
+                        <p class="text-secondary mb-0">Jaipur, Rajasthan, India<br>Cyber Defense Hub, Phase 4</p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-info-card">
+                        <div class="contact-icon-box">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4 class="text-white mb-3">Secure Email</h4>
+                        <p class="text-secondary mb-0">
+                            <a href="mailto:info@thecyberrakshak.com"
+                                class="text-decoration-none text-secondary">info@thecyberrakshak.com</a><br>
+                            <a href="mailto:support@thecyberrakshak.com"
+                                class="text-decoration-none text-secondary">support@thecyberrakshak.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-info-card">
+                        <div class="contact-icon-box">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h4 class="text-white mb-3">Voice Comms</h4>
+                        <p class="text-secondary mb-0">
+                            <a href="tel:+91XXXXXXXXXX" class="text-decoration-none text-secondary">+91 XXXXX
+                                XXXXX</a><br>
+                            <a href="tel:+91XXXXXXXXXX" class="text-decoration-none text-secondary">+91 XXXXX XXXXX</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-form-card">
+                        <h3 class="text-white mb-4">Send a Transmission</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label class="text-secondary small mb-2">FULL NAME</label>
+                                <input type="text" class="form-control form-control-cyber"
+                                    placeholder="Enter your identity">
+                            </div>
+                            <div class="mb-3">
+                                <label class="text-secondary small mb-2">EMAIL ADDRESS</label>
+                                <input type="email" class="form-control form-control-cyber"
+                                    placeholder="Enter your secure email">
+                            </div>
+                            <div class="mb-3">
+                                <label class="text-secondary small mb-2">SUBJECT</label>
+                                <select class="form-control form-control-cyber">
+                                    <option>Course Inquiry</option>
+                                    <option>Technical Support</option>
+                                    <option>Corporate Training</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="text-secondary small mb-2">MESSAGE</label>
+                                <textarea class="form-control form-control-cyber" rows="5"
+                                    placeholder="Type your encrypted message here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-cyber w-100 py-3 mt-3">INITIATE UPLOAD</button>
+                        </form>
+                    </div>
+                </div> -->
+                <div class="col-lg-12" data-aos="fade-left">
+                    <div class="map-container">
+                        <!-- Embedded Map with Cyber Style Filter -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113879.40212458403!2d75.71397334751433!3d26.88514168019777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1709140000000!5m2!1sen!2sin"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section pt-5 pb-4 position-relative overflow-hidden">
+        <div class="section-divider"></div>
+        <div class="footer-glow"></div>
+        <div class="container position-relative z-1">
+            <div class="row g-4">
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand mb-4">
+                        <a class="navbar-brand logo-text" href="#">
+                            <img src="assets/images/logo.png" alt="CYBERRAKSHAK" width="70px" height="65px">
+                        </a>
+                    </div>
+                    <p class="text-secondary mb-4" style="max-width: 320px;">
+                        The ultimate training ground for ethical hackers and digital defenders. Master the art of
+                        cybersecurity with hands-on methodology.
+                    </p>
+                    <div class="social-links d-flex gap-3">
+                        <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <!-- <a href="https://github.com/asif-cods" class="social-btn" title="GitHub"><i
+                                class="fab fa-github"></i></a> -->
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-white fw-bold mb-4 footer-title">Explore</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html#hero">Home Operations</a></li>
+                        <li><a href="index.html#about">About Agency</a></li>
+                        <li><a href="index.html#courses">CyberRakshak Courses</a></li>
+                        <li><a href="gallery.html">Success Gallery</a></li>
+                        <li><a href="index.html#testimonials">Students Success</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-white fw-bold mb-4 footer-title">Contact Info</h5>
+                    <div class="contact-item d-flex gap-3 mb-3">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            <span class="d-block text-white small opacity-50">Headquarters</span>
+                            <span class="text-secondary small">Jaipur, Rajasthan, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-item d-flex gap-3 mb-3">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <span class="d-block text-white small opacity-50">E-Mail</span>
+                            <a href="mailto:info@thecyberrakshak.com"
+                                class="text-secondary small text-decoration-none">info@thecyberrakshak.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item d-flex gap-3 mb-3">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text">
+                            <span class="d-block text-white small opacity-50">Phone No.</span>
+                            <a href="tel:+91XXXXXXXXXX" class="text-secondary small text-decoration-none">+91 XXXXX
+                                XXXXX</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <!-- <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-white fw-bold mb-4 footer-title">Intelligence Feed</h5>
+                    <p class="text-secondary small mb-4">Get the latest breach alerts and training updates directly to
+                        your terminal.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                            <button class="btn btn-cyber" type="button">JOIN</button>
+                        </div>
+                    </form>
+                </div> -->
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom mt-5 pt-4 border-top border-secondary border-opacity-10 text-center">
+                <p class="text-secondary small mb-0">
+                    © 2026 <span class="text-white fw-bold">CyberRakshak</span>. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Loader
+            const loader = document.getElementById('loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 500);
+            }
+
+            // AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+        });
+    </script>
+    <!-- ===== WhatsApp Float Button ===== -->
+    <!-- CHANGE THE NUMBER BELOW: replace 919999999999 with your WhatsApp number (country code + number, no + or spaces) -->
+
+    <!-- WhatsApp Floating Button -->
+    <div id="wa-float-btn" title="Chat on WhatsApp" onclick="toggleWaForm()">
+        <i class="fab fa-whatsapp"></i>
+        <span class="wa-tooltip">Chat with us!</span>
+    </div>
+
+    <!-- WhatsApp Popup Form -->
+    <div id="wa-form-popup">
+        <div class="wa-form-header">
+            <div class="wa-form-header-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+                <div class="wa-form-header-title">CyberRakshak Support</div>
+                <div class="wa-form-header-sub">Typically replies within minutes</div>
+            </div>
+            <button class="wa-form-close" onclick="toggleWaForm()" aria-label="Close">&times;</button>
+        </div>
+        <div class="wa-form-body">
+            <p class="wa-form-intro">Fill in your details and we'll take you straight to WhatsApp!</p>
+            <form id="waContactForm" onsubmit="sendToWhatsApp(event)">
+                <div class="wa-input-group">
+                    <label for="wa-name"><i class="fas fa-user"></i> Your Name</label>
+                    <input type="text" id="wa-name" placeholder="Enter your full name" required autocomplete="off">
+                </div>
+                <div class="wa-input-group">
+                    <label for="wa-email"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="wa-email" placeholder="Enter your email" required autocomplete="off">
+                </div>
+                <div class="wa-input-group">
+                    <label for="wa-query"><i class="fas fa-comment-dots"></i> Your Query</label>
+                    <textarea id="wa-query" rows="3" placeholder="Describe your question or interest..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="wa-submit-btn">
+                    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Styles -->
+    <style>
+        /* --- Float Button --- */
+        #wa-float-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 62px;
+            height: 62px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            animation: wa-pulse 2.2s infinite;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #wa-float-btn:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        #wa-float-btn i {
+            font-size: 32px;
+            color: #fff;
+            pointer-events: none;
+        }
+
+        @keyframes wa-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Tooltip */
+        .wa-tooltip {
+            position: absolute;
+            right: 74px;
+            background: #25D366;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+        }
+
+        #wa-float-btn:hover .wa-tooltip {
+            opacity: 1;
+        }
+
+        /* --- Popup Form --- */
+        #wa-form-popup {
+            position: fixed;
+            bottom: 105px;
+            right: 30px;
+            width: 340px;
+            background: rgba(10, 10, 20, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: 18px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(37, 211, 102, 0.1);
+            z-index: 9998;
+            overflow: hidden;
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        #wa-form-popup.wa-open {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Header */
+        .wa-form-header {
+            background: linear-gradient(135deg, #075E54, #128C7E);
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+
+        .wa-form-header-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .wa-form-header-icon i {
+            font-size: 22px;
+            color: #fff;
+        }
+
+        .wa-form-header-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .wa-form-header-sub {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 2px;
+        }
+
+        .wa-form-close {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.12);
+            border: none;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 18px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .wa-form-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Body */
+        .wa-form-body {
+            padding: 18px 20px 20px;
+        }
+
+        .wa-form-intro {
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+
+        .wa-input-group {
+            margin-bottom: 13px;
+        }
+
+        .wa-input-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #25D366;
+            margin-bottom: 5px;
+            letter-spacing: 0.3px;
+        }
+
+        .wa-input-group label i {
+            margin-right: 5px;
+            font-size: 11px;
+        }
+
+        .wa-input-group input,
+        .wa-input-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(37, 211, 102, 0.25);
+            border-radius: 10px;
+            padding: 9px 13px;
+            color: #fff;
+            font-size: 13px;
+            font-family: 'Outfit', sans-serif;
+            outline: none;
+            resize: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            box-sizing: border-box;
+        }
+
+        .wa-input-group input:focus,
+        .wa-input-group textarea:focus {
+            border-color: #25D366;
+            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.12);
+        }
+
+        .wa-input-group input::placeholder,
+        .wa-input-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .wa-submit-btn {
+            width: 100%;
+            padding: 11px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 4px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .wa-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+        }
+
+        .wa-submit-btn i {
+            font-size: 16px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            #wa-form-popup {
+                width: calc(100vw - 30px);
+                right: 15px;
+                bottom: 100px;
+            }
+
+            #wa-float-btn {
+                right: 15px;
+                bottom: 20px;
+            }
+        }
+    </style>
+
+    <!-- WhatsApp Script -->
+    <script>
+        // *** CHANGE THIS NUMBER to your WhatsApp number (country code + number, no + or spaces) ***
+        const WA_NUMBER = '+917678542845';
+
+        function toggleWaForm() {
+            const popup = document.getElementById('wa-form-popup');
+            popup.classList.toggle('wa-open');
+        }
+
+        // Close popup when clicking outside
+        document.addEventListener('click', function (e) {
+            const popup = document.getElementById('wa-form-popup');
+            const btn = document.getElementById('wa-float-btn');
+            if (popup.classList.contains('wa-open')
+                && !popup.contains(e.target)
+                && !btn.contains(e.target)) {
+                popup.classList.remove('wa-open');
+            }
+        });
+
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('wa-name').value.trim();
+            const email = document.getElementById('wa-email').value.trim();
+            const query = document.getElementById('wa-query').value.trim();
+
+            const message =
+                `Hello CyberRakshak! 👋%0A%0A` +
+                `*Name:* ${encodeURIComponent(name)}%0A` +
+                `*Email:* ${encodeURIComponent(email)}%0A` +
+                `*Query:* ${encodeURIComponent(query)}`;
+
+            const url = `https://wa.me/${WA_NUMBER}?text=${message}`;
+            window.open(url, '_blank');
+
+            // Reset & close
+            document.getElementById('waContactForm').reset();
+            document.getElementById('wa-form-popup').classList.remove('wa-open');
+        }
+    </script>
+
+
+</body>
+
+</html>

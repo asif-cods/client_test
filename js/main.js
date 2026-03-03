@@ -5,23 +5,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Loading Screen
     const loader = document.getElementById('loader');
     if (loader) {
-        setTimeout(() => {
-            loader.style.opacity = '0';
+        window.addEventListener('load', () => {
+            // Give it a tiny bit of time after the load event
             setTimeout(() => {
-                loader.style.display = 'none';
-                initAnimations();
-                // Initialize AOS
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-in-out',
-                    once: true,
-                    offset: 100
-                });
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    // The user wants 1 second delay before the hero text starts animating
+                    setTimeout(() => {
+                        initAnimations();
+                    }, 1000);
+
+                    // Initialize AOS separately so it can start early for other sections
+                    AOS.init({
+                        duration: 800,
+                        easing: 'ease-in-out',
+                        once: true,
+                        offset: 100
+                    });
+                }, 500);
             }, 500);
-        }, 1500); // Fake load time
+        });
     } else {
         initAnimations();
-        // Initialize AOS
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
@@ -36,30 +42,51 @@ document.addEventListener("DOMContentLoaded", () => {
     function initAnimations() {
 
         // Hero Text Animation
-        gsap.from(".hero-content h1", {
-            duration: 1,
-            y: 50,
-            opacity: 0,
-            ease: "power3.out",
-            delay: 0.2
-        });
+        gsap.fromTo(".hero-content h1",
+            { y: 50, opacity: 0 },
+            {
+                duration: 1,
+                y: 0,
+                opacity: 1,
+                ease: "power3.out",
+                delay: 0.2
+            }
+        );
 
-        gsap.from(".hero-content p", {
-            duration: 1,
-            y: 30,
-            opacity: 0,
-            ease: "power3.out",
-            delay: 0.4
-        });
+        gsap.fromTo(".hero-content p",
+            { y: 30, opacity: 0 },
+            {
+                duration: 1,
+                y: 0,
+                opacity: 1,
+                ease: "power3.out",
+                delay: 0.4
+            }
+        );
 
-        gsap.from(".hero-content .btn", {
-            duration: 0.8,
-            y: 20,
-            opacity: 0,
-            stagger: 0.2,
-            ease: "power3.out",
-            delay: 0.6
-        });
+        gsap.fromTo(".hero-content .btn",
+            { y: 20, opacity: 0 },
+            {
+                duration: 0.8,
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                ease: "power3.out",
+                delay: 0.6
+            }
+        );
+
+        // Right side image entrance
+        gsap.fromTo(".hacker-slider",
+            { x: 100, opacity: 0 },
+            {
+                duration: 1.5,
+                x: 0,
+                opacity: 1,
+                ease: "power4.out",
+                delay: 0.4
+            }
+        );
 
         // About Grid Animation
         gsap.from(".about-item", {
@@ -88,18 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Course Cards
-        gsap.from(".course-card", {
-            scrollTrigger: {
-                trigger: "#courses",
-                start: "top 75%",
-            },
-            duration: 0.8,
-            y: 100,
-            opacity: 0,
-            stagger: 0.1,
-            ease: "power3.out"
-        });
+        // Course cards are handled by AOS in courses.js to avoid registration conflicts
 
         // Timeline Items
         gsap.utils.toArray(".timeline-item").forEach((item, i) => {
@@ -232,10 +248,45 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', () => {
         const nav = document.querySelector('.navbar');
         if (window.scrollY > 50) {
-            nav.classList.add('scrolled'); // Add darker bg if needed
+            nav.classList.add('scrolled');
         } else {
             nav.classList.remove('scrolled');
         }
     });
+
+    // ── Scroll-Spy: highlight active nav section ──────────────────────────
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
+    const spySections = [];
+
+    navLinks.forEach(link => {
+        const id = link.getAttribute('href').replace('#', '');
+        const section = document.getElementById(id);
+        if (section) spySections.push({ link, section });
+    });
+
+    // Mark active for non-anchor page links (gallery.html, contact.html)
+    document.querySelectorAll('.navbar-nav .nav-link:not([href^="#"])').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && window.location.pathname.endsWith(href)) {
+            link.classList.add('active');
+        }
+    });
+
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const matched = spySections.find(s => s.section === entry.target);
+            if (!matched) return;
+            if (entry.isIntersecting) {
+                spySections.forEach(s => s.link.classList.remove('active'));
+                matched.link.classList.add('active');
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '-15% 0px -75% 0px',   // trigger when section is near top 15% of viewport
+        threshold: 0
+    });
+
+    spySections.forEach(({ section }) => spyObserver.observe(section));
 
 });

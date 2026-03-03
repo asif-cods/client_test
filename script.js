@@ -2,23 +2,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ==========================
-    // PRELOADER
+    // PRELOADER & HERO ENTRANCE
     // ==========================
-    const preloader = document.getElementById('preloader');
+    const preloader = document.getElementById('loader');
+    const heroReveals = document.querySelectorAll('.hero-reveal');
+
     if (preloader) {
         window.addEventListener('load', () => {
-            preloader.style.opacity = '0';
+            // Loader fade out starts after 0.3s
             setTimeout(() => {
-                preloader.remove();
-            }, 500);
+                preloader.style.opacity = '0';
+                setTimeout(() => preloader.remove(), 500);
+            }, 300);
+
+            // Hero reveal starts exactly 1 second after load event
+            setTimeout(() => {
+                heroReveals.forEach(el => el.classList.add('active'));
+            }, 1000);
         });
-        // Fallback in case load event already fired or takes too long
+
+        // Fallback
         setTimeout(() => {
             if (document.body.contains(preloader)) {
                 preloader.style.opacity = '0';
                 setTimeout(() => preloader.remove(), 500);
+                heroReveals.forEach(el => el.classList.add('active'));
             }
-        }, 3000);
+        }, 5000);
     }
 
 

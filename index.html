@@ -29,6 +29,9 @@
 
 <body class="cyber-theme">
 
+    <!-- Decorative bottom-left purple glow orb -->
+    <div id="cyber-bg-orb-bl" aria-hidden="true"></div>
+
     <!-- Loading Screen -->
     <div id="loader" class="loader-container">
         <div class="cyber-loader">
@@ -41,19 +44,26 @@
         <div class="container">
             <a class="navbar-brand logo-text" href="#">
                 <!-- <i class="fas fa-shield-halved neon-text"></i> CYBER<span class="text-primary">RAKSHAK</span> -->
-                <img src="assets/images/logo.png" alt="CYBERRAKSHAK" width="75px" height="70px">
+                <img src="assets/images/logo.png" alt="CYBERRAKSHAK" width="70px" height="65px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#threat-map">Live Map</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-cyber ms-3" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Success Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="https://play.google.com/store/apps/details?id=co.diaz.bawkn&hl=en_IN" target="_blank"
+                            class="play-store-link">
+                            <img src="assets/images/google_play_badge.png" alt="Get it on Google Play" height="40px"
+                                class="play-store-badge">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -61,16 +71,30 @@
 
     <!-- 1. Hero Section -->
     <section id="hero" class="hero-section position-relative overflow-hidden">
+        <div class="welcome-bar" style="padding: 5px 5px;
+                    position: absolute;
+                    top: 85px;
+                    width: 100%;
+                    text-align: center;
+                    /* background-color: #b700ff; */
+                    background-color: #430d58;
+                    /* b700ff  bc13fe*/
+                    color: rgb(255, 255, 255);
+                    font-weight: 800;
+                    z-index: 1;">
+            <span style="color: rgb(255, 117, 4);">Cyber Rakshak</span> Trainings & Investigation <span
+                style="color: #2bdb2b;">Center</span>
+        </div>
         <div id="canvas-container" class="position-absolute top-0 start-0 w-100 h-100"></div>
         <div class="container position-relative z-2 h-100 d-flex align-items-center">
-            <div class="row w-100 align-items-center">
+            <div class="row w-100 align-items-center" style="margin-top: 30px;">
                 <div class="col-lg-7 hero-content" data-tilt>
                     <h1 class="display-1 fw-bold text-white glitch-text" data-text="Master Cyber Security">
-                        Master Cyber Security.<br>
-                        <span class="neon-text-blue">Defend the Digital World.</span>
+                        Cyber Security.<br>
+                        <span class="neon-text-blue">For Digital World.</span>
                     </h1>
                     <p class="lead text-light mt-4 mb-5" style="max-width: 600px;">
-                        Join the elite force of ethical hackers and security experts.
+                        Join the Cyber Rakshak force of ethical hackers and security experts.
                         Interactive learning. Real-world simulations. Certified expertise.
                     </p>
                     <div class="d-flex gap-3">
@@ -79,7 +103,7 @@
                             <div class="btn-glitch"></div>
                         </a>
                         <a href="#roadmap" class="btn btn-cyber-outline btn-lg">
-                            View Curriculum
+                            Our Path
                         </a>
                     </div>
                 </div>
@@ -88,7 +112,7 @@
                 <div class="col-lg-5 position-relative d-none d-lg-block">
                     <div class="hacker-slider">
                         <img src="assets/images/h3.png" alt="Cyber Expert" class="img-fluid hacker-img active mb-2">
-                        <img src="assets/images/h2.png" alt="Digital Defender" class="img-fluid hacker-img mb-5">
+                        <!-- <img src="assets/images/h2.png" alt="Digital Defender" class="img-fluid hacker-img mb-5"> -->
                         <img src="assets/images/h23.png" alt="Ethical Hacker" class="img-fluid hacker-img">
                     </div>
                 </div>
@@ -106,28 +130,233 @@
         </div>
     </section>
 
+    <!-- Worked With Section -->
+    <section id="worked-with" class="worked-with-section py-5 mb-4">
+        <div class="section-divider"></div>
+        <div class="container mb-4 text-center" data-aos="fade-up">
+            <p class="worked-with-label mb-5">
+                <!-- <span class="ww-line"></span> -->
+            <h2 class="display-5 fw-bold mb-4">
+                Worked<span class="neon-text-blue"> With</span>
+            </h2>
+            <!-- <span class="ww-line"></span> -->
+            </p>
+        </div>
+
+        <div class="ww-marquee-outer mt-4">
+            <!-- track is duplicated in HTML for seamless CSS-only infinite loop -->
+            <div class="ww-marquee-track">
+
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/DR.-M.G.R.-UNIVERSITY-ONLINE-4.png" alt="MGR University">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/National_Academy_of_Customs_Indirect_Taxes_and_Narcotics_Logo.png"
+                        alt="NACIN">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/images (10).jpeg" alt="Partner">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/images (12).jpeg" alt="Partner">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/images (34).jpeg" alt="Partner">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/images (9).jpeg" alt="Partner">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/unnamed (1).png" alt="Partner">
+                </div>
+
+                <!-- Duplicate for seamless loop -->
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/DR.-M.G.R.-UNIVERSITY-ONLINE-4.png" alt="MGR University">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/National_Academy_of_Customs_Indirect_Taxes_and_Narcotics_Logo.png"
+                        alt="NACIN">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/images (10).jpeg" alt="Partner">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/images (12).jpeg" alt="Partner">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/images (34).jpeg" alt="Partner">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/images (9).jpeg" alt="Partner">
+                </div>
+                <div class="ww-logo-card">
+                    <img src="assets/images/Collabration/unnamed (1).png" alt="Partner">
+                </div>
+
+            </div><!-- /track -->
+        </div>
+    </section>
+
+    <!-- Worked With Styles -->
+    <style>
+        /* ---- Section wrapper ---- */
+        .worked-with-section {
+            background: #060810;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        /* ---- Label row ---- */
+        .worked-with-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin: 0 0 30px;
+        }
+
+        .ww-line {
+            flex: 1;
+            max-width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.5), transparent);
+        }
+
+        .ww-text {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.45);
+            white-space: nowrap;
+        }
+
+        /* ---- Marquee outer (clip + fade edges) ---- */
+        .ww-marquee-outer {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* soft fade on left & right edges */
+        .ww-marquee-outer::before,
+        .ww-marquee-outer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .ww-marquee-outer::before {
+            left: 0;
+            background: linear-gradient(to right, #060810, transparent);
+        }
+
+        .ww-marquee-outer::after {
+            right: 0;
+            background: linear-gradient(to left, #060810, transparent);
+        }
+
+        /* ---- Scrolling track ---- */
+        .ww-marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            width: max-content;
+            animation: ww-scroll 28s linear infinite;
+        }
+
+        /* Pause on hover */
+        .ww-marquee-outer:hover .ww-marquee-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes ww-scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ---- Individual logo card ---- */
+        .ww-logo-card {
+            flex-shrink: 0;
+            width: 160px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 18px;
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .ww-logo-card:hover {
+            background: rgba(0, 212, 255, 0.07);
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .ww-logo-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(40%) brightness(1.1);
+            transition: filter 0.3s ease;
+        }
+
+        .ww-logo-card:hover img {
+            filter: grayscale(0%) brightness(1.2);
+        }
+
+        /* Mobile */
+        @media (max-width: 576px) {
+            .ww-logo-card {
+                width: 120px;
+                height: 70px;
+                padding: 10px 12px;
+            }
+
+            .ww-marquee-outer::before,
+            .ww-marquee-outer::after {
+                width: 50px;
+            }
+        }
+    </style>
+
     <!-- 2. About Section -->
     <section id="about" class="section-padding bg-darker">
+        <div class="section-divider"></div>
         <div class="container">
             <!-- About Content with Image & Text -->
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
                     <div class="about-image-wrapper position-relative">
-                        <div class="pulse-ring"></div>
+                        <!-- <div class="pulse-ring"></div> -->
                         <img src="assets/images/about-img/abt-img-1.webp" alt="Cyber Security"
                             class="img-fluid cyber-hero-img active">
-                        <img src="assets/images/about-img/abt-img-6.jpg" alt="Cyber Security"
-                            class="img-fluid cyber-hero-img">
+                        <!-- <img src="assets/images/about-img/abt-img-6.jpg" alt="Cyber Security"
+                            class="img-fluid cyber-hero-img"> -->
                         <img src="assets/images/about-img/abt-img-3.png" alt="Cyber Security"
                             class="img-fluid cyber-hero-img">
-                        <img src="assets/images/about-img/abt-img-5.jpeg" alt="Cyber Security"
+                        <img src="assets/images/about-img/abt-img-5.jpg" alt="Cyber Security"
                             class="img-fluid cyber-hero-img">
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="about-content">
                         <h2 class="display-5 fw-bold mb-4">
-                            <span class="neon-text-blue">About</span> Us
+                            About<span class="neon-text-blue"> Us</span>
                         </h2>
                         <p class="lead mb-4">
                             Join the elite league of cyber defenders protecting organizations from evolving threats.
@@ -189,10 +418,222 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- What We Teach - Animated Cards -->
-            <div class="what-we-teach-section mt-5 pt-5">
-                <h2 class="text-center mb-5" data-aos="fade-up">
+    <!-- Our Services Section -->
+    <section id="our-services" class="section-padding bg-black">
+        <div class="section-divider"></div>
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-4 fw-bold text-white mb-3">
+                    Our <span class="neon-text-blue">Services</span>
+                </h2>
+                <p class="text-uppercase letter-spacing-2" style="color:#aaa;">
+                    End-to-end cybersecurity solutions tailored for every organisation
+                </p>
+            </div>
+
+            <div class="row g-4" id="services-grid">
+
+                <!-- 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card glass-card p-4 h-100">
+                        <div class="service-icon-wrap mb-4" style="--svc-color:#00d4ff;">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-2">Vulnerability Assessment &amp; Penetration Testing</h5>
+                        <p class="small" style="color:#aaa;line-height:1.7;">
+                            Identify, classify, and remediate security weaknesses across networks, applications, and
+                            infrastructure before attackers do.
+                        </p>
+                        <div class="service-line" style="--svc-color:#00d4ff;"></div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-card glass-card p-4 h-100">
+                        <div class="service-icon-wrap mb-4" style="--svc-color:#bc13fe;">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-2">Governance, Risk &amp; Compliance Audits</h5>
+                        <p class="small" style="color:#aaa;line-height:1.7;">
+                            Align your organisation with global standards (ISO 27001, GDPR, NIST) through structured GRC
+                            assessments and audit support.
+                        </p>
+                        <div class="service-line" style="--svc-color:#bc13fe;"></div>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card glass-card p-4 h-100">
+                        <div class="service-icon-wrap mb-4" style="--svc-color:#25D366;">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-2">Cybersecurity Awareness Trainings</h5>
+                        <p class="small" style="color:#aaa;line-height:1.7;">
+                            Empower your workforce with engaging, real-world security awareness programmes to reduce
+                            human-risk vulnerabilities.
+                        </p>
+                        <div class="service-line" style="--svc-color:#25D366;"></div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-card glass-card p-4 h-100">
+                        <div class="service-icon-wrap mb-4" style="--svc-color:#00d4ff;">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-2">Cloud Security (IaaS, PaaS, SaaS)</h5>
+                        <p class="small" style="color:#aaa;line-height:1.7;">
+                            Secure your cloud environments with configuration reviews, access management hardening, and
+                            continuous compliance monitoring.
+                        </p>
+                        <div class="service-line" style="--svc-color:#00d4ff;"></div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card glass-card p-4 h-100">
+                        <div class="service-icon-wrap mb-4" style="--svc-color:#ff4444;">
+                            <i class="fas fa-binoculars"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-2">Threat Intelligence &amp; Hunting</h5>
+                        <p class="small" style="color:#aaa;line-height:1.7;">
+                            Proactively hunt for advanced persistent threats and leverage curated intelligence feeds to
+                            stay ahead of cyber adversaries.
+                        </p>
+                        <div class="service-line" style="--svc-color:#ff4444;"></div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+                    <div class="service-card glass-card p-4 h-100">
+                        <div class="service-icon-wrap mb-4" style="--svc-color:#bc13fe;">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-2">Data Protection, Backups &amp; Business Continuity</h5>
+                        <p class="small" style="color:#aaa;line-height:1.7;">
+                            Design and implement robust data protection strategies, disaster-recovery plans, and BCP
+                            frameworks to ensure zero downtime.
+                        </p>
+                        <div class="service-line" style="--svc-color:#bc13fe;"></div>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card glass-card p-4 h-100">
+                        <div class="service-icon-wrap mb-4" style="--svc-color:#25D366;">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-2">Digital Forensics Investigations</h5>
+                        <p class="small" style="color:#aaa;line-height:1.7;">
+                            Conduct court-admissible forensic investigations into cyber incidents, data breaches, fraud,
+                            and cybercrime cases.
+                        </p>
+                        <div class="service-line" style="--svc-color:#25D366;"></div>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="450">
+                    <div class="service-card glass-card p-4 h-100">
+                        <div class="service-icon-wrap mb-4" style="--svc-color:#00d4ff;">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-2">Cybersecurity Risk Assessments</h5>
+                        <p class="small" style="color:#aaa;line-height:1.7;">
+                            Quantify and prioritise cyber risks across your digital assets with detailed reports and
+                            actionable remediation roadmaps.
+                        </p>
+                        <div class="service-line" style="--svc-color:#00d4ff;"></div>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card glass-card p-4 h-100">
+                        <div class="service-icon-wrap mb-4" style="--svc-color:#ff4444;">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h5 class="text-white fw-bold mb-2">Identity Theft Protection</h5>
+                        <p class="small" style="color:#aaa;line-height:1.7;">
+                            Safeguard personal and corporate identities with advanced monitoring, rapid response, and
+                            recovery services.
+                        </p>
+                        <div class="service-line" style="--svc-color:#ff4444;"></div>
+                    </div>
+                </div>
+
+            </div><!-- /row -->
+        </div>
+    </section>
+
+    <!-- Our Services Card Styles -->
+    <style>
+        .service-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px color-mix(in srgb, var(--svc-color) 25%, transparent);
+        }
+
+        .service-icon-wrap {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: color-mix(in srgb, var(--svc-color) 15%, transparent);
+            border: 1px solid color-mix(in srgb, var(--svc-color) 40%, transparent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .service-icon-wrap i {
+            font-size: 22px;
+            color: var(--svc-color);
+        }
+
+        .service-card:hover .service-icon-wrap {
+            background: color-mix(in srgb, var(--svc-color) 25%, transparent);
+        }
+
+        /* Bottom accent line */
+        .service-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--svc-color);
+            border-radius: 0 3px 0 0;
+            transition: width 0.4s ease;
+        }
+
+        .service-card:hover .service-line {
+            width: 100%;
+        }
+    </style>
+
+    <!-- What We Teach - Animated Cards -->
+    <section id="what-we-teach" class="section-padding bg-darker">
+        <div class="section-divider"></div>
+        <div class="container">
+            <div class=" what-we-teach-section">
+                <h2 class="text-center fw-bold mb-5" data-aos="fade-up">
                     WHAT WE <span class="neon-text-green">TEACH</span>
                 </h2>
                 <div class="row g-4">
@@ -287,8 +728,12 @@
             </div>
         </div>
 
-        <!-- Elite Security Experts Section -->
-        <section id="experts-section" class="position-relative mt-5">
+    </section>
+
+    <!-- Elite Security Experts Section -->
+    <section id="experts-section" class="section-padding position-relative mt-5">
+        <div class="section-divider"></div>
+        <div class="container">
             <div class="text-center mb-5">
                 <div class="terminal-badge d-inline-block mb-3">
                     <span class="text-success">root@cyberrakshak:~$</span> <span class="text-white typing-effect">ls
@@ -305,14 +750,18 @@
                     <!-- Speaker nodes will be injected here via JS -->
                 </div>
             </div>
-        </section>
         </div>
+
     </section>
+    <!-- </div> -->
+    <!-- </section> -->
 
     <!-- 3. Courses Section -->
     <section id="courses" class="section-padding bg-darker">
+        <div class="section-divider"></div>
         <div class="container">
-            <h2 class="section-title text-center mb-5">Elite <span class="neon-text-purple">Programs</span></h2>
+            <h2 class="section-title fw-bold text-center mb-5">Cyber Rakshak <span
+                    class="neon-text-purple">Course</span></h2>
 
             <!-- Filter Buttons -->
             <div class="course-filters text-center mb-4" data-aos="fade-up">
@@ -349,29 +798,44 @@
                     <i class="fas fa-chevron-down"></i> Show More Courses
                 </button>
             </div>
+    </section>
+
+    <!-- Students Placed Section -->
+    <section id="students-placed" class="section-padding bg-black overflow-hidden">
+        <div class="section-divider"></div>
+        <div class="container">
+            <h2 class="section-title fw-bold text-center mb-5">Our Students
+                <span class="neon-text-green">Placed</span>
+            </h2>
+
+            <div class="placed-marquee">
+                <div class="placed-track">
+                    <!-- Dynamic content will be injected by js/dynamic-content.js -->
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- 4. Cyber Threat Map Section -->
-    <section id="threat-map" class="section-padding bg-black position-relative overflow-hidden">
+    <!-- <section id="threat-map" class="section-padding bg-black position-relative overflow-hidden">
         <div class="container mb-4 text-center" style="z-index: 5; position: relative;">
             <h2 class="display-4 fw-bold text-white mb-2"
                 style="font-family: 'Rajdhani', sans-serif; letter-spacing: 3px;">LIVE CYBER THREAT MAP</h2>
         </div>
 
         <div class="map-wrapper"
-            style="position: relative; width: 100%; height: 100%; background: #000; border: 1px solid var(--glass-border); border-radius: 8px; overflow: hidden;">
-            <!-- <iframe id="raven-iframe" src="https://qeeqbox.github.io/raven/" width="100%" height="100%" frameborder="0"
+            style="position: relative; width: 100%; height: 100%; background: #000; border: 1px solid var(--glass-border); border-radius: 8px; overflow: hidden;"> -->
+    <!-- <iframe id="raven-iframe" src="https://qeeqbox.github.io/raven/" width="100%" height="100%" frameborder="0"
                 scrolling="auto" style="border: none;">
             </iframe> -->
-            <!-- <iframe id="raven-iframe" src="https://qeeqbox.github.io/raven/src/raven.html" frameborder="0" width="100%"
+    <!-- <iframe id="raven-iframe" src="https://qeeqbox.github.io/raven/src/raven.html" frameborder="0" width="100%"
                 height="600">
             </iframe> -->
-            <div style="position:relative;width:100%;height:600px;">
-                <iframe src="https://threatmap.checkpoint.com" style="width:100%;height:100%;border:0;"></iframe>
+    <!-- <div style="position:relative;width:100%;height:600px;">
+                <iframe src="https://threatmap.checkpoint.com" style="width:100%;height:100%;border:0;"></iframe> -->
 
-                <!-- overlay to hide logo -->
-                <!-- <div style="
+    <!-- overlay to hide logo -->
+    <!-- <div style="
                     position:absolute;
                     top:0;
                     left:0;
@@ -381,10 +845,10 @@
                     z-index:10;">
                 </div>
             </div> -->
-                <!-- <iframe src="https://qeeqbox.github.io/raven/" width="100%" height="100%" frameborder="0"></iframe> -->
-            </div>
+    <!-- <iframe src="https://qeeqbox.github.io/raven/" width="100%" height="100%" frameborder="0"></iframe> -->
+    <!-- </div> -->
 
-            <!-- <div class="map-overlay position-absolute bottom-0 end-0 p-4 pointer-events-none" style="z-index: 5;">
+    <!-- <div class="map-overlay position-absolute bottom-0 end-0 p-4 pointer-events-none" style="z-index: 5;">
             <div class="glass-panel p-3">
                 <div id="threat-stats" class="text-start font-monospace small">
                     <div class="mb-1">> RAVEN PROTOCOL ACTIVATED...</div>
@@ -393,14 +857,17 @@
                 </div>
             </div>
         </div> -->
-    </section>
+    <!-- </section> -->
 
     <!-- 5. Why Choose Us -->
     <section id="why-us" class="section-padding bg-black">
+        <div class="section-divider"></div>
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-4 fw-bold text-white mb-3">WHY <span class="neon-text-blue">CHOOSE US?</span></h2>
-                <p class="text-uppercase letter-spacing-2">Elevate your cybersecurity career with our world-class
+                <h2 class="display-4 fw-bold text-white mb-3">WHY <span class="neon-text-blue">CHOOSE US?</span>
+                </h2>
+                <p class="text-uppercase letter-spacing-2">Elevate your cybersecurity career with our
+                    world-class
                     ecosystem</p>
             </div>
 
@@ -412,7 +879,8 @@
                             <i class="fas fa-flask fa-2x neon-text-blue"></i>
                         </div>
                         <h4 class="text-white mb-3">Industry-Standard Labs</h4>
-                        <p class="  small">Access 24/7 virtual labs with real-world scenarios and the latest security
+                        <p class="  small">Access 24/7 virtual labs with real-world scenarios and the latest
+                            security
                             tools.</p>
                         <div class="feature-glow"></div>
                     </div>
@@ -425,7 +893,8 @@
                             <i class="fas fa-headset fa-2x neon-text-green"></i>
                         </div>
                         <h4 class="text-white mb-3">24/7 Mentor Support</h4>
-                        <p class="  small">Our expert mentors are always available to help you navigate complex security
+                        <p class="  small">Our expert mentors are always available to help you navigate complex
+                            security
                             challenges.</p>
                         <div class="feature-glow"
                             style="background: linear-gradient(90deg, transparent, var(--cyber-green), transparent);">
@@ -455,7 +924,8 @@
                             <i class="fas fa-certificate fa-2x neon-text-red"></i>
                         </div>
                         <h4 class="text-white mb-3">Global Certification</h4>
-                        <p class="  small">Industry-recognized certifications to validate your expertise to global
+                        <p class="  small">Industry-recognized certifications to validate your expertise to
+                            global
                             employers.</p>
                         <div class="feature-glow"
                             style="background: linear-gradient(90deg, transparent, var(--cyber-red), transparent);">
@@ -470,16 +940,20 @@
                     <div class="col-lg-10">
                         <div class="stats-counter d-flex justify-content-around glass-card p-4 py-5">
                             <div class="stat-item text-center">
-                                <h3 class="counter text-white fw-bold display-4 mb-2" data-target="10000">0</h3>
-                                <p class="text-uppercase letter-spacing-1 neon-text-blue mb-0">Students Trained</p>
+                                <h3 class="counter text-white fw-bold display-4 mb-2" data-target="700">0</h3>
+                                <p class="text-uppercase letter-spacing-1 neon-text-blue mb-0">Students Trained
+                                </p>
                             </div>
                             <div class="stat-item text-center">
                                 <h3 class="counter text-white fw-bold display-4 mb-2" data-target="50">0</h3>
-                                <p class="text-uppercase letter-spacing-1 neon-text-green mb-0">Countries Reached</p>
+                                <p class="text-uppercase letter-spacing-1 neon-text-green mb-0">Countries
+                                    Reached
+                                </p>
                             </div>
                             <div class="stat-item text-center">
                                 <h3 class="counter text-white fw-bold display-4 mb-2" data-target="95">0</h3>
-                                <p class="text-uppercase letter-spacing-1 neon-text-purple mb-0">Employment Rate</p>
+                                <p class="text-uppercase letter-spacing-1 neon-text-purple mb-0">Employment Rate
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -490,20 +964,24 @@
 
     <!-- 6. Learning Scroll - Timeline -->
     <section id="roadmap" class="section-padding bg-darker">
+        <div class="section-divider"></div>
+
         <div class="container">
-            <h2 class="section-title text-center mb-5">Our <span class="neon-text-green">Path</span></h2>
+            <h2 class="section-title fw-bold text-center mb-5">Our <span class="neon-text-green">Path</span></h2>
             <div class="timeline">
                 <div class="timeline-line"></div>
                 <!-- Phase 1 -->
                 <div class="timeline-item left">
                     <div class="content glass-card p-4">
-                        <h4 class="text-white neon-text-blue">Phase 1: Foundation (2018–2019)</h4>
+                        <h4 class="text-white neon-text-blue">Phase 1: Foundation <br> (2018–2019)</h4>
                         <ul class="list-unstyled mt-3 text-start small" style="color: #ccc; line-height: 1.6;">
-                            <li class="mb-2"><i class="fas fa-shield-halved me-2 neon-text-blue"></i>Company established
+                            <li class="mb-2"><i class="fas fa-shield-halved me-2 neon-text-blue"></i>Company
+                                established
                                 with a vision to create industry impact and social value.</li>
                             <li class="mb-2"><i class="fas fa-users me-2 neon-text-blue"></i>Formation of core team
                                 passionate about cybersecurity and digital safety.</li>
-                            <li><i class="fas fa-file-contract me-2 neon-text-blue"></i>Initial planning and groundwork
+                            <li><i class="fas fa-file-contract me-2 neon-text-blue"></i>Initial planning and
+                                groundwork
                                 for awareness initiatives.</li>
                         </ul>
                     </div>
@@ -516,7 +994,8 @@
                         <ul class="list-unstyled mt-3 text-start small" style="color: #ccc; line-height: 1.6;">
                             <li class="mb-2"><i class="fas fa-handshake me-2 neon-text-green"></i>Collaboration with
                                 cyber awareness wings Cyber Rakshak & Mission IT Education.</li>
-                            <li class="mb-2"><i class="fas fa-rocket me-2 neon-text-green"></i>Launch of cybersecurity
+                            <li class="mb-2"><i class="fas fa-rocket me-2 neon-text-green"></i>Launch of
+                                cybersecurity
                                 awareness programs.</li>
                             <li><i class="fas fa-earth-asia me-2 neon-text-green"></i>Early community engagement and
                                 educational activities.</li>
@@ -531,7 +1010,8 @@
                         <ul class="list-unstyled mt-3 text-start small" style="color: #ccc; line-height: 1.6;">
                             <li class="mb-2"><i class="fas fa-map-location-dot me-2 neon-text-purple"></i>Outreach
                                 expanded to 100+ communities across India.</li>
-                            <li class="mb-2"><i class="fas fa-award me-2 neon-text-purple"></i>Strong recognition for
+                            <li class="mb-2"><i class="fas fa-award me-2 neon-text-purple"></i>Strong recognition
+                                for
                                 social and national service initiatives.</li>
                             <li><i class="fas fa-graduation-cap me-2 neon-text-purple"></i>Continuous awareness
                                 campaigns, training sessions, and workshops.</li>
@@ -542,9 +1022,11 @@
                 <!-- Phase 4 -->
                 <div class="timeline-item right">
                     <div class="content glass-card p-4">
-                        <h4 class="text-white neon-text-red">Phase 4: Collaboration & Future Growth (2024–2025)</h4>
+                        <h4 class="text-white neon-text-red">Phase 4: Collaboration & Future Growth <br>(2024–2025)
+                        </h4>
                         <ul class="list-unstyled mt-3 text-start small" style="color: #ccc; line-height: 1.6;">
-                            <li class="mb-2"><i class="fas fa-briefcase me-2 neon-text-red"></i>Proposal for strategic
+                            <li class="mb-2"><i class="fas fa-briefcase me-2 neon-text-red"></i>Proposal for
+                                strategic
                                 collaboration with organizations.</li>
                             <li class="mb-2"><i class="fas fa-bullseye me-2 neon-text-red"></i>Focus on: Awareness
                                 campaigns for teachers & students, Training & Workshops.</li>
@@ -555,163 +1037,24 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- 7. Testimonials -->
     <section id="testimonials" class="section-padding bg-darker">
+        <div class="section-divider"></div>
         <div class="container">
-            <h2 class="section-title text-center mb-5" data-aos="fade-up">Success <span
-                    class="neon-text-purple">Stories</span></h2>
+            <h2 class="section-title fw-bold text-center mb-5">Success <span class="neon-text-blue">Stories</span>
+            </h2>
 
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
-                        class="active"></button>
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+            <div class="testimonials-marquee">
+                <div class="marquee-track">
+                    <!-- Dynamic content will be injected by js/dynamic-content.js -->
                 </div>
-
-                <div class="carousel-inner">
-                    <!-- Testimonial 1 -->
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-center" data-aos="zoom-in">
-                            <div class="testimonial-card glass-card p-5 text-center position-relative">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <div class="testimonial-avatar">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
-                                        alt="Rahul Sharma" class="rounded-circle">
-                                    <div class="avatar-glow"></div>
-                                </div>
-                                <div class="stars mb-3">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
-                                <p class="testimonial-text fst-italic">
-                                    "CyberRakshak transformed my career completely! From zero knowledge to landing a SOC
-                                    Analyst position at a Fortune 500 company in just 6 months. The hands-on labs and
-                                    real-world scenarios are unmatched."
-                                </p>
-                                <h5 class="text-white mt-4 mb-1">Rahul Sharma</h5>
-                                <span class="neon-text-blue small">SOC Analyst @ TCS</span>
-                                <p class="   small mt-2">Batch 2023</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center" data-aos="zoom-in">
-                            <div class="testimonial-card glass-card p-5 text-center position-relative">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <div class="testimonial-avatar">
-                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
-                                        alt="Priya Patel" class="rounded-circle">
-                                    <div class="avatar-glow"></div>
-                                </div>
-                                <div class="stars mb-3">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
-                                <p class="testimonial-text fst-italic">
-                                    "The mentors here are phenomenal! They're always available to help and guide you
-                                    through complex topics. I cleared my CEH and OSCP certifications on my first attempt
-                                    thanks to their training."
-                                </p>
-                                <h5 class="text-white mt-4 mb-1">Priya Patel</h5>
-                                <span class="neon-text-purple small">Penetration Tester @ Infosys</span>
-                                <p class="   small mt-2">Batch 2023</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center" data-aos="zoom-in">
-                            <div class="testimonial-card glass-card p-5 text-center position-relative">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <div class="testimonial-avatar">
-                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop"
-                                        alt="Arjun Kumar" class="rounded-circle">
-                                    <div class="avatar-glow"></div>
-                                </div>
-                                <div class="stars mb-3">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
-                                <p class="testimonial-text fst-italic">
-                                    "Best decision of my life! The course structure is perfect for beginners. Started
-                                    with no coding knowledge, now I'm successfully hunting bugs and earning through Bug
-                                    Bounty programs."
-                                </p>
-                                <h5 class="text-white mt-4 mb-1">Arjun Kumar</h5>
-                                <span class="neon-text-green small">Bug Bounty Hunter</span>
-                                <p class="   small mt-2">Batch 2024</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center" data-aos="zoom-in">
-                            <div class="testimonial-card glass-card p-5 text-center position-relative">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <div class="testimonial-avatar">
-                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop"
-                                        alt="Sneha Reddy" class="rounded-circle">
-                                    <div class="avatar-glow"></div>
-                                </div>
-                                <div class="stars mb-3">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                </div>
-                                <p class="testimonial-text fst-italic">
-                                    "The industry connections and placement support are incredible. Got interviewed by 5
-                                    top companies and received 3 offers. Currently working as a Security Analyst and
-                                    loving every moment!"
-                                </p>
-                                <h5 class="text-white mt-4 mb-1">Sneha Reddy</h5>
-                                <span class="neon-text-blue small">Security Analyst @ Wipro</span>
-                                <p class="   small mt-2">Batch 2024</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
     </section>
+
 
     <!-- 8. Pricing -->
     <!-- <section id="pricing" class="section-padding bg-darker">
@@ -792,39 +1135,91 @@
     </section> -->
 
     <!-- 10. Footer -->
-    <footer class="footer-section py-5 bg-black border-top border-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h4 class="text-white mb-3">CYBER<span class="text-primary">RAKSHAK</span></h4>
-                    <p class=" ">Empowering the next generation of cyber defenders.</p>
-                    <div class="social-icons">
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-discord"></i></a>
+    <footer class="footer-section pt-5 pb-4 position-relative overflow-hidden">
+        <div class="section-divider"></div>
+        <div class="footer-glow"></div>
+        <div class="container position-relative z-1">
+            <div class="row g-4">
+                <!-- Brand Section -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand mb-4">
+                        <a class="navbar-brand logo-text" href="#">
+                            <img src="assets/images/logo.png" alt="CYBERRAKSHAK" width="70px" height="65px">
+                        </a>
+                    </div>
+                    <p class="text-secondary mb-4" style="max-width: 320px;">
+                        The ultimate training ground for ethical hackers and digital defenders. Master the art of
+                        cybersecurity with hands-on methodology.
+                    </p>
+                    <div class="social-links d-flex gap-3">
+                        <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <!-- <a href="https://github.com/asif-cods" class="social-btn" title="GitHub"><i
+                                class="fab fa-github"></i></a> -->
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="text-white mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#courses" class="  text-decoration-none">Courses</a></li>
-                        <li><a href="#about" class="  text-decoration-none">About Us</a></li>
-                        <li><a href="#pricing" class="  text-decoration-none">Pricing</a></li>
-                        <li><a href="#contact" class="  text-decoration-none">Contact</a></li>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-white fw-bold mb-4 footer-title">Explore</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#hero">Home Operations</a></li>
+                        <li><a href="#about">About Agency</a></li>
+                        <li><a href="#courses">CyberRakshak Courses</a></li>
+                        <li><a href="gallery.html">Success Gallery</a></li>
+                        <li><a href="#testimonials">Students Success</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="text-white mb-3">Newsletter</h5>
-                    <div class="input-group">
-                        <input type="email" class="form-control bg-transparent text-white border-secondary"
-                            placeholder="Your Email">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-white fw-bold mb-4 footer-title">Contact Info</h5>
+                    <div class="contact-item d-flex gap-3 mb-3">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            <span class="d-block text-white small opacity-50">Headquarters</span>
+                            <span class="text-secondary small">Jaipur, Rajasthan, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-item d-flex gap-3 mb-3">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <span class="d-block text-white small opacity-50">E-Mail</span>
+                            <a href="mailto:info@thecyberrakshak.com"
+                                class="text-secondary small text-decoration-none">info@thecyberrakshak.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item d-flex gap-3 mb-3">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text">
+                            <span class="d-block text-white small opacity-50">Phone No.</span>
+                            <a href="tel:+91XXXXXXXXXX" class="text-secondary small text-decoration-none">+91 XXXXX
+                                XXXXX</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Newsletter -->
+                <!-- <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-white fw-bold mb-4 footer-title">Intelligence Feed</h5>
+                    <p class="text-secondary small mb-4">Get the latest breach alerts and training updates directly to
+                        your terminal.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                            <button class="btn btn-cyber" type="button">JOIN</button>
+                        </div>
+                    </form>
+                </div> -->
             </div>
-            <div class="text-center mt-4">
-                <p class="  small">&copy; 2024 CyberRakshak. All Rights Reserved. BY ASIF.</p>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom mt-5 pt-4 border-top border-secondary border-opacity-10 text-center">
+                <p class="text-secondary small mb-0">
+                    © 2026 <span class="text-white fw-bold">CyberRakshak</span>. All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
@@ -846,87 +1241,352 @@
     <script src="js/three-scene.js"></script>
     <script src="js/parallax.js"></script>
     <script src="js/courses.js"></script>
+    <script src="js/dynamic-content.js"></script>
     <script src="js/main.js"></script>
-    <!-- <script type="text/javascript">
-        Raven Threat Map Initialization
-        document.getElementById('raven-iframe').addEventListener("load", function () {
-            try {
-                var raven_options = {
-                    'world_type': null,
-                    'selected_countries': [],
-                    'remove_countries': ['aq'],
-                    'height': 750,
-                    'width': window.innerWidth,
-                    'backup_background_color': '#050505',
-                    'orginal_country_color': '#333333',
-                    'clicked_country_color': '#bc13fe',
-                    'selected_country_color': '#00f3ff',
-                    'attack_output': true,
-                    'global_timeout': 2000,
-                    'global_stats_limit': 10,
-                    'db_length': 1000,
-                    'location': 'scripts',
-                    'panels': ['multi-output', 'single-output', 'tooltip', 'random', 'insert', 'taskbar'],
-                    'disable': [],
-                    'verbose': false
-                };
 
-                // Initialize Raven API
-                if (document.getElementById('raven-iframe').contentWindow.raven) {
-                    window['raven'] = document.getElementById('raven-iframe').contentWindow.raven;
-                    window['raven'].init_all(raven_options);
-                    window['raven'].init_world();
 
-                    // Optional: Start a demo attack simulation
-                    setInterval(function () {
-                        const targets = ['seattle,wa,us', 'delhi,in', 'mumbai,in', 'london,gb', 'berlin,de', 'tokyo,jp', '8.8.8.8', '0.0.0.0'];
-                        const from = targets[Math.floor(Math.random() * targets.length)];
-                        const to = targets[Math.floor(Math.random() * targets.length)];
-                        if (from !== to && from && to) {
-                            window['raven'].add_to_data_to_table({ 'from': from, 'to': to }, { 'line': { 'from': null, 'to': null } }, 2000, ['line', 'multi-output', 'single-output']);
-                        }
-                    }, 4000);
-                }
-            } catch (e) {
-                console.warn("Raven API access restricted by CORS. Standard visualization remains active.");
+    <!-- ===== WhatsApp Float Button ===== -->
+    <!-- CHANGE THE NUMBER BELOW: replace 919999999999 with your WhatsApp number (country code + number, no + or spaces) -->
+
+    <!-- WhatsApp Floating Button -->
+    <div id="wa-float-btn" title="Chat on WhatsApp" onclick="toggleWaForm()">
+        <i class="fab fa-whatsapp"></i>
+        <span class="wa-tooltip">Chat with us!</span>
+    </div>
+
+    <!-- WhatsApp Popup Form -->
+    <div id="wa-form-popup">
+        <div class="wa-form-header">
+            <div class="wa-form-header-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+                <div class="wa-form-header-title">CyberRakshak Support</div>
+                <div class="wa-form-header-sub">Typically replies within minutes</div>
+            </div>
+            <button class="wa-form-close" onclick="toggleWaForm()" aria-label="Close">&times;</button>
+        </div>
+        <div class="wa-form-body">
+            <p class="wa-form-intro">Fill in your details and we'll take you straight to WhatsApp!</p>
+            <form id="waContactForm" onsubmit="sendToWhatsApp(event)">
+                <div class="wa-input-group">
+                    <label for="wa-name"><i class="fas fa-user"></i> Your Name</label>
+                    <input type="text" id="wa-name" placeholder="Enter your full name" required autocomplete="off">
+                </div>
+                <div class="wa-input-group">
+                    <label for="wa-email"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="wa-email" placeholder="Enter your email" required autocomplete="off">
+                </div>
+                <div class="wa-input-group">
+                    <label for="wa-query"><i class="fas fa-comment-dots"></i> Your Query</label>
+                    <textarea id="wa-query" rows="3" placeholder="Describe your question or interest..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="wa-submit-btn">
+                    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Styles -->
+    <style>
+        /* --- Float Button --- */
+        #wa-float-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 62px;
+            height: 62px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            animation: wa-pulse 2.2s infinite;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #wa-float-btn:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        #wa-float-btn i {
+            font-size: 32px;
+            color: #fff;
+            pointer-events: none;
+        }
+
+        @keyframes wa-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Tooltip */
+        .wa-tooltip {
+            position: absolute;
+            right: 74px;
+            background: #25D366;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+        }
+
+        #wa-float-btn:hover .wa-tooltip {
+            opacity: 1;
+        }
+
+        /* --- Popup Form --- */
+        #wa-form-popup {
+            position: fixed;
+            bottom: 105px;
+            right: 30px;
+            width: 340px;
+            background: rgba(10, 10, 20, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: 18px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(37, 211, 102, 0.1);
+            z-index: 9998;
+            overflow: hidden;
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        #wa-form-popup.wa-open {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Header */
+        .wa-form-header {
+            background: linear-gradient(135deg, #075E54, #128C7E);
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+
+        .wa-form-header-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .wa-form-header-icon i {
+            font-size: 22px;
+            color: #fff;
+        }
+
+        .wa-form-header-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .wa-form-header-sub {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 2px;
+        }
+
+        .wa-form-close {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.12);
+            border: none;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 18px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .wa-form-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Body */
+        .wa-form-body {
+            padding: 18px 20px 20px;
+        }
+
+        .wa-form-intro {
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+
+        .wa-input-group {
+            margin-bottom: 13px;
+        }
+
+        .wa-input-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #25D366;
+            margin-bottom: 5px;
+            letter-spacing: 0.3px;
+        }
+
+        .wa-input-group label i {
+            margin-right: 5px;
+            font-size: 11px;
+        }
+
+        .wa-input-group input,
+        .wa-input-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(37, 211, 102, 0.25);
+            border-radius: 10px;
+            padding: 9px 13px;
+            color: #fff;
+            font-size: 13px;
+            font-family: 'Outfit', sans-serif;
+            outline: none;
+            resize: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            box-sizing: border-box;
+        }
+
+        .wa-input-group input:focus,
+        .wa-input-group textarea:focus {
+            border-color: #25D366;
+            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.12);
+        }
+
+        .wa-input-group input::placeholder,
+        .wa-input-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .wa-submit-btn {
+            width: 100%;
+            padding: 11px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 4px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .wa-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+        }
+
+        .wa-submit-btn i {
+            font-size: 16px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            #wa-form-popup {
+                width: calc(100vw - 30px);
+                right: 15px;
+                bottom: 100px;
+            }
+
+            #wa-float-btn {
+                right: 15px;
+                bottom: 20px;
+            }
+        }
+    </style>
+
+    <!-- WhatsApp Script -->
+    <script>
+        // *** CHANGE THIS NUMBER to your WhatsApp number (country code + number, no + or spaces) ***
+        const WA_NUMBER = '+917678542845';
+
+        function toggleWaForm() {
+            const popup = document.getElementById('wa-form-popup');
+            popup.classList.toggle('wa-open');
+        }
+
+        // Close popup when clicking outside
+        document.addEventListener('click', function (e) {
+            const popup = document.getElementById('wa-form-popup');
+            const btn = document.getElementById('wa-float-btn');
+            if (popup.classList.contains('wa-open')
+                && !popup.contains(e.target)
+                && !btn.contains(e.target)) {
+                popup.classList.remove('wa-open');
             }
         });
-    </script> -->
-    <script>
-        document.getElementById('raven-iframe').addEventListener("load", function () {
 
-            const raven = document.getElementById('raven-iframe').contentWindow.raven
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('wa-name').value.trim();
+            const email = document.getElementById('wa-email').value.trim();
+            const query = document.getElementById('wa-query').value.trim();
 
-            raven.init_all({
-                height: 600,
-                width: window.innerWidth,
-                attack_output: true,
-                global_timeout: 1500,
-                db_length: 5000,
-                panels: ['single-output'],
-                verbose: false
-            })
+            const message =
+                `Hello CyberRakshak! 👋%0A%0A` +
+                `*Name:* ${encodeURIComponent(name)}%0A` +
+                `*Email:* ${encodeURIComponent(email)}%0A` +
+                `*Query:* ${encodeURIComponent(query)}`;
 
-            raven.init_world()
+            const url = `https://wa.me/${WA_NUMBER}?text=${message}`;
+            window.open(url, '_blank');
 
-            // ⭐ COUNTRIES LIST
-            const countries = ['us', 'cn', 'ru', 'in', 'br', 'de', 'fr', 'gb', 'jp', 'ir', 'kp', 'ua', 'tr', 'au', 'ca']
-
-            // ⭐ RANDOM ATTACK LOOP
-            setInterval(() => {
-                const from = countries[Math.floor(Math.random() * countries.length)]
-                const to = countries[Math.floor(Math.random() * countries.length)]
-
-                raven.add_to_data_to_table(
-                    { from, to },
-                    { 'line': { 'from': null, 'to': null } },
-                    1200,
-                    ['line', 'single-output']
-                )
-            }, 1000)
-
-        })
+            // Reset & close
+            document.getElementById('waContactForm').reset();
+            document.getElementById('wa-form-popup').classList.remove('wa-open');
+        }
     </script>
+
 </body>
 
 </html>

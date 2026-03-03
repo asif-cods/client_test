@@ -167,6 +167,8 @@ function initExpertsScene() {
         { name: "Sunil Chaudhary", role: "Cyber Advocate Advisor", img: "assets/images/team-img/Sunil Chaudhary.png" },
         { name: "DCP Yogesh Kumar", role: "Jaipur LEA Capacity Building Head", img: "assets/images/team-img/DCP Yogesh Kumar.png" },
         { name: "Shri Shailendra Singh", role: "OSD Govt of India", img: "assets/images/team-img/Shri Shailendra Singh.png" },
+        { name: "Yunit Kumar Patle", role: "Cyber Investigator & State Co-ordinator: Maharshtra", img: "assets/images/team-img/Yunit Kumar Patle.jpeg" },
+        { name: "Anand Kumar Choubey", role: "Cyber Security Trainer & State Co-ordinator:Jharkhand & Bihar", img: "assets/images/team-img/Anand Kumar Choubey.jpeg" },
         { name: "ACP RAJ KHATIB", role: "Mumbai Police", img: "assets/images/team-img/ACP RAJ KHATIB.jpg" },
         { name: "Dinesh Chaudhary", role: "Finance Management Head", img: "assets/images/team-img/Dinesh Chaudhary.jpg" },
         { name: "Babita Chaudhary", role: "Director (Women Empowerment)", img: "assets/images/team-img/Babita Chaudhary.jpg" }

@@ -7,7 +7,7 @@ const coursesData = [
         id: 1,
         title: "Foundational Bug Hunting course",
         category: "ethical-hacking",
-        image: "assets/images/courses/c1.jpeg",
+        image: "assets/images/courses/c-1.jpg",
         duration: "3 Months",
         level: "Beginner",
         link: "https://superprofile.bio/course/b033dc99-b91b-43b1-b143-ee30713a22bb",
@@ -20,7 +20,7 @@ const coursesData = [
         id: 2,
         title: "Advance Bug Hunting course",
         category: "ethical-hacking",
-        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=250&fit=crop",
+        image: "assets/images/courses/c-2.png",
         duration: "6 Months",
         level: "Expert",
         link: "https://superprofile.bio/vp/681e0015d28af900137d24ef",
@@ -33,7 +33,7 @@ const coursesData = [
         id: 3,
         title: "Digital Forensics",
         category: "cyber-crime",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
+        image: "assets/images/courses/c-3.png",
         duration: "",
         level: "Intermediate",
         link: "https://superprofile.bio/vp/6734af001e544600136eed86",
@@ -46,7 +46,7 @@ const coursesData = [
         id: 4,
         title: "Cyber Crime Investigation",
         category: "cyber-crime",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
+        image: "assets/images/courses/c-4.png",
         duration: "",
         level: "Advanced",
         link: "https://superprofile.bio/vp/684d357205d9340013cc0d4a",
@@ -61,7 +61,7 @@ const coursesData = [
         id: 5,
         title: "Ethical Hacking Penetration Testing",
         category: "ethical-hacking",
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=250&fit=crop",
+        image: "assets/images/courses/c-5.png",
         duration: "6 Months",
         level: "",
         link: "https://www.thecyberrakshak.com/courses/758019",
@@ -74,7 +74,7 @@ const coursesData = [
         id: 6,
         title: "Foundation SOC",
         category: "cyber-crime",
-        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&h=250&fit=crop",
+        image: "assets/images/courses/c-6.png",
         duration: "",
         level: "Expert",
         link: "",
@@ -87,7 +87,7 @@ const coursesData = [
         id: 7,
         title: "Advance SIEM COURSE",
         category: "ethical-hacking",
-        image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=250&fit=crop",
+        image: "assets/images/courses/c-7.png",
         duration: "",
         level: "Advanced",
         link: "",
@@ -102,10 +102,10 @@ const coursesData = [
         id: 8,
         title: "AI Powered Digital Marketing",
         category: "digital-marketing",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+        image: "assets/images/courses/c-8.png",
         duration: "",
         level: "Beginner",
-        link: "https://www.thecyberrakshak.com/courses/762667?mainCategory=144",
+        link: "https://classplusapp.com/w/cyberrakshaktrainings/courses/791769?utm_source%3Dother%26utm_medium%3Dtutor-course-referral%26utm_campaign%3Dcourse-overview-webapp",
         price: "₹3,000",
         oldPrice: "₹5,000",
         badge: "Popular",
@@ -128,6 +128,9 @@ const levelFilterButtons = document.querySelectorAll('.level-btn');
 
 // Render Courses
 function renderCourses(categoryFilter = currentFilter, levelFilter = currentLevelFilter, limit = displayedCourses) {
+    const coursesGrid = document.getElementById('coursesGrid');
+    if (!coursesGrid) return;
+
     let filteredCourses = coursesData;
 
     if (categoryFilter !== 'all') {
@@ -135,32 +138,58 @@ function renderCourses(categoryFilter = currentFilter, levelFilter = currentLeve
     }
 
     if (levelFilter !== 'all') {
-        filteredCourses = filteredCourses.filter(course => course.level.toLowerCase() === levelFilter.toLowerCase());
+        filteredCourses = filteredCourses.filter(course =>
+            course.level && course.level.toLowerCase() === levelFilter.toLowerCase()
+        );
     }
 
     const coursesToShow = filteredCourses.slice(0, limit);
 
-    coursesGrid.innerHTML = '';
-
+    // Use a document fragment or build a string once for performance
+    let gridHTML = '';
     coursesToShow.forEach((course, index) => {
-        const courseCard = createCourseCard(course, index);
-        coursesGrid.innerHTML += courseCard;
+        gridHTML += createCourseCard(course, index);
     });
+
+    coursesGrid.innerHTML = gridHTML;
+
+    // Handle empty state
+    if (gridHTML === '') {
+        coursesGrid.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <div class="no-results-icon mb-3">
+                    <i class="fas fa-search fa-3x text-secondary opacity-50"></i>
+                </div>
+                <h4 class="text-secondary">No courses found matching your criteria.</h4>
+            </div>
+        `;
+    }
 
     // Update show more button
     updateShowMoreButton(filteredCourses.length, limit);
 
-    // Re-init Vanilla Tilt for new cards
-    if (typeof VanillaTilt !== 'undefined') {
-        setTimeout(() => {
+    // Re-init animations and effects for new cards
+    setTimeout(() => {
+        // Vanilla Tilt
+        if (typeof VanillaTilt !== 'undefined') {
             VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
                 max: 15,
                 speed: 400,
                 glare: true,
                 "max-glare": 0.3,
             });
-        }, 100);
-    }
+        }
+
+        // Refresh AOS to detect new elements
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+
+        // Refresh GSAP ScrollTrigger to recalculate offsets
+        if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+        }
+    }, 100);
 }
 
 // Create Course Card HTML
@@ -180,14 +209,14 @@ function createCourseCard(course, index) {
                 <div class="card-body p-4">
                     <h4>${course.title}</h4>
                     <div class="course-meta d-flex justify-content-between mb-3 small">
-                        <span><i class="far fa-clock"></i> ${course.duration}</span>
-                        <span><i class="fas fa-signal"></i> ${course.level}</span>
+                        ${course.duration ? `<span><i class="far fa-clock"></i> ${course.duration}</span>` : ''}
+                        ${course.level ? `<span><i class="fas fa-signal"></i> ${course.level}</span>` : ''}
                     </div>
                     <div class="price mb-3 text-white fw-bold">
                         <span class="fs-5">${course.price}</span>
                         ${course.oldPrice ? `<small class=" text-decoration-line-through ms-2">${course.oldPrice}</small>` : ''}
                     </div>
-                    <a href="${enrollLink}"${linkTarget} class="btn btn-sm btn-cyber w-100">Enroll Now</a>
+                    <a href="course-details.html?id=${course.id}" class="btn btn-sm btn-cyber w-100">Enroll Now</a>
                 </div>
             </div>
         </div>
@@ -249,28 +278,35 @@ levelFilterButtons.forEach(btn => {
 });
 
 // Show More/Less Functionality
-showMoreBtn.addEventListener('click', () => {
-    let filteredCourses = coursesData;
-    if (currentFilter !== 'all') {
-        filteredCourses = filteredCourses.filter(course => course.category === currentFilter);
-    }
-    if (currentLevelFilter !== 'all') {
-        filteredCourses = filteredCourses.filter(course => course.level.toLowerCase() === currentLevelFilter.toLowerCase());
-    }
+if (showMoreBtn) {
+    showMoreBtn.addEventListener('click', () => {
+        let filteredCourses = coursesData;
+        if (currentFilter !== 'all') {
+            filteredCourses = filteredCourses.filter(course => course.category === currentFilter);
+        }
+        if (currentLevelFilter !== 'all') {
+            filteredCourses = filteredCourses.filter(course => course.level.toLowerCase() === currentLevelFilter.toLowerCase());
+        }
 
-    if (showMoreBtn.classList.contains('show-less')) {
-        // Show less
-        displayedCourses = coursesPerPage;
-        document.getElementById('courses').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-        // Show ALL remaining courses
-        displayedCourses = filteredCourses.length;
-    }
+        if (showMoreBtn.classList.contains('show-less')) {
+            // Show less
+            displayedCourses = coursesPerPage;
+            document.getElementById('courses').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            // Show ALL remaining courses
+            displayedCourses = filteredCourses.length;
+        }
 
-    renderCourses(currentFilter, currentLevelFilter, displayedCourses);
-});
+        renderCourses(currentFilter, currentLevelFilter, displayedCourses);
+    });
+}
 
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        renderCourses();
+    });
+} else {
+    // Already loaded
     renderCourses();
-});
+}
