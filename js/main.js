@@ -289,4 +289,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     spySections.forEach(({ section }) => spyObserver.observe(section));
 
+    // Close mobile menu on nav link click
+    const navLinksAll = document.querySelectorAll('.navbar-nav .nav-link');
+    const menuToggle = document.getElementById('navbarNav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+
+    navLinksAll.forEach(link => {
+        link.addEventListener('click', () => {
+            if (menuToggle && menuToggle.classList.contains('show')) {
+                if (navbarToggler) {
+                    navbarToggler.click(); // Trigger the click to handle both the toggle state and the collapse
+                } else {
+                    menuToggle.classList.remove('show');
+                }
+            }
+        });
+    });
+
 });
