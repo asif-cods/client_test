@@ -588,9 +588,9 @@ section {
 }
 
 .hero-section {
-    height: 100vh;
-    min-height: 700px;
+    min-height: 100vh;
     padding-top: 80px;
+    padding-bottom: 60px;
 }
 
 .hero-content {

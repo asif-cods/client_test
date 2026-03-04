@@ -4,29 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1. Loading Screen
     const loader = document.getElementById('loader');
-    if (loader) {
-        window.addEventListener('load', () => {
-            // Give it a tiny bit of time after the load event
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                    // The user wants 1 second delay before the hero text starts animating
-                    setTimeout(() => {
-                        initAnimations();
-                    }, 1000);
+    const waBtn = document.getElementById('wa-float-btn');
 
-                    // Initialize AOS separately so it can start early for other sections
-                    AOS.init({
-                        duration: 800,
-                        easing: 'ease-in-out',
-                        once: true,
-                        offset: 100
-                    });
-                }, 500);
-            }, 500);
-        });
-    } else {
+    if (waBtn) {
+        // Hide WhatsApp float button during loading
+        waBtn.style.opacity = '0';
+        waBtn.style.pointerEvents = 'none';
+        waBtn.style.transition = 'opacity 0.5s ease';
+    }
+
+    const initApp = () => {
+        if (waBtn) {
+            waBtn.style.opacity = '1';
+            waBtn.style.pointerEvents = 'auto';
+        }
+
         initAnimations();
         AOS.init({
             duration: 800,
@@ -34,6 +26,34 @@ document.addEventListener("DOMContentLoaded", () => {
             once: true,
             offset: 100
         });
+    };
+
+    if (loader) {
+        let loaderHidden = false;
+
+        const hideLoader = () => {
+            if (loaderHidden) return;
+            loaderHidden = true;
+
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    // 1 second delay before the hero text starts animating
+                    setTimeout(initApp, 1000);
+                }, 500);
+            }, 500);
+        };
+
+        if (document.readyState === 'complete') {
+            hideLoader();
+        } else {
+            window.addEventListener('load', hideLoader);
+            // Fallback: hide the loader after 3 seconds even if the page hasn't fully loaded
+            setTimeout(hideLoader, 3000);
+        }
+    } else {
+        initApp();
     }
 
     // 2. Register GSAP

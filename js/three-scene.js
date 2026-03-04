@@ -371,33 +371,47 @@ function initExpertsScene() {
     setTimeout(handleResize, 100);
 
     // 6. Interactive Navigation (Drag & Zoom)
-    // Mouse Down
-    container.addEventListener('mousedown', (e) => {
+    const onStart = (e) => {
         isDragging = true;
-        previousMousePosition = { x: e.clientX, y: e.clientY };
-        container.style.cursor = 'grabbing';
-    });
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        previousMousePosition = { x: clientX, y: clientY };
+        if (container) container.style.cursor = 'grabbing';
+    };
 
-    // Mouse Up
-    document.addEventListener('mouseup', () => {
+    // Mouse / Touch Down
+    container.addEventListener('mousedown', onStart);
+    container.addEventListener('touchstart', onStart, { passive: true });
+
+    const onEnd = () => {
         isDragging = false;
         if (container) container.style.cursor = 'grab';
-    });
+    };
 
-    // Mouse Move (Rotate)
-    container.addEventListener('mousemove', (e) => {
+    // Mouse / Touch Up
+    document.addEventListener('mouseup', onEnd);
+    document.addEventListener('touchend', onEnd);
+
+    // Mouse / Touch Move (Rotate)
+    const onMove = (e) => {
         if (isDragging) {
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
             const deltaMove = {
-                x: e.clientX - previousMousePosition.x,
-                y: e.clientY - previousMousePosition.y
+                x: clientX - previousMousePosition.x,
+                y: clientY - previousMousePosition.y
             };
 
             networkGroup.rotation.y += deltaMove.x * 0.005;
             networkGroup.rotation.x += deltaMove.y * 0.005;
 
-            previousMousePosition = { x: e.clientX, y: e.clientY };
+            previousMousePosition = { x: clientX, y: clientY };
         }
-    });
+    };
+
+    container.addEventListener('mousemove', onMove);
+    container.addEventListener('touchmove', onMove, { passive: true });
 
     // Zoom (Wheel)
     container.addEventListener('wheel', (e) => {
