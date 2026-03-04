@@ -171,6 +171,16 @@ section {
 }
 
 /* Navigation */
+
+
+.nav-items {
+    background-color: transparent;
+    border: 2px solid rgb(73, 74, 75);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
 .glass-nav {
     /* background: rgba(5, 5, 5, 0.8); */
     background-color: #012a4b;
