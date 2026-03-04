@@ -81,7 +81,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
         <div class="container">
-            <a class="navbar-brand logo-text" href="index.html">
+            <a class="navbar-brand logo-text" href="#">
                 <!-- <i class="fas fa-shield-halved neon-text"></i> CYBER<span class="text-primary">RAKSHAK</span> -->
                 <img src="assets/images/logo.png" alt="CYBERRAKSHAK" width="70px" height="65px">
             </a>
@@ -90,7 +90,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#courses">Courses</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Success Stories</a></li>
@@ -305,6 +305,7 @@
             });
         });
     </script>
+
     <!-- ===== WhatsApp Float Button ===== -->
     <!-- CHANGE THE NUMBER BELOW: replace 919999999999 with your WhatsApp number (country code + number, no + or spaces) -->
 
@@ -647,7 +648,83 @@
         }
     </script>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <style>
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 110px;
+            width: 62px;
+            height: 62px;
+            background: var(--cyber-blue);
+            color: var(--cyber-black);
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.8);
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            #back-to-top {
+                right: 80px;
+                bottom: 18px;
+                width: 54px;
+                height: 54px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #back-to-top {
+                right: 80px;
+                bottom: 20px;
+            }
+        }
+    </style>
+
+    <script>
+        // Back to Top Logic
+        const backToTopBtn = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add("show");
+            } else {
+                backToTopBtn.classList.remove("show");
+            }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 </body>
 
 </html>
