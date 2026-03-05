@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Details | CyberRakshak</title>
+    <title>Blog | CyberRakshak</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,49 +22,17 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
     <style>
-        .course-details-section {
+        .blog-header {
             padding-top: 150px;
-            min-height: 80vh;
+            padding-bottom: 60px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(1, 42, 75, 0.4), transparent);
         }
 
-        .course-detail-card {
-            background: rgba(10, 10, 15, 0.8);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .course-header-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .course-info-badge {
-            background: rgba(0, 243, 255, 0.1);
-            border: 1px solid var(--cyber-blue);
-            color: var(--cyber-blue);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: inline-block;
-        }
-
-        .price-tag {
-            font-size: 2.5rem;
-            color: #fff;
-            text-shadow: 0 0 10px var(--cyber-blue);
-        }
-
-        .syllabus-item {
-            background: rgba(255, 255, 255, 0.05);
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 3px solid var(--cyber-blue);
+        .blog-container {
+            padding-bottom: 100px;
         }
     </style>
 </head>
@@ -89,13 +57,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-items nav-link" href="index.html#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-items nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-items nav-link" href="index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-items nav-link active" href="index.html#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-items nav-link" href="index.html#courses">Courses</a></li>
                     <li class="nav-item"><a class="nav-items nav-link" href="index.html#testimonials">Success
                             Stories</a></li>
                     <li class="nav-item"><a class="nav-items nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-items nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-items nav-link active" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-items nav-link" href="contact.html">Contact Us</a></li>
                     <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
                         <a href="https://play.google.com/store/apps/details?id=co.diaz.bawkn&hl=en_IN" target="_blank"
@@ -109,82 +77,104 @@
         </div>
     </nav>
 
-    <section class="course-details-section">
+    <!-- Blog Header -->
+    <header class="blog-header">
         <div class="container">
-            <!-- Back Button -->
-            <div class="mb-4" data-aos="fade-down">
-                <a href="index.html#courses" class="btn btn-cyber-outline">
-                    <i class="fas fa-arrow-left me-2"></i> Back To Home
-                </a>
-            </div>
+            <h1 class="display-3 fw-bold text-white mb-3" data-aos="fade-up">Cyber Intelligence <span
+                    class="neon-text-blue">Blog</span></h1>
+            <p class="text-secondary letter-spacing-2 text-uppercase" data-aos="fade-up" data-aos-delay="100">
+                Insights, Tutorials, and Trends from the World of Cybersecurity</p>
+        </div>
+    </header>
 
-            <div class="row g-5">
-                <!-- Course Main Content -->
-                <div class="col-lg-8" data-aos="fade-right">
-                    <div class="course-detail-card mb-4">
-                        <img id="course-image" src="" alt="Course Image" class="course-header-img">
-                        <div class="p-4 p-md-5">
-                            <div class="d-flex gap-2 mb-3 flex-wrap">
-                                <span id="course-category" class="course-info-badge">Category</span>
-                                <span id="course-level" class="course-info-badge">Level</span>
-                                <span id="course-duration" class="course-info-badge">Duration</span>
-                            </div>
-                            <h1 id="course-title" class="display-4 fw-bold text-white mb-4">Course Title</h1>
-                            <div id="course-description" class="text-secondary fs-5 mb-5">
-                                Loading description...
-                            </div>
-
-                            <h3 class="text-white mb-4">What you will learn</h3>
-                            <div class="row g-3" id="course-features">
-                                <div class="col-md-6">
-                                    <div class="syllabus-item">
-                                        <i class="fas fa-check-circle neon-text-blue me-2"></i> Real-world security
-                                        scenarios
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="syllabus-item">
-                                        <i class="fas fa-check-circle neon-text-blue me-2"></i> Hands-on lab access
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="syllabus-item">
-                                        <i class="fas fa-check-circle neon-text-blue me-2"></i> Expert mentorship
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="syllabus-item">
-                                        <i class="fas fa-check-circle neon-text-blue me-2"></i> Industry recognized
-                                        certificate
-                                    </div>
-                                </div>
+    <!-- Blog Content -->
+    <section class="blog-container">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Blog Card 1 -->
+                <div class="col-lg-6 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card">
+                        <div class="blog-meta">
+                            <span class="blog-category">Investigation</span>
+                            <span class="blog-date">Oct 12, 2025</span>
+                        </div>
+                        <div class="blog-image-wrapper">
+                            <img src="https://media.istockphoto.com/id/2110589243/photo/person-identity-concept-with-fingerprint-and-code.jpg?s=612x612&w=0&k=20&c=ODaXMset1mrdg49w876FdcCAEHpR1eMaM5VK9ZVW7XU="
+                                alt="Cyber Investigation">
+                        </div>
+                        <div class="blog-content-overlay">
+                            <h3 class="blog-title">The Art of Digital Forensics</h3>
+                            <p class="blog-description">Discover the latest techniques used by our experts to trace
+                                complex cyber crimes and recover encrypted digital evidence.</p>
+                            <div class="blog-read-more">
+                                <a href="#" class="btn btn-cyber-outline btn-sm">Read More</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Course Sidebar/Enroll Sidebar -->
-                <div class="col-lg-4" data-aos="fade-left">
-                    <div class="course-detail-card p-4 sticky-top" style="top: 100px; z-index: 10;">
-                        <div class="text-center mb-4">
-                            <div class="price-tag mb-1" id="course-price">₹0</div>
-                            <div class="text-secondary text-decoration-line-through" id="course-old-price">₹0</div>
+                <!-- Blog Card 2 -->
+                <div class="col-lg-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-card">
+                        <div class="blog-meta">
+                            <span class="blog-category">Hacking</span>
+                            <span class="blog-date">Oct 05, 2025</span>
                         </div>
-
-                        <div class="d-grid gap-3 mb-4">
-                            <a id="enroll-button-link" href="#" target="_blank"
-                                class="btn btn-cyber py-3 fw-bold">ENROLL NOW</a>
+                        <div class="blog-image-wrapper">
+                            <img src="https://images.pexels.com/photos/5926382/pexels-photo-5926382.jpeg"
+                                alt="Ethical Hacking">
                         </div>
+                        <div class="blog-content-overlay">
+                            <h3 class="blog-title">Penetration Testing 101</h3>
+                            <p class="blog-description">A comprehensive guide for beginners looking to break into the
+                                world of ethical hacking and infrastructure assessment.</p>
+                            <div class="blog-read-more">
+                                <a href="#" class="btn btn-cyber-outline btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                        <div class="course-includes">
-                            <h6 class="text-white text-uppercase letter-spacing-1 mb-3">Course Includes:</h6>
-                            <ul class="list-unstyled text-secondary small">
-                                <li class="mb-2"><i class="fas fa-video me-2"></i> High Quality Lectures</li>
-                                <li class="mb-2"><i class="fas fa-flask me-2"></i> Virtual Lab Environment</li>
-                                <li class="mb-2"><i class="fas fa-file-pdf me-2"></i> Study Materials</li>
-                                <li class="mb-2"><i class="fas fa-certificate me-2"></i> Certification</li>
-                                <li class="mb-2"><i class="fas fa-infinity me-2"></i> Lifetime Access</li>
-                            </ul>
+                <!-- Blog Card 3 -->
+                <div class="col-lg-6 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-card">
+                        <div class="blog-meta">
+                            <span class="blog-category">Security</span>
+                            <span class="blog-date">Sep 28, 2025</span>
+                        </div>
+                        <div class="blog-image-wrapper">
+                            <img src="https://media.istockphoto.com/id/2167017233/photo/cyber-security-team-working-in-a-cyber-security-operations-center-soc-to-protect-datacenter.jpg?s=2048x2048&w=is&k=20&c=Qi_sjCtILrQQX5cMg98Y-Bk1eO9KrJpkLGbFcH5EYms="
+                                alt="SOC Operations">
+                        </div>
+                        <div class="blog-content-overlay">
+                            <h3 class="blog-title">SOC Operations Excellence</h3>
+                            <p class="blog-description">How modern Security Operations Centers are evolving with AI and
+                                machine learning to combat advanced persistent threats.</p>
+                            <div class="blog-read-more">
+                                <a href="#" class="btn btn-cyber-outline btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 4 -->
+                <div class="col-lg-6 col-xl-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="blog-card">
+                        <div class="blog-meta">
+                            <span class="blog-category">Mobile</span>
+                            <span class="blog-date">Sep 20, 2025</span>
+                        </div>
+                        <div class="blog-image-wrapper">
+                            <img src="https://media.istockphoto.com/id/2035601113/photo/cybersecurity-innovations-concept-engineer-computer-working-with-laptop-computer-show-pad.jpg?s=612x612&w=0&k=20&c=zhqd2qypnGpbYCDqdOHt0BUGHDcp6ehPJzh155a5DgI="
+                                alt="Mobile Security">
+                        </div>
+                        <div class="blog-content-overlay">
+                            <h3 class="blog-title">Securing Personal Assets</h3>
+                            <p class="blog-description">Simple but effective steps everyone should take to protect their
+                                mobile devices and personal identity from hackers.</p>
+                            <div class="blog-read-more">
+                                <a href="#" class="btn btn-cyber-outline btn-sm">Read More</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -192,24 +182,23 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer-section pt-5 pb-4 position-relative overflow-hidden">
         <div class="section-divider"></div>
         <div class="footer-glow"></div>
         <div class="container position-relative z-1">
             <div class="row g-4">
-                <!-- Brand Section -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="footer-brand mb-4">
                         <a class="navbar-brand logo-text" href="index.html">
                             <img src="assets/images/logo.png" alt="CYBERRAKSHAK" width="70px" height="65px">
                         </a>
                     </div>
-                    <p class="text-secondary mb-4">
+                    <p class="text-secondary mb-4" style="max-width: 320px;">
                         The ultimate training ground for ethical hackers and digital defenders. Master the art of
                         cybersecurity with hands-on methodology.
                     </p>
                     <div class="social-links d-flex gap-3">
-                        <!-- <a href="#" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a> -->
                         <a href="https://www.linkedin.com/company/cyber-rakshak-org" class="social-btn"
                             title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://instagram.com/cyberrakshak" class="social-btn" title="Instagram"><i
@@ -217,7 +206,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
                 <div class="col-lg-2 col-md-6 mb-4">
                     <h5 class="text-white fw-bold mb-4 footer-title">Explore</h5>
                     <ul class="list-unstyled footer-links">
@@ -262,10 +250,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Footer Bottom -->
             <div class="footer-bottom mt-5 pt-4 border-top border-secondary border-opacity-10 text-center">
                 <p class="text-secondary small mb-0">
                     © 2026 <span class="text-white fw-bold">CyberRakshak</span>. All rights reserved.
@@ -274,35 +260,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/courses.js"></script>
-    <script src="js/course-details.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Loader
-            const loader = document.getElementById('loader');
-            if (loader) {
-                setTimeout(() => {
-                    loader.style.opacity = '0';
-                    setTimeout(() => {
-                        loader.style.display = 'none';
-                    }, 500);
-                }, 500);
-            }
-            // AOS
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-        });
-    </script>
-
     <!-- ===== WhatsApp Float Button ===== -->
-    <!-- CHANGE THE NUMBER BELOW: replace 919999999999 with your WhatsApp number (country code + number, no + or spaces) -->
-
     <!-- WhatsApp Floating Button -->
     <div id="wa-float-btn" title="Chat on WhatsApp" onclick="toggleWaForm()">
         <i class="fab fa-whatsapp"></i>
@@ -602,7 +560,6 @@
 
     <!-- WhatsApp Script -->
     <script>
-        // *** CHANGE THIS NUMBER to your WhatsApp number (country code + number, no + or spaces) ***
         const WA_NUMBER = '+917678542845';
 
         function toggleWaForm() {
@@ -610,7 +567,6 @@
             popup.classList.toggle('wa-open');
         }
 
-        // Close popup when clicking outside
         document.addEventListener('click', function (e) {
             const popup = document.getElementById('wa-form-popup');
             const btn = document.getElementById('wa-float-btn');
@@ -636,7 +592,6 @@
             const url = `https://wa.me/${WA_NUMBER}?text=${message}`;
             window.open(url, '_blank');
 
-            // Reset & close
             document.getElementById('waContactForm').reset();
             document.getElementById('wa-form-popup').classList.remove('wa-open');
         }
@@ -647,75 +602,41 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <style>
-        /* Back to Top Button */
-        #back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 110px;
-            width: 62px;
-            height: 62px;
-            background: var(--cyber-blue);
-            color: var(--cyber-black);
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 243, 255, 0.8);
-            background: #fff;
-        }
-
-        @media (max-width: 768px) {
-            #back-to-top {
-                right: 80px;
-                bottom: 18px;
-                width: 54px;
-                height: 54px;
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #back-to-top {
-                right: 80px;
-                bottom: 20px;
-            }
-        }
-    </style>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Back to Top Logic
-        const backToTopBtn = document.getElementById("back-to-top");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add("show");
-            } else {
-                backToTopBtn.classList.remove("show");
+        document.addEventListener('DOMContentLoaded', () => {
+            // Loader
+            const loader = document.getElementById('loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 500);
             }
-        });
 
-        backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+            // AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Back to Top
+            const backToTopBtn = document.getElementById("back-to-top");
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add("show");
+                } else {
+                    backToTopBtn.classList.remove("show");
+                }
+            });
+
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             });
         });
     </script>

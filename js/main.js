@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     counter.innerText = Math.ceil(current);
                     requestAnimationFrame(updateCount);
                 } else {
-                    counter.innerText = target + (target > 100 ? '+' : '');
+                    counter.innerText = target + (target > 100 ? '+' : '-States');
                 }
             };
             updateCount();
@@ -275,19 +275,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ── Scroll-Spy: highlight active nav section ──────────────────────────
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href*="#"]');
     const spySections = [];
 
     navLinks.forEach(link => {
-        const id = link.getAttribute('href').replace('#', '');
-        const section = document.getElementById(id);
-        if (section) spySections.push({ link, section });
+        const href = link.getAttribute('href');
+        const id = href.includes('#') ? href.split('#')[1] : null;
+        if (id) {
+            const section = document.getElementById(id);
+            if (section) spySections.push({ link, section });
+        }
     });
 
     // Mark active for non-anchor page links (gallery.html, contact.html)
-    document.querySelectorAll('.navbar-nav .nav-link:not([href^="#"])').forEach(link => {
+    document.querySelectorAll('.navbar-nav .nav-link:not([href*="#"])').forEach(link => {
         const href = link.getAttribute('href');
-        if (href && window.location.pathname.endsWith(href)) {
+        // Check if the current URL ends with the link's href
+        if (href && window.location.pathname.includes(href)) {
             link.classList.add('active');
         }
     });
