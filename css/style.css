@@ -2204,7 +2204,10 @@ section {
     }
 
     .map-container {
-        height: 350px;
+        /* height: 350px; */
+        max-width: 100%;
+        overflow: hidden;
+        /* margin-bottom: 10px; */
     }
 
     /* ── About stat cards: single column on phones ── */
@@ -2710,16 +2713,36 @@ footer>* {
 @media (max-width: 768px) {
     .stats-counter {
         flex-direction: column !important;
-        gap: 2.5rem;
+        gap: 2rem !important;
+        padding: 2rem 1rem !important;
     }
 
     .stats-counter .display-4 {
-        font-size: 2.5rem !important;
+        font-size: 2.2rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .stats-counter .counter span {
+        font-size: 1rem !important;
+    }
+
+    .stats-counter p {
+        font-size: 0.8rem !important;
     }
 
     /* Improving map on mobile */
     .india-map-img {
-        max-width: 95% !important;
-        margin-top: 10px;
+        max-width: 100% !important;
+        margin-top: 5px;
+    }
+
+    .map-container {
+        margin-bottom: -20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-counter .display-4 {
+        font-size: 1.8rem !important;
     }
 }
