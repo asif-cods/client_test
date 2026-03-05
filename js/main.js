@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     counter.innerText = Math.ceil(current);
                     requestAnimationFrame(updateCount);
                 } else {
-                    counter.innerText = target + (target > 100 ? '+' : '-States');
+                    counter.innerText = target + (target > 100 ? '+' : '-STATES');
                 }
             };
             updateCount();
