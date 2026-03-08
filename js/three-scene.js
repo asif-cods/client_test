@@ -52,26 +52,9 @@ function initHeroScene() {
     const lines = new THREE.LineSegments(linesGeometry, lineMaterial);
     scene.add(lines);
 
-    // Mouse interaction
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetX = 0;
-    let targetY = 0;
-
-    const windowHalfX = window.innerWidth / 2;
-    const windowHalfY = window.innerHeight / 2;
-
-    document.addEventListener('mousemove', (event) => {
-        mouseX = (event.clientX - windowHalfX);
-        mouseY = (event.clientY - windowHalfY);
-    });
-
     // Animation Loop
     const animate = () => {
         requestAnimationFrame(animate);
-
-        targetX = mouseX * 0.001;
-        targetY = mouseY * 0.001;
 
         particles.rotation.y += 0.002;
         particles.rotation.x += 0.001;
@@ -123,6 +106,5 @@ function initHeroScene() {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     initHeroScene();
-    initExpertsScene();
 });
 

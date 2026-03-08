@@ -121,7 +121,6 @@ let displayedCourses = 4; // Initially show 4 courses
 const coursesPerPage = 4;
 
 // DOM Elements
-const coursesGrid = document.getElementById('coursesGrid');
 const showMoreBtn = document.getElementById('showMoreBtn');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const levelFilterButtons = document.querySelectorAll('.level-btn');
