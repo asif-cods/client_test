@@ -75,6 +75,7 @@ const galleryData = {
     ],
     achievement: [
         { url: "assets/images/achivement-img/16_20260213_134735_0015.png", desc: "Elite Cybersecurity Excellence Certificate" },
+        { url: "assets/images/gallaery/Saloni_std.webp", desc: "Our Student Saloni got Bounty from doing Bug Bounty" },
         { url: "assets/images/achivement-img/18_20260213_134735_0017.png", desc: "National Cyber Security Recognition Award" },
         { url: "assets/images/achivement-img/21_20260213_134735_0020.png", desc: "100+ Successful Placements in Top MNCs" },
         { url: "assets/images/achivement-img/22_20260213_134735_0021.png", desc: "Award for Best Training Institute in Rajasthan" }
@@ -100,7 +101,7 @@ function renderGalleryMarrquee(category = 'all') {
 
     const createGalleryItem = (item) => `
         <div class="gallery-marquee-item">
-            <img src="${item.url}" alt="Success Milestone">
+            <img src="${item.url}" alt="Success Milestone" loading="lazy">
             <div class="gallery-marquee-desc">
                 <p class="mb-0 text-white small">${item.desc}</p>
             </div>
@@ -125,9 +126,9 @@ function initDynamicContent() {
             <div class="placed-card">
                 <div class="placed-photo-wrapper">
                     <div class="photo-bg-circle"></div>
-                    <img src="${student.image}" class="student-photo" alt="${student.name}">
+                    <img src="${student.image}" class="student-photo" alt="${student.name}" loading="lazy">
                     <div class="company-logo-badge">
-                        <img src="${student.companyLogo}" alt="${student.companyName}">
+                        <img src="${student.companyLogo}" alt="${student.companyName}" loading="lazy">
                     </div>
                 </div>
                 <div class="placed-info">

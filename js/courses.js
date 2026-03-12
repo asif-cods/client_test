@@ -202,7 +202,7 @@ function createCourseCard(course, index) {
             <div class="course-card glass-card" data-tilt>
                 ${course.badge ? `<div class="card-badge">${course.badge}</div>` : ''}
                 <div class="card-img-top position-relative">
-                    <img src="${course.image}" alt="${course.title}" class="img-fluid">
+                    <img src="${course.image}" alt="${course.title}" class="img-fluid" loading="lazy">
                     <div class="overlay"></div>
                 </div>
                 <div class="card-body p-4">
